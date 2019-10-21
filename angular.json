@@ -27,9 +27,6 @@
               "src/assets"
             ],
             "styles": [
-//              {
-//                "input": "src/egais-theme.scss"
-//              },
               "src/styles.scss",
               "src/egais-theme.scss"
             ],
@@ -62,6 +59,13 @@
                 }
               ]
             }
+          }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://violetgekkon.github.io/angular-widget/",
+            "name": "sia angular-widget"
           }
         },
         "serve": {

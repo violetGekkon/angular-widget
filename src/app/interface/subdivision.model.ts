@@ -1,10 +1,11 @@
 export interface Subdivision {
+  Short_Name: string;
   fsrar: string;
   kpp: string;
   address: string;
 }
 
-export const sub = [
+export const sub: Subdivision[] = [
   // {
   //   fsrar: '0300001657',
   //   kpp: '',
