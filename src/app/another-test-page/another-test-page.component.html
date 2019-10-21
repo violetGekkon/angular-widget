@@ -1,0 +1,53 @@
+<div [class]="theme">
+  <mat-card>
+    <button mat-raised-button color="primary" routerLink="">Primary</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn" appTooltip="My App Tooltip">Warn</button>
+    <button mat-icon-button color="primary" aria-label="icon-button with a help icon">
+      <mat-icon appTooltip="My App Tooltip">help</mat-icon>
+    </button>
+  </mat-card>
+  <br>
+  <mat-card>
+    <mat-form-field>
+      <mat-label>Favorite food</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card>
+  <mat-card>
+    <mat-form-field>
+      <mat-label>Theme</mat-label>
+      <mat-select [(value)]="theme">
+        <mat-option value="egais-theme">egais-theme</mat-option>
+        <mat-option value="egais-dark-theme">egais-dark-theme</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card>
+  <p>You selected theme: {{theme}}</p>
+  <mat-card>
+    <mat-form-field>
+      <mat-label>Theme</mat-label>
+      <mat-select [(value)]="selected" (change)="onThemeChange()">
+        <mat-option>None</mat-option>
+        <mat-option value="egais-theme">egais-theme</mat-option>
+        <mat-option value="egais-dark-theme">egais-dark-theme</mat-option>
+        <mat-option value="option3">Option 3</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card>
+
+  <p>You selected: {{selected}}</p>
+
+</div>
+
+<div style="width: 300px; height:300px" [innerHTML]="text">
+</div>
+
+<div style="width: 300px; height:300px" [innerHTML]="text">
+</div>
+
+

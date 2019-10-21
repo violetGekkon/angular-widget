@@ -1,0 +1,18 @@
+.vh30 {
+  height: 30vh;
+  border: 1px solid black;
+  background-color: rgb(148, 194, 216);
+  font-size: 32px;
+}
+
+.docs-toc-container {
+  top: 35px;
+  position: sticky;
+  width: 100%;
+  padding: 5px 0 10px 10px;
+  border-left: 4px solid #3f51b5;
+}
+
+.item-active {
+  font-weight: bold;
+}

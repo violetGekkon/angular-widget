@@ -1,0 +1,26 @@
+@mixin test-page-theme($theme) {
+
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .ml-file-list {
+    border-bottom: 1px solid mat-color($foreground, divider);
+  }
+
+  .ml-file-list-item {
+    color: mat-color($primary);
+
+
+    &:hover, &:active, &:focus {
+      background-color: mat-color($background, hover);
+    }
+
+    &.selected {
+      background-color: mat-color($primary, lighter, 0.5);
+      color: mat-color($foreground, text);
+    }
+  }
+}

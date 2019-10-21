@@ -1,0 +1,162 @@
+@import '~@angular/material/theming';
+@import 'app/test-page/test-page.component.scss-theme';
+
+@include mat-core();
+
+$egais-primary-palette: (
+  50 : #e2ebf4,
+  100 : #b6cee4,
+  200 : #85aed3,
+  300 : #548dc1,
+  400 : #3074b3,
+  500 : #0b5ca6,
+  600 : #0a549e,
+  700 : #084a95,
+  800 : #06418b,
+  900 : #03307b,
+  A100 : #a8c3ff,
+  A200 : #759fff,
+  A400 : #427cff,
+  A700 : #296aff,
+  contrast: (
+    50: $light-primary-text,
+    100: $light-primary-text,
+    200: $light-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: $light-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: white,
+  )
+);
+
+$egais-accent-palette: (
+  50 : #faebea,
+  100 : #f2cdcb,
+  200 : #e9aca8,
+  300 : #e08a85,
+  400 : #d9716b,
+  500 : #d25851,
+  600 : #cd504a,
+  700 : #c74740,
+  800 : #c13d37,
+  900 : #b62d27,
+  A100 : #fff4f4,
+  A200 : #ffc3c1,
+  A400 : #ff928e,
+  A700 : #ff7974,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$egais-warn-palette: (
+  50 : #f6e0e4,
+  100 : #e7b3bc,
+  200 : #d88090,
+  300 : #c84d63,
+  400 : #bc2641,
+  500 : #b00020,
+  600 : #a9001c,
+  700 : #a00018,
+  800 : #970013,
+  900 : #87000b,
+  A100 : #ffb3b6,
+  A200 : #ff8085,
+  A400 : #ff4d53,
+  A700 : #ff343b,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+/* egais-light-theme */
+
+$egais-theme-primary: mat-palette($egais-primary-palette);
+$egais-theme-accent: mat-palette($egais-accent-palette);
+$egais-theme-warn: mat-palette($egais-warn-palette);
+
+$egais-light-theme: mat-light-theme(
+    $egais-theme-primary,
+    $egais-theme-accent,
+    $egais-theme-warn);
+
+/* egais-dark-theme */
+
+$egais-dark-theme-primary: mat-palette($mat-purple);
+$egais-dark-theme-accent: mat-palette($mat-pink);
+$egais-dark-theme-warn: mat-palette($mat-red);
+
+$egais-dark-theme: mat-dark-theme(
+    $egais-dark-theme-primary,
+    $egais-dark-theme-accent,
+    $egais-dark-theme-warn);
+
+/* egais-theme with custom foreground
+
+@function egais-light-theme-foreground($color) {
+  @return (
+    base: $color,
+    divider: $white-12-opacity,
+    dividers: $white-12-opacity,
+    disabled: rgba($color, 0.38),
+    disabled-button: rgba($color, 0.38),
+    disabled-text: rgba($color, 0.38),
+    hint-text: rgba($color, 0.38),
+    secondary-text: rgba($color, 0.54),
+    icon: rgba($color, 0.54),
+    icons: rgba($color, 0.54),
+    text: rgba($color, 0.87),
+    slider-off: rgba($color, 0.26),
+    slider-off-active: rgba($color, 0.38),
+    slider-min: rgba($color, 0.38)
+  );
+}
+
+$egais-foreground: egais-light-theme-foreground(#0b5ca6);
+$egais-theme: map-merge($egais-light-theme, (foreground: $egais-foreground)); */
+
+@mixin egais-components-theme($theme) {
+  @include test-page-theme($theme);
+}
+
+@include angular-material-theme($egais-light-theme);
+@include egais-components-theme($egais-light-theme)
+
+
+.egais-dark-theme {
+  @include angular-material-theme($egais-dark-theme);
+  @include egais-components-theme($egais-dark-theme)
+}

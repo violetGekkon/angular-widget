@@ -1,0 +1,18 @@
+<div class="example-boundary" cdkDropList cdkDropListOrientation="horizontal">
+
+  <!--<div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>-->
+  <!--I can only be dragged within the dotted container-->
+  <!--</div>-->
+
+  <mat-grid-list cols="8" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let card of cards$ | async"
+                   [colspan]="2" [rowspan]="2">
+      <app-dashboard-card-spawner cdkDrag [card]="card"></app-dashboard-card-spawner>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <!--<app-dashboard-card-spawner *ngFor="let card of cards$ | async"-->
+                              <!--[card]="card"-->
+
+  <!--&gt;</app-dashboard-card-spawner>-->
+</div>

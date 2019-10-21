@@ -1,0 +1,19 @@
+<mat-card class="example-card">
+  <mat-card-content>
+    <div *ngIf="subdivision.kpp">
+      <h4>КПП</h4>
+      <p>{{subdivision.kpp}}</p>
+    </div>
+    <div>
+      <h4>Адрес</h4>
+      <p>{{subdivision.address}}</p>
+    </div>
+    <div fxLayout="row wrap" class="ci-rsa-exist" *ngIf="certificated">
+      <img src="assets/img/SmallRSA.png" alt="RSA" title="Сгенерирован сертификат RSA" width="24" height="24">
+    </div>
+  </mat-card-content>
+</mat-card>
+
+
+
+
