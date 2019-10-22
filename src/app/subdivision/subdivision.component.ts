@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit} from '@angular/core';
-import {Subdivision} from '../interface/subdivision.model';
+import {Subdivision} from '../interfaces/subdivision.model';
 
 @Component({
   selector: 'app-subdivision',

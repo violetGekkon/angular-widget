@@ -1,4 +1,19 @@
-<div class="flex-container">
-  <div *ngFor="let item of data$ | async">{{item.name}}</div>
+<!--<div class="flex-container">-->
+<!--  <div *ngFor="let item of data$ | async">{{item.name}}</div>-->
+<!--</div>-->
+
+<div fxFlexFill fxLayout="column" class="ci-utm-info-list-container">
+  <div class="ci-widget-name">{{name}}</div>
+  <div fxFlex fxLayout="column" *ngIf="info$ | async">
+    <div fxFlex fxLayout="row" fxLayoutAlign="start center" *ngFor="let item of listitems" class="ci-utm-info-list-item" >
+      <mat-icon [ngClass]="
+          item.icon == 'clear' ? 'material-icons lite-red' : (
+          item.icon == 'error_outline' ? 'material-icons orange600' : 'material-icons lite-green')">{{item.icon}}</mat-icon>
+      <div fxFlex fxLayout="column" class="ci-utm-info-list-item-text">
+        <div class="ci-utm-info-list-item-title">{{item.title}}</div>
+        <div class="ci-utm-info-list-item-description">{{item.description}}</div>
+      </div>
+    </div>
+  </div>
 </div>
 

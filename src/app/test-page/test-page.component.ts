@@ -5,7 +5,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DashboardCard} from '../card/model/dashboard-card.model';
 import {DashboardCardsService} from '../services/dashboard-card-service.service';
 import {ViewTableCardComponent} from '../card/view-table-card/view-table-card.component';
-import {Subdivision, sub} from '../interface/subdivision.model';
+import {Subdivision, sub} from '../interfaces/subdivision.model';
 import {combineLatest, Observable, of} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 

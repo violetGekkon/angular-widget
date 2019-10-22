@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {User} from './settings-page/settings-page.component';
+import {Observable, of} from 'rxjs';
+import {UTMInfo, utmInfo} from './interfaces/utm.model';
 
 @Injectable()
 export class DataService {
@@ -21,8 +21,8 @@ export class DataService {
   }
 
 
-  getFakeData(): Observable<User[]> {
-    return this.httpClient.get<User[]>('https://jsonplaceholder.typicode.com/users');
+  getFakeData(): Observable<UTMInfo> {
+    return of(utmInfo);
   }
 
 }

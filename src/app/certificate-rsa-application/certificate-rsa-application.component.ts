@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Subdivision} from '../interface/subdivision.model';
+import {Subdivision} from '../interfaces/subdivision.model';
 
 @Component({
   selector: 'app-certificate-rsa-application',
@@ -16,6 +16,7 @@ export class CertificateRsaApplicationComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
 }

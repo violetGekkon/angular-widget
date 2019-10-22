@@ -1,38 +1,9 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatTableDataSource, PageEvent} from '@angular/material';
+import {Component, OnInit} from '@angular/core';
 import {DataService} from '../data.service';
 import {Observable} from 'rxjs';
+import {Certificate, DbUtm, UTMInfo} from '../interfaces/utm.model';
+import {map} from 'rxjs/operators';
 
-
-export interface Geo {
-  lat: string;
-  lng: string;
-}
-
-export interface Address {
-  street: string;
-  suite: string;
-  city: string;
-  zipcode: string;
-  geo: Geo;
-}
-
-export interface Company {
-  name: string;
-  catchPhrase: string;
-  bs: string;
-}
-
-export interface User {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: Address;
-  phone: string;
-  website: string;
-  company: Company;
-}
 
 @Component({
   selector: 'app-settings-page',
@@ -41,49 +12,92 @@ export interface User {
 })
 export class SettingsPageComponent implements OnInit {
 
-  isLeftVisible = true;
-  settingsList = [];
-  displayedColumns: string[] = ['name', 'description'];
-  dataSource: MatTableDataSource<{ name: string, description: string }>;
-  length;
-  xsdText = '';
+  name = 'Основные параметры УТМ';
+  info$;
+  listitems = [];
+  utmInfo$: Observable<UTMInfo> = this.dataService.getFakeData();
 
-  data$: Observable<User[]> = this.dataService.getFakeData();
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor(public dataService: DataService) {
 
   }
 
   ngOnInit() {
+    this.info$ = this.utmInfo$.pipe(
+      map((data) => {
 
-    this.dataService.getXsdList().subscribe((data: { name: string, description: string }[]) => {
-      this.dataSource = new MatTableDataSource<{ name: string, description: string }>(data);
-      this.dataSource.paginator = this.paginator;
-    });
+        const oldVersion = false;
+
+        this.listitems.push({
+          title: 'Версия ПО',
+          description: oldVersion ? `${data.version} - устаревшая версия` : data.version,
+          icon: oldVersion ? 'clear' : 'check'
+        });
+
+        // RSA сертификат
+        const rsaCert: Certificate = data.rsa;
+
+        // Контур по ключу RSA
+        const сontourByRSA = rsaCert.issuer === 'test.pki.fsrar.ru' ? 'test' : 'prod';
+
+        this.listitems.push({
+          title: data.contour === 'test' ? 'Тестовый контур' : 'Продуктивный контур',
+          description: data.contour === сontourByRSA ?
+            `RSA сертификат ${rsaCert.issuer} соответствует контуру` :
+            `RSA сертификат ${rsaCert.issuer} не соответствует контуру`,
+          icon: data.contour === сontourByRSA ? 'check' : 'clear'
+        });
+
+        // БД УТМ
+        const dbUtm: DbUtm = data.db;
+        const dbIsValid = dbUtm.ownerId === data.ownerId;
+
+        this.listitems.push({
+          title: dbIsValid ? 'БД в актуальном состоянии' : 'БД - несоответствие данных',
+          description: dbIsValid ? dbUtm.createDate : `rsa БД - ${dbUtm.ownerId}\nrsa подразделения  - ${data.ownerId}`,
+          icon: dbIsValid ? 'check' : 'clear'
+        });
+
+        // Информация о лицензии
+
+        if (data.license) {
+          this.listitems.push({
+            title: 'Статус лицензии',
+            description: data.license ? 'Лицензия на вид деятельности действует' : 'Лицензия на вид деятельности не действует',
+            icon: data.license ? 'check' : 'clear'
+          });
+        }
+
+        this.listitems.push({
+          title: 'Неотправленные чеки',
+          description: data.checkInfo !== null ? `Чеки не отправлялись с ${data.checkInfo}` : 'Отсутствуют неотправленные чеки',
+          icon: data.checkInfo !== null ? 'clear' : 'check'
+        });
 
 
-    this.settingsList = [
-      {title: 'Настройки УТМ'},
-      {title: 'Сертификаты'},
-      {title: 'XML схемы'},
-      {title: 'Фильтр IP-адресов'}
-    ];
+        this.listitems.push({
+          title: 'Период действия RSA',
+          description: rsaCert.isValid === 'revoked' ? 'Отозван' : rsaCert.isValid === 'invalid' ? 'Недействителен' :
+            rsaCert.startDate,
+          icon: rsaCert.isValid === 'valid' ? 'check' : 'clear'
+        });
 
-  }
+        // ГОСТ сертификат
 
-  rowClicked(row: any) {
-    this.dataService.getXsd(row.name).subscribe(content => {
-      this.xsdText = content;
-      this.isLeftVisible = !this.isLeftVisible;
-    });
-  }
+        const gostCert: Certificate = data.gost;
 
-  applyFilter(filter: string) {
-    this.dataSource.filter = filter.trim().toLowerCase();
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+        const gostTime = `с ${gostCert.startDate} по ${gostCert.expireDate} \n`;
+
+
+        this.listitems.push({
+          title: 'Период действия ГОСТ',
+          description: gostCert.isValid === 'invalid' ? 'Недействителен' : gostTime,
+          icon: gostCert.isValid === 'valid' ? 'check' : 'clear'
+        });
+
+        return this.listitems;
+
+      }));
   }
 
 
