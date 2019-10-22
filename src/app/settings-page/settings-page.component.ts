@@ -12,7 +12,8 @@ import {map} from 'rxjs/operators';
 })
 export class SettingsPageComponent implements OnInit {
 
-  name = 'Основные параметры УТМ';
+  name1 = 'Основные параметры УТМ (flex-layout lib)';
+  name2 = 'Основные параметры УТМ (flex in css)';
   info$;
   listitems = [];
   utmInfo$: Observable<UTMInfo> = this.dataService.getFakeData();

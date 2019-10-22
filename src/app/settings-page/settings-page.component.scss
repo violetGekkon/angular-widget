@@ -44,3 +44,25 @@
   cursor: pointer;
   outline: none;
 }
+
+
+.ci-utm-info-list-container {
+  display: flex;
+  border: solid 1px red;
+  flex: 1 1 auto;            /*  changed, flex row item need the grow value
+                                          to be 1 to fill its parent's width  */
+  flex-direction: column;
+}
+
+.ci-utm-info-list-item {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.ci-utm-info-list-item-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}

@@ -8,21 +8,45 @@
   fxLayout="row wrap"
   fxLayout.lt-sm="column"
   fxLayoutGap="24px"
-  fxLayoutAlign="flex-start">
+  fxLayoutAlign="flex-start" *ngIf="info$ | async">
   <mat-card
             fxFlex="0 1 calc(33.3% - 32px)"
             fxFlex.lt-md="0 1 calc(50% - 32px)"
             fxFlex.lt-sm="100%">
     <mat-card-content>
 
-      <div fxFlexFill fxLayout="column" class="ci-utm-info-list-container">
-        <div class="ci-widget-name">{{name}}</div>
-        <div fxFlex fxLayout="column" *ngIf="info$ | async">
-          <div fxFlex fxLayout="row" fxLayoutAlign="start center" *ngFor="let item of listitems" class="ci-utm-info-list-item" >
+      <div fxFlexFill fxLayout="column">
+        <div class="ci-widget-name">{{name1}}</div>
+        <div fxFlex fxLayout="column">
+          <div fxFlex fxLayout="row" fxLayoutAlign="start center" *ngFor="let item of listitems">
             <mat-icon [ngClass]="
           item.icon == 'clear' ? 'material-icons lite-red' : (
           item.icon == 'error_outline' ? 'material-icons orange600' : 'material-icons lite-green')">{{item.icon}}</mat-icon>
             <div fxFlex fxLayout="column" class="ci-utm-info-list-item-text">
+              <div class="ci-utm-info-list-item-title">{{item.title}}</div>
+              <div class="ci-utm-info-list-item-description">{{item.description}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card
+    fxFlex="0 1 calc(33.3% - 32px)"
+    fxFlex.lt-md="0 1 calc(50% - 32px)"
+    fxFlex.lt-sm="100%">
+    <mat-card-content style="display: flex; height: 100%">
+
+      <div class="ci-utm-info-list-container">
+        <div class="ci-widget-name">{{name2}}</div>
+        <div class="ci-utm-info-list-item">
+          <div *ngFor="let item of listitems" class="ci-utm-info-list-item-content">
+            <mat-icon [ngClass]="
+          item.icon == 'clear' ? 'material-icons lite-red' : (
+          item.icon == 'error_outline' ? 'material-icons orange600' : 'material-icons lite-green')">{{item.icon}}</mat-icon>
+            <div class="ci-utm-info-list-item-text">
               <div class="ci-utm-info-list-item-title">{{item.title}}</div>
               <div class="ci-utm-info-list-item-description">{{item.description}}</div>
             </div>
