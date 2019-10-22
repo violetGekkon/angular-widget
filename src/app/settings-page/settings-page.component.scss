@@ -12,3 +12,35 @@
   line-height: 75px;
   font-size: 30px;
 }
+
+.ci-utm-info-list-item{
+  width: 100%;
+  height: 12vh;
+}
+
+.ci-utm-info-list-item-text {
+  padding-left: 8px;
+  //border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ci-utm-info-list-item-title {
+  font-size: 13px;
+}
+
+.ci-utm-info-list-item-description {
+  padding: 2px 0;
+  font-size: 12px;
+  color: rgba(0,0,0,.87);
+  font-weight: 500;
+  opacity: 0.7;
+  white-space: pre-wrap;
+}
+
+.mat-card {
+  max-width: 350px;
+}
+
+.ci-widget-content-focus {
+  cursor: pointer;
+  outline: none;
+}

@@ -2,18 +2,36 @@
 <!--  <div *ngFor="let item of data$ | async">{{item.name}}</div>-->
 <!--</div>-->
 
-<div fxFlexFill fxLayout="column" class="ci-utm-info-list-container">
-  <div class="ci-widget-name">{{name}}</div>
-  <div fxFlex fxLayout="column" *ngIf="info$ | async">
-    <div fxFlex fxLayout="row" fxLayoutAlign="start center" *ngFor="let item of listitems" class="ci-utm-info-list-item" >
-      <mat-icon [ngClass]="
+
+
+<div
+  fxLayout="row wrap"
+  fxLayout.lt-sm="column"
+  fxLayoutGap="24px"
+  fxLayoutAlign="flex-start">
+  <mat-card
+            fxFlex="0 1 calc(33.3% - 32px)"
+            fxFlex.lt-md="0 1 calc(50% - 32px)"
+            fxFlex.lt-sm="100%">
+    <mat-card-content>
+
+      <div fxFlexFill fxLayout="column" class="ci-utm-info-list-container">
+        <div class="ci-widget-name">{{name}}</div>
+        <div fxFlex fxLayout="column" *ngIf="info$ | async">
+          <div fxFlex fxLayout="row" fxLayoutAlign="start center" *ngFor="let item of listitems" class="ci-utm-info-list-item" >
+            <mat-icon [ngClass]="
           item.icon == 'clear' ? 'material-icons lite-red' : (
           item.icon == 'error_outline' ? 'material-icons orange600' : 'material-icons lite-green')">{{item.icon}}</mat-icon>
-      <div fxFlex fxLayout="column" class="ci-utm-info-list-item-text">
-        <div class="ci-utm-info-list-item-title">{{item.title}}</div>
-        <div class="ci-utm-info-list-item-description">{{item.description}}</div>
+            <div fxFlex fxLayout="column" class="ci-utm-info-list-item-text">
+              <div class="ci-utm-info-list-item-title">{{item.title}}</div>
+              <div class="ci-utm-info-list-item-description">{{item.description}}</div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+
+    </mat-card-content>
+  </mat-card>
 </div>
+
 
