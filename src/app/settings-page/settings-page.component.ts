@@ -14,8 +14,47 @@ export class SettingsPageComponent implements OnInit {
 
   name1 = 'Основные параметры УТМ (flex-layout lib)';
   name2 = 'Основные параметры УТМ (flex in css)';
+  name3 = 'flex-layout lib for container, flex in css for card';
   info$;
   listitems = [];
+
+  listitems2 = [
+    {
+      title: 'Версия ПО',
+      description: 'version',
+      icon: 'check'
+    },
+    {
+      title: 'Тестовый контур',
+      description: 'RSA сертификат test.pki.fsrar.ru соответствует контуру',
+      icon: 'check'
+    },
+    {
+      title: 'БД в актуальном состоянии',
+      description: '16.10.2019 11:51:20',
+      icon: 'check'
+    },
+    {
+      title: 'Статус лицензии',
+      description: 'Лицензия на вид деятельности действует',
+      icon: 'check'
+    },
+    {
+      title: 'Неотправленные чеки',
+      description: 'Отсутствуют неотправленные чеки',
+      icon: 'check'
+    },
+    {
+      title: 'Период действия RSA',
+      description: 'с 17.10.2019 16:50:29 по 17.10.2020 17:00:29 ',
+      icon: 'check'
+    },
+    {
+      title: 'Период действия GOST',
+      description: 'с 17.10.2019 16:50:29 по 17.10.2020 17:00:29 ',
+      icon: 'check'
+    }
+  ];
   utmInfo$: Observable<UTMInfo> = this.dataService.getFakeData();
 
 
