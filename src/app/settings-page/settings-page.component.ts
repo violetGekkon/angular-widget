@@ -12,7 +12,7 @@ import {map} from 'rxjs/operators';
 })
 export class SettingsPageComponent implements OnInit {
 
-  name1 = 'Основные параметры УТМ (flex-layout lib)';
+  name1 = 'Основные параметры УТМ';
   name2 = 'Основные параметры УТМ (flex in css)';
   name3 = 'flex-layout lib for container, flex in css for card';
   name4 = 'flex-layout lib for card, flex in css for container';
