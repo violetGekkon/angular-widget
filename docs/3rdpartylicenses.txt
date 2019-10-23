@@ -400,8 +400,6 @@ MIT
 
 @angular/material/core
 
-@angular/material/list
-
 @angular/material/select
 
 @angular/material/tooltip
@@ -409,6 +407,8 @@ MIT
 @angular/material/expansion
 
 @angular/material/sidenav
+
+@angular/material/list
 
 @angular/material/toolbar
 
