@@ -48,7 +48,7 @@
 
 .ci-utm-info-list-container {
   display: flex;
-  border: solid 1px red;
+  //border: solid 1px red;
   flex: 1 1 auto;            /*  changed, flex row item need the grow value
                                           to be 1 to fill its parent's width  */
   flex-direction: column;
@@ -104,4 +104,10 @@
     margin-right: unset;
     margin-bottom: 32px;
   }
+}
+
+
+.mat-list-item {
+  font-size: 12px!important;
+  height: 42px!important;
 }

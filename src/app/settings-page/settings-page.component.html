@@ -220,6 +220,26 @@
   </mat-card>
 </div>
 
+<div>
+  <mat-card>
+    <mat-card-content class="ci-utm-info-list-container">
+
+      <div>{{name5}}</div>
+      <mat-list>
+        <mat-list-item *ngFor="let item of listitems">
+          <mat-icon mat-list-icon [ngClass]="
+                item.icon == 'clear' ? 'material-icons lite-red' : (
+                item.icon == 'error_outline' ?
+                'material-icons orange600' : 'material-icons lite-green')">{{item.icon}}</mat-icon>
+          <h4 mat-line class="ci-utm-info-list-item-title">{{item.title}}</h4>
+          <p mat-line class="ci-utm-info-list-item-description">{{item.description}}</p>
+        </mat-list-item>
+      </mat-list>
+
+    </mat-card-content>
+
+  </mat-card>
+</div>
 
 
 <!--<mat-card-content>-->
