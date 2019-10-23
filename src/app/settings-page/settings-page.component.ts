@@ -16,7 +16,7 @@ export class SettingsPageComponent implements OnInit {
   name2 = 'Основные параметры УТМ (flex in css)';
   name3 = 'flex-layout lib for container, flex in css for card';
   name4 = 'flex-layout lib for card, flex in css for container';
-  name5 = 'flex-layout lib for card';
+  name5 = 'flex-layout css for mat-card-content';
   info$;
   listitems = [];
 
