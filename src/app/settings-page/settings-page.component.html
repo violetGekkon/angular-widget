@@ -13,23 +13,19 @@
     fxFlex.lt-md="0 1 calc(50% - 32px)"
     fxFlex.lt-sm="100%">
     <mat-card-content>
-
-      <div fxFlexFill fxLayout="column">
+      <div fxLayout="column">
         <div class="ci-widget-name">{{name1}}</div>
-        <div fxFlex fxLayout="column">
-          <div fxFlex fxLayout="row" fxLayoutAlign="start center" *ngFor="let item of listitems">
-            <mat-icon [ngClass]="
+        <div fxFlex fxLayout="row" fxLayoutAlign="start center" *ngFor="let item of listitems">
+          <mat-icon [ngClass]="
                 item.icon == 'clear' ? 'material-icons lite-red' : (
                 item.icon == 'error_outline' ?
                 'material-icons orange600' : 'material-icons lite-green')">{{item.icon}}</mat-icon>
-            <div fxFlex fxLayout="column" class="ci-utm-info-list-item-text">
-              <div class="ci-utm-info-list-item-title">{{item.title}}</div>
-              <div class="ci-utm-info-list-item-description">{{item.description}}</div>
-            </div>
+          <div class="ci-utm-info-list-item-text">
+            <div class="ci-utm-info-list-item-title">{{item.title}}</div>
+            <div class="ci-utm-info-list-item-description">{{item.description}}</div>
           </div>
         </div>
       </div>
-
     </mat-card-content>
   </mat-card>
 
