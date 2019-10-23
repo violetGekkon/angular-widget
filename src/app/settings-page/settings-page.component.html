@@ -179,9 +179,9 @@
 
 <div>
   <mat-card>
-    <mat-card-content>
-      <div fxLayout="column">
-        <div class="ci-widget-name">{{name5}}</div>
+    <mat-card-content fxLayout="column">
+
+        <div>{{name5}}</div>
         <div fxFlex fxLayout="row" fxLayoutAlign="start center" *ngFor="let item of listitems">
           <mat-icon [ngClass]="
                 item.icon == 'clear' ? 'material-icons lite-red' : (
@@ -192,7 +192,7 @@
             <div class="ci-utm-info-list-item-description">{{item.description}}</div>
           </div>
         </div>
-      </div>
+
     </mat-card-content>
 
   </mat-card>
