@@ -17,7 +17,7 @@ export class DashboardCard {
                   key: InjectionToken<string>,
                   value: string
                 },
-                color: {
+                color?: {
                   key: InjectionToken<string>,
                   value: string,
                 }

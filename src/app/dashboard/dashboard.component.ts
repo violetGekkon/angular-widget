@@ -1,27 +1,59 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, InjectionToken, OnDestroy, OnInit} from '@angular/core';
 import {DashboardCard} from '../card/model/dashboard-card.model';
 import {DashboardCardsService} from '../services/dashboard-card-service.service';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {ViewTableCardComponent} from '../card/view-table-card/view-table-card.component';
-import {takeWhile} from 'rxjs/operators';
+import {takeWhile, switchMap} from 'rxjs/operators';
+import {DocumentChartComponent} from '../card/document-chart/document-chart.component';
+import {SettingsPageComponent} from '../settings-page/settings-page.component';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
+  entryComponents: [DocumentChartComponent, SettingsPageComponent]
 })
 export class DashboardComponent implements OnInit, OnDestroy {
 
-  cards$: Observable<DashboardCard[]>;
-  private alive = true;
+  // cards$: Observable<DashboardCard[]>;
+  cards: DashboardCard[] = [];
   count: number;
   counter: Observable<number>;
 
-  constructor(private cardsService: DashboardCardsService) {
-    this.cards$ = this.cardsService.cards;
+  constructor() {
+
   }
 
   ngOnInit() {
+
+    // const switched = of(1, 2, 3).pipe(switchMap((x: number) => of(x, x ** 2, x ** 3)));
+    // switched.subscribe(x => console.log(x));
+
+    this.cards.push(new DashboardCard(
+      {
+        name: {
+          key: DashboardCard.metadata.NAME,
+          value: 'Основные параметры УТМ'
+        },
+        routerLink: {
+          key: DashboardCard.metadata.ROUTERLINK,
+          value: '/'
+        }
+      }, SettingsPageComponent
+    ));
+
+    this.cards.push(new DashboardCard(
+      {
+        name: {
+          key: DashboardCard.metadata.NAME,
+          value: 'Диаграмма докуменов'
+        },
+        routerLink: {
+          key: DashboardCard.metadata.ROUTERLINK,
+          value: '/'
+        }
+      }, DocumentChartComponent
+    ));
 
     // this.counter = new Observable<number>(observer => {
     //   console.log('[takeWhile] Subscribed');

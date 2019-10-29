@@ -25,46 +25,32 @@
 <!--  </mat-card>-->
 <!--</div>-->
 
-<div
-  fxLayout="row wrap"
-  fxLayout.lt-sm="column"
-  fxLayoutGap="24px"
-  fxLayoutAlign="flex-start" *ngIf="info$ | async">
-  <mat-card
-    fxFlex="0 1 calc(33.3% - 32px)"
-    fxFlex.lt-md="0 1 calc(50% - 32px)"
-    fxFlex.lt-sm="100%">
-    <mat-card-content>
 
-      <!--      <div class="ci-widget-name">{{name1}}</div>-->
-      <!--      <mat-list>-->
-      <!--        <mat-list-item *ngFor="let item of listitems">-->
-      <!--          <mat-icon mat-list-icon [ngClass]="-->
-      <!--                item.icon == 'clear' ? 'material-icons lite-red' : (-->
-      <!--                item.icon == 'error_outline' ?-->
-      <!--                'material-icons orange600' : 'material-icons lite-green')">{{item.icon}}</mat-icon>-->
-      <!--          <h4 mat-line class="ci-utm-info-list-item-title">{{item.title}}</h4>-->
-      <!--          <p mat-line class="ci-utm-info-list-item-description">{{item.description}}</p>-->
-      <!--        </mat-list-item>-->
-      <!--      </mat-list>-->
+<!--      <div class="ci-widget-name">{{name1}}</div>-->
+<!--      <mat-list>-->
+<!--        <mat-list-item *ngFor="let item of listitems">-->
+<!--          <mat-icon mat-list-icon [ngClass]="-->
+<!--                item.icon == 'clear' ? 'material-icons lite-red' : (-->
+<!--                item.icon == 'error_outline' ?-->
+<!--                'material-icons orange600' : 'material-icons lite-green')">{{item.icon}}</mat-icon>-->
+<!--          <h4 mat-line class="ci-utm-info-list-item-title">{{item.title}}</h4>-->
+<!--          <p mat-line class="ci-utm-info-list-item-description">{{item.description}}</p>-->
+<!--        </mat-list-item>-->
+<!--      </mat-list>-->
 
-      <div class="ci-utm-info-list-container">
-        <div class="ci-widget-name">{{name2}}</div>
-
-        <div *ngFor="let item of listitems" class="ci-utm-info-list-item-content">
-          <mat-icon [ngClass]="
+<div class="ci-utm-info-list-container">
+  <div class="ci-widget-name">{{name2}}</div>
+  <div *ngIf="info$ | async">
+    <div *ngFor="let item of listitems" class="ci-utm-info-list-item-content">
+      <mat-icon [ngClass]="
                 item.icon == 'clear' ? 'material-icons lite-red' : (
                 item.icon == 'error_outline' ? 'material-icons orange600' : 'material-icons lite-green')">{{item.icon}}</mat-icon>
-          <div class="ci-utm-info-list-item-text">
-            <div class="ci-utm-info-list-item-title">{{item.title}}</div>
-            <div class="ci-utm-info-list-item-description">{{item.description}}</div>
-          </div>
-        </div>
+      <div class="ci-utm-info-list-item-text">
+        <div class="ci-utm-info-list-item-title">{{item.title}}</div>
+        <div class="ci-utm-info-list-item-description">{{item.description}}</div>
       </div>
-
-    </mat-card-content>
-
-  </mat-card>
+    </div>
+  </div>
 </div>
 
 <!--<div class="card-list">-->

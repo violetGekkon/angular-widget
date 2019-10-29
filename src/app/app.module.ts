@@ -45,6 +45,10 @@ import { FileComponent } from './file/file.component';
 import { AppTooltipComponent } from './tooltips/app-tooltip/app-tooltip.component';
 import {AppTooltipDirective} from './tooltips/app-tooltip/app-tooltip.directive';
 import {OverlayModule} from '@angular/cdk/overlay';
+import { NvD3Module } from 'ng2-nvd3';
+import 'd3';
+import 'nvd3';
+import { DocumentChartComponent } from './card/document-chart/document-chart.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +68,8 @@ import {OverlayModule} from '@angular/cdk/overlay';
     BreadcrumbComponent,
     FileComponent,
     AppTooltipComponent,
-    AppTooltipDirective
+    AppTooltipDirective,
+    DocumentChartComponent
   ],
   imports: [
     AppRoutingModule,
@@ -90,7 +95,8 @@ import {OverlayModule} from '@angular/cdk/overlay';
     MatTableModule,
     MatPaginatorModule,
     FlexLayoutModule,
-    OverlayModule
+    OverlayModule,
+    NvD3Module
   ],
   providers: [WeatherService, DataService],
   bootstrap: [AppComponent],
