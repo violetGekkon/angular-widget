@@ -1,8 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {DataService} from '../data.service';
-import {Observable} from 'rxjs';
-import {Certificate, DbUtm, UTMInfo} from '../interfaces/utm.model';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {map} from 'rxjs/operators';
+import {MatPaginator, MatTableDataSource} from '@angular/material';
 
 
 @Component({
@@ -12,135 +10,51 @@ import {map} from 'rxjs/operators';
 })
 export class SettingsPageComponent implements OnInit {
 
-  name1 = 'Основные параметры УТМ';
-  name2 = 'Основные параметры УТМ (flex in css)';
-  name3 = 'flex-layout lib for container, flex in css for card';
-  name4 = 'flex-layout lib for card, flex in css for container';
-  name5 = 'flex-layout css for mat-card-content';
-  info$;
-  listitems = [];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  noData = this.dataSource.connect().pipe(map(data => data.length === 0));
 
-  listitems2 = [
-    {
-      title: 'Версия ПО',
-      description: 'version',
-      icon: 'check'
-    },
-    {
-      title: 'Тестовый контур',
-      description: 'RSA сертификат test.pki.fsrar.ru соответствует контуру',
-      icon: 'check'
-    },
-    {
-      title: 'БД в актуальном состоянии',
-      description: '16.10.2019 11:51:20',
-      icon: 'check'
-    },
-    {
-      title: 'Статус лицензии',
-      description: 'Лицензия на вид деятельности действует',
-      icon: 'check'
-    },
-    {
-      title: 'Неотправленные чеки',
-      description: 'Отсутствуют неотправленные чеки',
-      icon: 'check'
-    },
-    {
-      title: 'Период действия RSA',
-      description: 'с 17.10.2019 16:50:29 по 17.10.2020 17:00:29 ',
-      icon: 'check'
-    },
-    {
-      title: 'Период действия GOST',
-      description: 'с 17.10.2019 16:50:29 по 17.10.2020 17:00:29 ',
-      icon: 'check'
-    }
-  ];
-  utmInfo$: Observable<UTMInfo> = this.dataService.getFakeData();
+  numbers = [0, 1, 2];
 
-
-  constructor(public dataService: DataService) {
-
-  }
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
-    this.info$ = this.utmInfo$.pipe(
-      map((data) => {
-
-        const oldVersion = false;
-
-        this.listitems.push({
-          title: 'Версия ПО',
-          description: oldVersion ? `${data.version} - устаревшая версия` : data.version,
-          icon: oldVersion ? 'clear' : 'check'
-        });
-
-        // RSA сертификат
-        const rsaCert: Certificate = data.rsa;
-
-        // Контур по ключу RSA
-        const сontourByRSA = rsaCert.issuer === 'test.pki.fsrar.ru' ? 'test' : 'prod';
-
-        this.listitems.push({
-          title: data.contour === 'test' ? 'Тестовый контур' : 'Продуктивный контур',
-          description: data.contour === сontourByRSA ?
-            `RSA сертификат ${rsaCert.issuer} соответствует контуру` :
-            `RSA сертификат ${rsaCert.issuer} не соответствует контуру`,
-          icon: data.contour === сontourByRSA ? 'check' : 'clear'
-        });
-
-        // БД УТМ
-        const dbUtm: DbUtm = data.db;
-        const dbIsValid = dbUtm.ownerId === data.ownerId;
-
-        this.listitems.push({
-          title: dbIsValid ? 'БД в актуальном состоянии' : 'БД - несоответствие данных',
-          description: dbIsValid ? dbUtm.createDate : `rsa БД - ${dbUtm.ownerId}\nrsa подразделения  - ${data.ownerId}`,
-          icon: dbIsValid ? 'check' : 'clear'
-        });
-
-        // Информация о лицензии
-
-        if (data.license) {
-          this.listitems.push({
-            title: 'Статус лицензии',
-            description: data.license ? 'Лицензия на вид деятельности действует' : 'Лицензия на вид деятельности не действует',
-            icon: data.license ? 'check' : 'clear'
-          });
-        }
-
-        this.listitems.push({
-          title: 'Неотправленные чеки',
-          description: data.checkInfo !== null ? `Чеки не отправлялись с ${data.checkInfo}` : 'Отсутствуют неотправленные чеки',
-          icon: data.checkInfo !== null ? 'clear' : 'check'
-        });
-
-
-        this.listitems.push({
-          title: 'Период действия RSA',
-          description: rsaCert.isValid === 'revoked' ? 'Отозван' : rsaCert.isValid === 'invalid' ? 'Недействителен' :
-            rsaCert.startDate,
-          icon: rsaCert.isValid === 'valid' ? 'check' : 'clear'
-        });
-
-        // ГОСТ сертификат
-
-        const gostCert: Certificate = data.gost;
-
-        const gostTime = `с ${gostCert.startDate} по ${gostCert.expireDate} \n`;
-
-
-        this.listitems.push({
-          title: 'Период действия ГОСТ',
-          description: gostCert.isValid === 'invalid' ? 'Недействителен' : gostTime,
-          icon: gostCert.isValid === 'valid' ? 'check' : 'clear'
-        });
-
-        return this.listitems;
-
-      }));
+    this.dataSource.paginator = this.paginator;
   }
 
-
+  removeData() {
+    const data = this.dataSource.data.slice();
+    data.shift();
+    this.dataSource.data = data;
+  }
 }
+
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
+}
+
+const ELEMENT_DATA: PeriodicElement[] = [
+  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
+  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
+  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
+  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
+  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+  {position: 11, name: 'Sodium', weight: 22.9897, symbol: 'Na'},
+  {position: 12, name: 'Magnesium', weight: 24.305, symbol: 'Mg'},
+  {position: 13, name: 'Aluminum', weight: 26.9815, symbol: 'Al'},
+  {position: 14, name: 'Silicon', weight: 28.0855, symbol: 'Si'},
+  {position: 15, name: 'Phosphorus', weight: 30.9738, symbol: 'P'},
+  {position: 16, name: 'Sulfur', weight: 32.065, symbol: 'S'},
+  {position: 17, name: 'Chlorine', weight: 35.453, symbol: 'Cl'},
+  {position: 18, name: 'Argon', weight: 39.948, symbol: 'Ar'},
+  {position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K'},
+  {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
+];
