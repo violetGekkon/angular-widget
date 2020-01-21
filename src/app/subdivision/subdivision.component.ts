@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit} from '@angular/core';
-import {Subdivision} from '../interfaces/subdivision.model';
+import {Subdivision} from '../../../shared/subdivision.model';
 
 @Component({
   selector: 'app-subdivision',
@@ -21,7 +21,7 @@ export class SubdivisionComponent implements OnInit {
 
   ngOnInit() {
     this.fsrar = '0300001657';
-    this.certificated = (this.subdivision.fsrar === this.fsrar) ? true : false;
+    this.certificated = (this.subdivision.ownerID === this.fsrar) ? true : false;
   }
 
 }
