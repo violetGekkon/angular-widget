@@ -15,7 +15,7 @@ const routes: Routes = [
       () => import('./modules/setting-page/settings.module').then(m => m.SettingsModule)
   },
   {path: 'test1', component: AnotherTestPageComponent},
-  {path: 'file', component: FileComponent}
+  {path: 'file', component: FileComponent},
   {path: 'map', component: AnotherTestPageComponent}
   // {path: 'testlist', component: TestListComponent}
 ];

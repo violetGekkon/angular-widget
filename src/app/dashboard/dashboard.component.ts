@@ -33,19 +33,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
       {
         name: {
           key: DashboardCard.metadata.NAME,
-          value: 'Основные параметры УТМ'
-        },
-        routerLink: {
-          key: DashboardCard.metadata.ROUTERLINK,
-          value: '/'
-        }
-      }, SettingsPageComponent
-    ));
-
-    this.cards.push(new DashboardCard(
-      {
-        name: {
-          key: DashboardCard.metadata.NAME,
           value: 'Диаграмма докуменов'
         },
         routerLink: {

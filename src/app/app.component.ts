@@ -7,6 +7,7 @@ import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/lay
 import {Router, Scroll, NavigationEnd} from '@angular/router';
 import {filter, map} from 'rxjs/operators';
 import {MediaObserver} from '@angular/flex-layout';
+import {TestService} from './test/test.service';
 const COLORS = [
   '#ea4335',
   '#4285f4',
@@ -59,9 +60,12 @@ export class AppComponent implements OnInit {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private mediaObserver: MediaObserver,
+    private testSrv: TestService
     ) { }
 
   ngOnInit() {
+
+    this.testSrv.parseXml();
 
     const breakpointsGrid: { [size: string]: number } = {
       ['xs']: 1,

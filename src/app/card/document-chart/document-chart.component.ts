@@ -1,4 +1,5 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {AfterViewInit, Component, HostListener, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {NvD3Component} from 'ng2-nvd3';
 
 @Component({
   selector: 'app-document-chart',
@@ -6,12 +7,19 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
   styleUrls: ['../../../../node_modules/nvd3/build/nv.d3.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class DocumentChartComponent implements OnInit {
+export class DocumentChartComponent implements OnInit, AfterViewInit {
 
   public options: any;
   public data: any;
+  @ViewChild('chart', {read: NvD3Component}) chart: NvD3Component;
 
   constructor() {
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    console.log(event);
+
   }
 
   ngOnInit() {
@@ -23,6 +31,7 @@ export class DocumentChartComponent implements OnInit {
     this.options = {
       chart: {
         type: 'discreteBarChart',
+        // width: 100,
         height: 250,
         margin: {
           top: 15,
@@ -70,6 +79,10 @@ export class DocumentChartComponent implements OnInit {
         ]
       }
     ];
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => this.chart.updateSize(), 100);
   }
 
 }
