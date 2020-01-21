@@ -7,6 +7,9 @@ import {UTMInfo, utmInfo} from './interfaces/utm.model';
 export class DataService {
 
   utmHost = 'http://127.0.0.1:3001';
+  // тестовое api для проверки запросов
+  readonly url = 'http://httpbin.org/post';
+
 
   constructor(private httpClient: HttpClient) {
   }

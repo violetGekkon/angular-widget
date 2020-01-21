@@ -40,7 +40,7 @@ export class ManeNavComponent implements OnInit {
       {
         heading: 'Ключ доступа',
         pages: [
-          {title: 'Формирование RSA', link: '/test', icon: ''},
+          {title: 'Формирование RSA', link: '/rsa', icon: ''},
           {title: 'Перенос остатков', link: '/', icon: ''},
           {title: 'Тестовый RSA', link: '/', icon: ''},
           {title: 'Файлы', link: '/file', icon: ''}

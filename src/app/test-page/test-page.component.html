@@ -1,5 +1,5 @@
 <div style="margin: 20px">
-  <p>Файлы</p>
+  <button mat-button (click)="createRecords()">Создать записи в MongoDB</button>
   <mat-horizontal-stepper linear #stepper>
     <mat-step [editable]="isEditable">
       <form [formGroup]="firstFormGroup">
@@ -50,20 +50,4 @@
     </mat-step>
   </mat-horizontal-stepper>
 </div>
-<!--<mat-form-field class="example-form-field">-->
-<!--  <input matInput type="text" placeholder="Поиск (КПП, адрес)" [(ngModel)]="value">-->
-<!--  <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">-->
-<!--    <mat-icon>close</mat-icon>-->
-<!--  </button>-->
-<!--</mat-form-field>-->
 
-
-<!--<ul class="ml-file-list">-->
-<!--  <li class="ml-file-list-item" *ngFor="let file of files" (click)="createCard()">-->
-<!--    <mat-icon class="material-icons">description</mat-icon> {{file.name}}-->
-<!--  </li>-->
-<!--</ul>-->
-<!--<button mat-raised-button color="primary" (click)="createCard()">Создать виджет</button>-->
-<!--<div>-->
-<!--  <p>Проверка наличия специальной федеральной марки</p>-->
-<!--</div>-->
