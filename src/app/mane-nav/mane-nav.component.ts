@@ -34,7 +34,7 @@ export class ManeNavComponent implements OnInit {
           {title: 'УТМ', link: '/test1', icon: ''},
           {title: 'Проверка марок', link: '/', icon: ''},
           {title: 'Настройки', link: '/settings', icon: ''},
-          {title: 'Проверка ТТН', link: '/', icon: ''}
+          {title: 'mergeMap и т.д.', link: '/map', icon: ''}
         ]
       },
       {

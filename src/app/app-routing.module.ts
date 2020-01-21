@@ -16,6 +16,7 @@ const routes: Routes = [
   },
   {path: 'test1', component: AnotherTestPageComponent},
   {path: 'file', component: FileComponent}
+  {path: 'map', component: AnotherTestPageComponent}
   // {path: 'testlist', component: TestListComponent}
 ];
 
