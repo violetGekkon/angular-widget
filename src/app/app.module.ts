@@ -42,13 +42,14 @@ import { SlidePanelComponent } from './slide-panel/slide-panel.component';
 import {DataService} from './data.service';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { FileComponent } from './file/file.component';
-import { AppTooltipComponent } from './tooltips/app-tooltip/app-tooltip.component';
-import {AppTooltipDirective} from './tooltips/app-tooltip/app-tooltip.directive';
+import { AppTooltipComponent } from './ui/tooltips/app-tooltip/app-tooltip.component';
+import {AppTooltipDirective} from './ui/tooltips/app-tooltip/app-tooltip.directive';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { NvD3Module } from 'ng2-nvd3';
 import 'd3';
 import 'nvd3';
 import { DocumentChartComponent } from './card/document-chart/document-chart.component';
+import { NgLoopDirective } from './ui/directives/ng-loop.directive';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { DocumentChartComponent } from './card/document-chart/document-chart.com
     FileComponent,
     AppTooltipComponent,
     AppTooltipDirective,
-    DocumentChartComponent
+    DocumentChartComponent,
+    NgLoopDirective
   ],
   imports: [
     AppRoutingModule,
