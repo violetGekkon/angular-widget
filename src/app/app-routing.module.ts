@@ -8,7 +8,7 @@ import {FileComponent} from './file/file.component';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent, pathMatch: 'full'},
-  {path: 'test', component: TestPageComponent},
+  {path: 'rsa', component: TestPageComponent},
   {path: 'settings', component: SettingsPageComponent},
   {path: 'test1', component: AnotherTestPageComponent},
   {path: 'file', component: FileComponent}
