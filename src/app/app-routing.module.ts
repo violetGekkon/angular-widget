@@ -1,22 +1,27 @@
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
-import {TestPageComponent} from './test-page/test-page.component';
+import {RsaPageComponent} from './rsa-page/rsa-page.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import {AnotherTestPageComponent} from './another-test-page/another-test-page.component';
-import {SettingsPageComponent} from './settings-page/settings-page.component';
+import {MapExampleComponent} from './map-example/map-example.component';
+import {TableComponent} from './settings-page/table.component';
 import {FileComponent} from './file/file.component';
+import {CardOrListViewExampleComponent} from './components/card-or-list-view-example/card-or-list-view-example.component';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent, pathMatch: 'full'},
-  {path: 'rsa', component: TestPageComponent},
-  // {path: 'settings', component: SettingsPageComponent},
+  {path: 'rsa', component: RsaPageComponent},
+  {path: 'settings', component: TableComponent},
   {
-    path: 'settings', loadChildren:
-      () => import('./modules/setting-page/settings.module').then(m => m.SettingsModule)
+    path: 'issuance', loadChildren:
+      () => import('./modules/barcode-issuance/barcode-issuance.module').then(m => m.BarcodeIssuanceModule)
   },
-  {path: 'test1', component: AnotherTestPageComponent},
+  {
+    path: 'issuance', loadChildren:
+      () => import('./modules/barcode-issuance/barcode-issuance.module').then(m => m.BarcodeIssuanceModule)
+  },
+  {path: 'card-or-list', component: CardOrListViewExampleComponent},
   {path: 'file', component: FileComponent},
-  {path: 'map', component: AnotherTestPageComponent}
+  {path: 'map', component: MapExampleComponent}
   // {path: 'testlist', component: TestListComponent}
 ];
 

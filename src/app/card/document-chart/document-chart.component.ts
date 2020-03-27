@@ -11,7 +11,7 @@ export class DocumentChartComponent implements OnInit, AfterViewInit {
 
   public options: any;
   public data: any;
-  @ViewChild('chart', {read: NvD3Component}) chart: NvD3Component;
+  @ViewChild('chart', {read: NvD3Component, static: false}) chart: NvD3Component;
 
   constructor() {
   }

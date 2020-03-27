@@ -1,5 +1,5 @@
 @import '~@angular/material/theming';
-@import 'app/test-page/test-page.component.scss-theme';
+@import 'app/rsa-page/rsa-page.component.scss-theme';
 
 @include mat-core();
 
@@ -153,7 +153,7 @@ $egais-theme: map-merge($egais-light-theme, (foreground: $egais-foreground)); */
 }
 
 @include angular-material-theme($egais-light-theme);
-@include egais-components-theme($egais-light-theme)
+@include egais-components-theme($egais-light-theme);
 
 
 .egais-dark-theme {

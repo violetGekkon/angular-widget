@@ -31,8 +31,8 @@ export class ManeNavComponent implements OnInit {
       {
         heading: 'Сервисы',
         pages: [
-          {title: 'УТМ', link: '/test1', icon: ''},
-          {title: 'Проверка марок', link: '/', icon: ''},
+          {title: 'CardOrListView', link: '/card-or-list', icon: ''},
+          {title: 'Заявление на выдачу марок', link: '/issuance', icon: ''},
           {title: 'Талица/директивы', link: '/settings', icon: ''},
           {title: 'mergeMap и т.д.', link: '/map', icon: ''}
         ]
@@ -41,17 +41,7 @@ export class ManeNavComponent implements OnInit {
         heading: 'Ключ доступа',
         pages: [
           {title: 'Формирование RSA', link: '/rsa', icon: ''},
-          {title: 'Перенос остатков', link: '/', icon: ''},
-          {title: 'Тестовый RSA', link: '/', icon: ''},
           {title: 'Файлы', link: '/file', icon: ''}
-        ]
-      },
-      {
-        heading: 'Справочники',
-        pages: [
-          {title: 'Номенклатура', link: '/', icon: ''},
-          {title: 'Контрагенты', link: '/', icon: ''},
-          {title: 'Журнал продаж', link: '/', icon: ''}
         ]
       }
     ];

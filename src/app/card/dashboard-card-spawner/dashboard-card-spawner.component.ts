@@ -8,7 +8,7 @@ import {DashboardCard} from '../model/dashboard-card.model';
 })
 export class DashboardCardSpawnerComponent implements OnInit {
 
-  @ViewChild('spawn', {read: ViewContainerRef}) container;
+  @ViewChild('spawn', {read: ViewContainerRef, static: false}) container;
 
   constructor(private resolver: ComponentFactoryResolver) {
   }

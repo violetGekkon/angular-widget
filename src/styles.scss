@@ -2,7 +2,7 @@
 //@import "~@angular/material/prebuilt-themes/purple-green.css";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-@import '~src/breakpoints';
+@import 'src/breakpoints';
 
 html, body {
   height: 100%;
@@ -73,6 +73,9 @@ body {
   color: rgba(0, 0, 0, .7);
 }
 
+.ci-full-width {
+  width: 100%;
+}
 
 
 

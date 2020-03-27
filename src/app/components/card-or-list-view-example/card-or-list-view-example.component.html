@@ -1,0 +1,11 @@
+<app-card-or-list-view
+  [items]="items"
+  [mode]="mode">
+  <div *cardItem="let item">
+    <h1>{{item.header}}</h1>
+    <p>{{item.content}}</p>
+  </div>
+  <li *listItem="let item">
+    {{item.header}}: {{item.content}}
+  </li>
+</app-card-or-list-view>

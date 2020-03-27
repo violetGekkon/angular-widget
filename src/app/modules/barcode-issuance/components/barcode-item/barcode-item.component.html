@@ -1,0 +1,64 @@
+<div fxLayout="column" [formGroup]="group">
+  <div fxLayout.gt-md="row"
+       fxLayout.lt-lg="row wrap"
+       fxLayout.lt-md="column"
+       fxLayoutGap="12px"
+       fxLayoutGap.lt-md="0px">
+
+    <mat-form-field floatLabel="always" class="ci-full-width">
+      <mat-select placeholder="Тип марки" formControlName="sampleFSM">
+        <mat-option *ngFor="let type of types704" [value]="type.name">
+          {{type.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field fxFlex.gt-md="20%"
+                    fxFlex.lt-lg="100%"
+                    floatLabel="always" class="ci-full-width">
+      <input #code matInput minlength="3" maxlength="3" placeholder="Код образца" formControlName="markType" required>
+      <mat-hint align="end">{{code.value?.length || 0}}/3</mat-hint>
+    </mat-form-field>
+
+  </div>
+  <div fxLayout.gt-md="row"
+       fxLayout.lt-md="column"
+       fxLayoutGap="12px"
+       fxLayoutGap.lt-md="0px">
+
+    <mat-form-field floatLabel="always" class="ci-full-width">
+      <input matInput placeholder="Емкость, подлежащая маркировке потребительской тары АП (л)"
+             formControlName="capacity" required>
+    </mat-form-field>
+
+    <mat-form-field floatLabel="always" class="ci-full-width">
+      <input matInput placeholder="Количество марок" formControlName="quantity" required>
+    </mat-form-field>
+
+  </div>
+  <div fxLayout.gt-md="row"
+       fxLayout.lt-lg="row wrap"
+       fxLayout.lt-md="column"
+       fxLayoutGap="12px"
+       fxLayoutGap.lt-md="0px">
+
+
+
+    <mat-form-field floatLabel="always" class="ci-full-width">
+      <mat-select placeholder="Вид АП">
+        <mat-option *ngFor="let vid of vidAP" [value]="vid.name">
+          {{vid.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field floatLabel="always" class="ci-full-width">
+      <input matInput placeholder="Объем маркируемой АП (дал)" formControlName="quantityDal" required>
+    </mat-form-field>
+
+    <mat-form-field floatLabel="always" class="ci-full-width">
+      <input matInput placeholder="Содержание этилового спирта(%)" formControlName="alcPercent" required>
+    </mat-form-field>
+
+  </div>
+</div>

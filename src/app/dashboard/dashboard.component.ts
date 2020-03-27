@@ -4,14 +4,15 @@ import {DashboardCardsService} from '../services/dashboard-card-service.service'
 import {Observable, of} from 'rxjs';
 import {ViewTableCardComponent} from '../card/view-table-card/view-table-card.component';
 import {takeWhile, switchMap} from 'rxjs/operators';
+// import {DocumentChartComponent} from '../card/document-chart/document-chart.component';
+import {TableComponent} from '../settings-page/table.component';
 import {DocumentChartComponent} from '../card/document-chart/document-chart.component';
-import {SettingsPageComponent} from '../settings-page/settings-page.component';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-  entryComponents: [DocumentChartComponent, SettingsPageComponent]
+  entryComponents: [TableComponent]
 })
 export class DashboardComponent implements OnInit, OnDestroy {
 
