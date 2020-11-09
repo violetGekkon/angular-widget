@@ -1,38 +1,47 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav primary" fixedInViewport="true" style="padding: 20px"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="!(isHandset$ | async)">
+  <mat-sidenav
+    #drawer
+    class="sidenav primary" fixedInViewport="true" style="padding: 20px"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
 
     <mat-nav-list>
-      <mat-accordion multi="true">
-        <div *ngFor="let navItem of navList">
-          <mat-expansion-panel class="mat-elevation-z0" [expanded]="true">
-            <mat-expansion-panel-header class="nav-head" [expandedHeight]="'48px'">
-              <mat-panel-title class="nav-link">
-                <!--<mat-icon>{{navItem.icon}}</mat-icon>-->
-                <span class="nav-link-text">{{navItem.heading}}</span>
-              </mat-panel-title>
-            </mat-expansion-panel-header>
 
-            <ul class="nav-section">
-              <li *ngFor="let navPage of navItem.pages"
-                   class="nav-item">
-                <a class="nav-link"
-                   routerLink="{{navPage.link}}"
-                   routerLinkActive="selected"
-                >{{navPage.title}}</a>
-              </li>
-            </ul>
-          </mat-expansion-panel>
+      <div class="ci-viewer-nav">
+        <div class="ci-viewer-nav-content">
+          <div *ngFor="let navItem of navList">
+            <mat-accordion multi="true">
+              <mat-expansion-panel class="mat-elevation-z0" [expanded]="true">
+                <mat-expansion-panel-header class="nav-head" [expandedHeight]="'48px'">
+                  <mat-panel-title class="nav-link">
+                    <!--<mat-icon>{{navItem.icon}}</mat-icon>-->
+                    <span class="nav-link-text">{{navItem.heading}}</span>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <ul class="nav-section">
+                  <li *ngFor="let navPage of navItem.pages"
+                      class="nav-item">
+                    <a class="nav-link"
+                       routerLink="{{navPage.link}}"
+                       routerLinkActive="selected"
+                    >{{navPage.title}}</a>
+                  </li>
+                </ul>
+              </mat-expansion-panel>
+            </mat-accordion>
+
+          </div>
         </div>
-      </mat-accordion>
-<!--      <a mat-list-item routerLink="/test">Test</a>-->
-<!--      <a mat-list-item routerLink="/test1">Test 1</a>-->
-<!--      <a mat-list-item routerLink="/testlist">Test List</a>-->
+      </div>
+      <!--      <a mat-list-item routerLink="/test">Test</a>-->
+      <!--      <a mat-list-item routerLink="/test1">Test 1</a>-->
+      <!--      <a mat-list-item routerLink="/testlist">Test List</a>-->
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content fxFlex fxLayout="column">
+
     <mat-toolbar color="primary">
       <button
         type="button"
@@ -43,6 +52,8 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
     </mat-toolbar>
+
+    <div class="ci-push-content"></div>
     <main style="padding: 15px">
       <router-outlet></router-outlet>
     </main>

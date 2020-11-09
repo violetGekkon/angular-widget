@@ -7,17 +7,17 @@ import {ManeNavComponent} from './mane-nav/mane-nav.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import {AppRoutingModule} from './app-routing.module';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import {DashboardCardSpawnerComponent} from './card/dashboard-card-spawner/dashboard-card-spawner.component';
-import {RsaPageComponent} from './rsa-page/rsa-page.component';
-import {ViewTableCardComponent} from './card/view-table-card/view-table-card.component';
+import {DashboardCardSpawnerComponent} from './components/card/dashboard-card-spawner/dashboard-card-spawner.component';
+import {RsaPageComponent} from './components/rsa-page/rsa-page.component';
+import {ViewTableCardComponent} from './components/card/view-table-card/view-table-card.component';
 import {WeatherService} from './services/weather.service';
 import {HttpClientModule} from '@angular/common/http';
 import {MapExampleComponent} from './map-example/map-example.component';
 import {SubdivisionComponent} from './subdivision/subdivision.component';
-import {CertificateRsaApplicationComponent} from './certificate-rsa-application/certificate-rsa-application.component';
+import {CertificateRsaApplicationComponent} from './components/certificate-rsa-application/certificate-rsa-application.component';
 import {TestListComponent} from './test-list/test-list.component';
 import {NavListComponent} from './nav-list/nav-list.component';
-import {TableComponent} from './settings-page/table.component';
+import {TableComponent} from './table-page/table.component';
 import {SlidePanelComponent} from './slide-panel/slide-panel.component';
 import {DataService} from './data.service';
 import {BreadcrumbComponent} from './breadcrumb/breadcrumb.component';
@@ -28,6 +28,8 @@ import {OverlayModule} from '@angular/cdk/overlay';
 import {NgLoopDirective} from './ui/directives/ng-loop.directive';
 import {SharedModule} from './ui/shared/shared.module';
 import {CardOrListViewExampleComponent} from './components/card-or-list-view-example/card-or-list-view-example.component';
+import {DocumentChartComponent} from './components/card/document-chart/document-chart.component';
+import {NvD3Module} from 'ng2-nvd3';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,7 @@ import {CardOrListViewExampleComponent} from './components/card-or-list-view-exa
     FileComponent,
     AppTooltipComponent,
     AppTooltipDirective,
-    // DocumentChartComponent,
+    DocumentChartComponent,
     NgLoopDirective,
     CardOrListViewExampleComponent
   ],
@@ -59,8 +61,8 @@ import {CardOrListViewExampleComponent} from './components/card-or-list-view-exa
     HttpClientModule,
     LayoutModule,
     OverlayModule,
-    SharedModule
-    // NvD3Module
+    SharedModule,
+    NvD3Module
   ],
   providers: [WeatherService, DataService],
   bootstrap: [AppComponent],

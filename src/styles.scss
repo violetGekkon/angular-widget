@@ -4,8 +4,10 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import 'src/breakpoints';
 
-html, body {
-  height: 100%;
+html,
+body {
+  height: 100vh;
+  overflow: hidden;
 }
 
 body {

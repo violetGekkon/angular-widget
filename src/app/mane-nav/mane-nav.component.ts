@@ -1,10 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import {Observable} from 'rxjs';
-import {filter, map} from 'rxjs/operators';
-import {MatAccordion, MatExpansionPanel} from '@angular/material';
-import {Location, ViewportScroller} from '@angular/common';
-import {Route, Router, Scroll} from '@angular/router';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-mane-nav',
@@ -33,8 +30,16 @@ export class ManeNavComponent implements OnInit {
         pages: [
           {title: 'CardOrListView', link: '/card-or-list', icon: ''},
           {title: 'Заявление на выдачу марок', link: '/issuance', icon: ''},
-          {title: 'Талица/директивы', link: '/settings', icon: ''},
-          {title: 'mergeMap и т.д.', link: '/map', icon: ''}
+          {title: 'mergeMap и т.д.', link: '/map', icon: ''},
+          {title: 'Настройки', link: '/settings', icon: ''},
+          {title: 'animations', link: '/animations'}
+        ]
+      },
+      {
+        heading: 'Таблицы',
+        pages: [
+          {title: 'Generic Mat Table', link: '/generic-mat-table', icon: ''},
+          {title: 'Талица/директивы', link: '/table', icon: ''},
         ]
       },
       {

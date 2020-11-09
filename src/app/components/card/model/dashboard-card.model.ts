@@ -22,7 +22,7 @@ export class DashboardCard {
                   value: string,
                 }
               },
-              private component: any
+              private _component: any
 
               // private services:
               //   {provide: any, useClass: any, deps: any[]}[]
@@ -34,8 +34,8 @@ export class DashboardCard {
     return this.input;
   }
 
-  get components(): any {
-    return this.component;
+  get component(): any {
+    return this._component;
   }
 
   // get services(): any {

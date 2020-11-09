@@ -8,7 +8,7 @@ import {DashboardCard} from '../model/dashboard-card.model';
 })
 export class DashboardCardSpawnerComponent implements OnInit {
 
-  @ViewChild('spawn', {read: ViewContainerRef, static: false}) container;
+  @ViewChild('spawn', {read: ViewContainerRef, static: true}) container;
 
   constructor(private resolver: ComponentFactoryResolver) {
   }
@@ -17,6 +17,8 @@ export class DashboardCardSpawnerComponent implements OnInit {
     if (!data) {
       return;
     }
+
+    const componentFactory = this.resolver.resolveComponentFactory(data.component);
 
     const inputProviders = Object.keys(data.inputs).map((inputName) => {
       return {
@@ -27,9 +29,9 @@ export class DashboardCardSpawnerComponent implements OnInit {
     });
     // inputProviders = inputProviders.concat(data.services);
 
-    const injector = Injector.create(inputProviders, this.container.parentInjector);
-    const factory = this.resolver.resolveComponentFactory(data.components);
-    const component = factory.create(injector);
+    const injector = Injector.create({providers: inputProviders});
+
+    const component = componentFactory.create(injector);
     this.container.insert(component.hostView);
   }
 

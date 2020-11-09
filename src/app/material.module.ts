@@ -16,6 +16,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import {MatMomentDateModule} from '@angular/material-moment-adapter';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [],
@@ -34,7 +35,8 @@ import {MatMomentDateModule} from '@angular/material-moment-adapter';
     MatCheckboxModule,
     MatTableModule,
     MatPaginatorModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    MatTabsModule
   ],
   exports: [
     MatToolbarModule,
@@ -51,7 +53,8 @@ import {MatMomentDateModule} from '@angular/material-moment-adapter';
     MatCheckboxModule,
     MatTableModule,
     MatPaginatorModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatTabsModule
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'ru-Ru'}

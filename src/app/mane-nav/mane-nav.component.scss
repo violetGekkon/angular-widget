@@ -11,10 +11,17 @@
   background: inherit;
 }
 
-.mat-toolbar.mat-primary {
-  position: sticky;
+.ci-viewer-nav-content {
+  margin: 20px 0 16px;
+  width: 230px;
+}
+
+.mat-toolbar {
+  position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 10000;
+  height: 80px;
+  width: calc(100% - 237px);
 }
 
 .nav-section {
@@ -61,4 +68,8 @@ a:hover, a:active{
 
 .nav-item a:not(.active):hover {
   opacity: 0.6 !important;
+}
+
+.ci-push-content {
+  margin-bottom: 80px;
 }

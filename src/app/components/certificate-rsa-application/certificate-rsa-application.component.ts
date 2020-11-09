@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Subdivision} from '../../../shared/subdivision.model';
+import {Subdivision} from '../../../../shared/subdivision.model';
 
 @Component({
   selector: 'app-certificate-rsa-application',

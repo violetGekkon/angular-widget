@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, Injector, OnInit, ViewChild, ElementRef} from '@angular/core';
 import {AbstractDashboardCard} from '../abstract-dashboard-card';
 import {DashboardCard} from '../model/dashboard-card.model';
-import {WeatherService} from '../../services/weather.service';
+import {WeatherService} from '../../../services/weather.service';
 
 // import * as D3 from 'd3';
 import {color} from 'd3';
