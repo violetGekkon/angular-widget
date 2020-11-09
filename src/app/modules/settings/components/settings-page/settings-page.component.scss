@@ -1,0 +1,52 @@
+.ci-settings-viewer-content {
+  font-size: 15px;
+  max-width: 85%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.ci-settings-viewer-list {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0 10px 16px;
+  border-left: 2px solid #0b5ca6;
+  position: fixed;
+  top: 100px;
+  right: 0;
+  width: 12%;
+
+}
+
+.ci-settings-viewer-list ul {
+  list-style-type: none;
+  margin: 0 0 5px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.ci-settings-viewer-list li {
+  font-size: 15px;
+  line-height: 16px;
+  margin: 0;
+  padding: 5px 15px 5px 0;
+}
+
+.ci-settings-viewer-list a {
+  opacity: 0.6;
+  color: #0b5ca6;
+  font-weight: 400;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.ci-settings-viewer-list a:hover, .ci-settings-viewer-list a.ci-settings-list-item-active {
+  opacity: 1;
+}
+
+.ci-settings-content-card {
+  margin-bottom: 35px;
+  background: #fff;
+  border: 1px solid #e0e4e7;
+  padding: 12px;
+  height: 400px;
+}

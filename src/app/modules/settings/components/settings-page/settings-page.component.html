@@ -1,0 +1,36 @@
+<div class="ci-settings-viewer">
+  <div class="ci-settings-viewer-content">
+
+<!--    <ng-container *ngFor="let item of settingItems">-->
+<!--      <app-settings-item [settingsItem]="item"></app-settings-item>-->
+<!--    </ng-container>-->
+
+    <div #settingsContainer class="ci-settings-content-card" id="utm">
+      <h3 class="ci-heading">Настройки УТМ</h3>
+    </div>
+    <div #settingsContainer class="ci-settings-content-card" id="ipfilter">
+      <h3 class="ci-heading">Фильтр IP-адресов</h3>
+    </div>
+    <div #settingsContainer class="ci-settings-content-card" id="xsd">
+      <h3 class="ci-heading">XML cхемы</h3>
+      <div>
+    <div #settingsContainer class="ci-settings-content-card" id="certificates">
+      <h3 class="ci-heading">Сертификаты</h3>
+    </div>
+  </div>
+
+  <div class="ci-settings-viewer-list">
+
+    <ul>
+      <li *ngFor="let settingsItem of settingsList; let i = index">
+        <a class="ci-link"
+           routerLink="/settings"
+           [ngClass]="{'ci-settings-list-item-active':i === activeIndex}"
+           routerLinkActiveOptions="{exact:true}"
+           [fragment]="settingsItem.fragment">
+          {{settingsItem.title}}</a>
+      </li>
+    </ul>
+
+  </div>
+</div>
