@@ -35,7 +35,7 @@ export class RsaPageComponent implements OnInit, AfterViewInit {
   organisation;
 
 
-  @ViewChild('stepper', {static: false}) stepper;
+  @ViewChild('stepper') stepper;
 
   constructor(private cardsService: DashboardCardsService, private _formBuilder: FormBuilder, private mongoDB: MongoDBService) {
   }

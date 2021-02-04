@@ -28,7 +28,7 @@ export class BarcodeIssuanceComponent implements OnInit, AfterViewInit {
   number;
   totalStepsCount;
 
-  @ViewChild('stepper', {static: false})
+  @ViewChild('stepper')
   private matStepper: MatStepper;
 
   // calcList = new Map(

@@ -14,7 +14,7 @@ import {color} from 'd3';
 })
 export class ViewTableCardComponent extends AbstractDashboardCard implements OnInit, AfterViewInit {
 
-  @ViewChild('containerPieChart', {static: false}) element: ElementRef;
+  @ViewChild('containerPieChart') element: ElementRef;
 
   private host;
   private svg;
