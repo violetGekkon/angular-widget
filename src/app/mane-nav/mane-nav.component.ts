@@ -26,13 +26,14 @@ export class ManeNavComponent implements OnInit {
 
     this.navList = [
       {
-        heading: 'Сервисы',
+        heading: 'Разное',
         pages: [
           {title: 'CardOrListView', link: '/card-or-list', icon: ''},
           {title: 'Заявление на выдачу марок', link: '/issuance', icon: ''},
           {title: 'mergeMap и т.д.', link: '/map', icon: ''},
           {title: 'Настройки', link: '/settings', icon: ''},
-          {title: 'animations', link: '/animations'}
+          {title: 'animations', link: '/animations'},
+          {title: 'Продукция', link: '/product-list'}
         ]
       },
       {

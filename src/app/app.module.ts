@@ -30,6 +30,10 @@ import {SharedModule} from './ui/shared/shared.module';
 import {CardOrListViewExampleComponent} from './components/card-or-list-view-example/card-or-list-view-example.component';
 import {DocumentChartComponent} from './components/card/document-chart/document-chart.component';
 import {NvD3Module} from 'ng2-nvd3';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { OverviewComponent } from './components/overview/overview.component';
+import { SpecsComponent } from './components/specs/specs.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,11 @@ import {NvD3Module} from 'ng2-nvd3';
     AppTooltipDirective,
     DocumentChartComponent,
     NgLoopDirective,
-    CardOrListViewExampleComponent
+    CardOrListViewExampleComponent,
+    ProductListComponent,
+    ProductDetailsComponent,
+    OverviewComponent,
+    SpecsComponent
   ],
   imports: [
     AppRoutingModule,
