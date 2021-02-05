@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { VolumeTypeComponent } from './volume-type.component';
 
@@ -6,7 +6,7 @@ describe('VolumeTypeComponent', () => {
   let component: VolumeTypeComponent;
   let fixture: ComponentFixture<VolumeTypeComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ VolumeTypeComponent ]
     })

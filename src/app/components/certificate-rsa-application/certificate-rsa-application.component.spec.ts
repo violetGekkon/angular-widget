@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CertificateRsaApplicationComponent } from './certificate-rsa-application.component';
 
@@ -6,7 +6,7 @@ describe('CertificateRsaApplicationComponent', () => {
   let component: CertificateRsaApplicationComponent;
   let fixture: ComponentFixture<CertificateRsaApplicationComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CertificateRsaApplicationComponent ]
     })

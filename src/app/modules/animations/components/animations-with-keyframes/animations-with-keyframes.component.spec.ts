@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { AnimationsWithKeyframesComponent } from './animations-with-keyframes.component';
 
@@ -6,7 +6,7 @@ describe('AnimationsWithKeyframesComponent', () => {
   let component: AnimationsWithKeyframesComponent;
   let fixture: ComponentFixture<AnimationsWithKeyframesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ AnimationsWithKeyframesComponent ]
     })

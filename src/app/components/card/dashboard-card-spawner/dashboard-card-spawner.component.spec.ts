@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { DashboardCardSpawnerComponent } from './dashboard-card-spawner.component';
 
@@ -6,7 +6,7 @@ describe('DashboardCardSpawnerComponent', () => {
   let component: DashboardCardSpawnerComponent;
   let fixture: ComponentFixture<DashboardCardSpawnerComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ DashboardCardSpawnerComponent ]
     })
