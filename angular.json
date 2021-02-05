@@ -30,9 +30,6 @@
             "styles": [
               "src/styles.scss",
               "src/egais-theme.scss"
-            ],
-            "scripts": [
-              "node_modules/hammerjs/hammer.min.js"
             ]
           },
           "configurations": {
