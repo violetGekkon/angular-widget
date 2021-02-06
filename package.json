@@ -1,9 +1,10 @@
 {
   "name": "angular-widget",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4205",
+    "prebuild": "npm --no-git-tag-version version patch",
     "build": "ng build --prod --base-href /app",
     "test": "ng test",
     "lint": "ng lint",
