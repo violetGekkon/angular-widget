@@ -13,15 +13,20 @@
 
 .ci-viewer-nav-content {
   margin: 20px 0 16px;
-  width: 230px;
+  width: 190px;
 }
 
 .mat-toolbar {
   position: fixed;
   top: 0;
   z-index: 10000;
-  height: 80px;
   width: calc(100% - 237px);
+}
+
+@media screen and (max-width: 960px) {
+  .mat-toolbar {
+    width: 100%;
+  }
 }
 
 .nav-section {

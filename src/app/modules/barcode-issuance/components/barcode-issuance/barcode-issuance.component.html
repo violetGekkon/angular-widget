@@ -1,6 +1,5 @@
 <div fxLayout="row" fxLayoutAlign="start start">
-  <div fxFlex="1 1 80%">
-    <form [formGroup]="codeIssuanceForm" (ngSubmit)="sendIssue()">
+    <form [formGroup]="codeIssuanceForm" (ngSubmit)="sendIssue()" [style.width]="'100%'">
       <mat-horizontal-stepper linear labelPosition="bottom" #stepper
                               (selectionChange)="stepChanged(stepper);">
         <!--        Отправитель  -->
@@ -65,14 +64,14 @@
 
 
     </form>
-  </div>
-  <div fxFlex="0 0 300px" fxLayout="column" class="ci-side-menu-container">
-    <p>Расчет потребностей в ФСМ</p>
-    <mat-checkbox *ngFor="let item of calcList"
-                  [(ngModel)]="item.checked"
-                  (change)="setTotalStepsCount($event)"
-    >{{item.label}}</mat-checkbox>
-  </div>
+
+<!--  <div fxFlex="0 0 300px" fxLayout="column" class="ci-side-menu-container">-->
+<!--    <p>Расчет потребностей в ФСМ</p>-->
+<!--    <mat-checkbox *ngFor="let item of calcList"-->
+<!--                  [(ngModel)]="item.checked"-->
+<!--                  (change)="setTotalStepsCount($event)"-->
+<!--    >{{item.label}}</mat-checkbox>-->
+<!--  </div>-->
 </div>
 
 

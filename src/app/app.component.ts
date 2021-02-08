@@ -1,14 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {Location, ViewportScroller} from '@angular/common';
 import {DashboardCardsService} from './services/dashboard-card-service.service';
 
-import {ViewTableCardComponent} from './components/card/view-table-card/view-table-card.component';
-import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
-import {Router, Scroll, NavigationEnd} from '@angular/router';
-import {filter, map} from 'rxjs/operators';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import {map} from 'rxjs/operators';
 import {MediaObserver} from '@angular/flex-layout';
-import {TestService} from './test/test.service';
-import {DocumentChartComponent} from './components/card/document-chart/document-chart.component';
+
+
+
 const COLORS = [
   '#ea4335',
   '#4285f4',
@@ -60,12 +58,18 @@ export class AppComponent implements OnInit {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private mediaObserver: MediaObserver,
-    private testSrv: TestService
-    ) { }
+  ) {
+  }
 
   ngOnInit() {
 
-    this.testSrv.parseXml();
+    this.breakpointObserver.observe([
+
+      Breakpoints.TabletPortrait,
+])
+      .subscribe(
+        result => console.log(result)
+      );
 
     const breakpointsGrid: { [size: string]: number } = {
       ['xs']: 1,

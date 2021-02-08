@@ -10,8 +10,9 @@
 
       <div class="ci-viewer-nav">
         <div class="ci-viewer-nav-content">
-          <div *ngFor="let navItem of navList">
+
             <mat-accordion multi="true">
+              <div *ngFor="let navItem of navList">
               <mat-expansion-panel class="mat-elevation-z0" [expanded]="true">
                 <mat-expansion-panel-header class="nav-head" [expandedHeight]="'48px'">
                   <mat-panel-title class="nav-link">
@@ -30,31 +31,32 @@
                   </li>
                 </ul>
               </mat-expansion-panel>
+              </div>
             </mat-accordion>
 
-          </div>
+
         </div>
       </div>
-      <!--      <a mat-list-item routerLink="/test">Test</a>-->
-      <!--      <a mat-list-item routerLink="/test1">Test 1</a>-->
-      <!--      <a mat-list-item routerLink="/testlist">Test List</a>-->
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content fxFlex fxLayout="column">
+  <mat-sidenav-content fxFlex fxLayout="column" appScrollDirection (scrolledUp)="show = 'show'" (scrolledDown)="show = 'hide'">
 
     <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
+      <mat-toolbar-row class="mat-elevation-z6">
+        <span>First toolbar-row</span>
+          <button type="button"
+                  aria-label="Toggle sidenav"
+                  mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          </button>
+      </mat-toolbar-row>
+      <mat-toolbar-row fxHide fxShow.xs [@fadeShowHide]="show">
+        <span>Second toolbar-row</span>
+      </mat-toolbar-row>
     </mat-toolbar>
 
     <div class="ci-push-content"></div>
-    <main style="padding: 15px">
+    <main style="padding: 15px" #main>
       <router-outlet></router-outlet>
     </main>
   </mat-sidenav-content>
