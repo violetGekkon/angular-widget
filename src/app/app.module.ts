@@ -31,6 +31,10 @@ import {CardOrListViewExampleComponent} from './components/card-or-list-view-exa
 import {DocumentChartComponent} from './components/card/document-chart/document-chart.component';
 import {NvD3Module} from 'ng2-nvd3';
 import {ScrollDirectionDirective} from './ui/directives/scroll-direction.directive';
+import {ProductListComponent} from './components/product-list/product-list.component';
+import {ProductDetailsComponent} from './components/product-details/product-details.component';
+import {OverviewComponent} from './components/overview/overview.component';
+import {SpecsComponent} from './components/specs/specs.component';
 
 @NgModule({
   declarations: [
