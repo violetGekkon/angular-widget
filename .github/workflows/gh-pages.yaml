@@ -26,9 +26,9 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
-          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build # The folder the action should deploy.
+          token: ${{ secrets.REPO_TOKEN }}
+          branch: gh-pages # The branch the action should deploy to.
+          folder: dist/angular-widget # The folder the action should deploy.
 
       - name: Version
         run: node -p -e '`PACKAGE_VERSION=${require("./package.json").version}`' >> $GITHUB_ENV
