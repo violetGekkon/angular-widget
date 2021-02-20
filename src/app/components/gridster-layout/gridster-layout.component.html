@@ -1,0 +1,21 @@
+<div fxLayout="row" [style.margin-bottom]="'25px'">
+  <div
+    class="draggable"
+    draggable="true"
+    (dragend)="dropItem('example1')"
+  >
+    Example 1
+  </div>
+  <div
+    class="draggable"
+    draggable="true"
+    (dragend)="dropItem('example2')"
+  >
+    Example 2
+  </div>
+</div>
+<gridster [options]="options">
+  <gridster-item *ngFor="let item of layout" [item]="item"
+                 (dragover)="setDropId(item.id)">
+  </gridster-item>
+</gridster>

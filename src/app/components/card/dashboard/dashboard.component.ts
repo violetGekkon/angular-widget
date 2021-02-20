@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {DashboardCard} from '../components/card/model/dashboard-card.model';
-import {TableComponent} from '../table-page/table.component';
-import {DocumentChartComponent} from '../components/card/document-chart/document-chart.component';
+import {DashboardCard} from '../model/dashboard-card.model';
+import {TableComponent} from '../../../table-page/table.component';
+import {DocumentChartComponent} from '../document-chart/document-chart.component';
 
 @Component({
   selector: 'app-dashboard',

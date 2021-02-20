@@ -1,7 +1,7 @@
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {RsaPageComponent} from './components/rsa-page/rsa-page.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
+import {DashboardComponent} from './components/card/dashboard/dashboard.component';
 import {MapExampleComponent} from './map-example/map-example.component';
 import {TableComponent} from './table-page/table.component';
 import {FileComponent} from './file/file.component';
@@ -10,9 +10,9 @@ import {ProductListComponent} from './components/product-list/product-list.compo
 import {ProductDetailsComponent} from './components/product-details/product-details.component';
 import {OverviewComponent} from './components/overview/overview.component';
 import {SpecsComponent} from './components/specs/specs.component';
+import {GridsterLayoutComponent} from './components/gridster-layout/gridster-layout.component';
 
 const routes: Routes = [
-  {path: '', component: DashboardComponent, pathMatch: 'full'},
   {path: 'rsa', component: RsaPageComponent},
   {path: 'table', component: TableComponent},
   {path: 'product-list', component: ProductListComponent},
@@ -42,8 +42,8 @@ const routes: Routes = [
   },
   {path: 'card-or-list', component: CardOrListViewExampleComponent},
   {path: 'file', component: FileComponent},
-  {path: 'map', component: MapExampleComponent}
-  // {path: 'testlist', component: TestListComponent}
+  {path: 'map', component: MapExampleComponent},
+  {path: '**', component: GridsterLayoutComponent}
 ];
 
 @NgModule({
