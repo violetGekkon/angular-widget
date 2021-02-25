@@ -35,7 +35,7 @@ jobs:
 
       - name: Version
         run: node -p -e '`PACKAGE_VERSION=${require("./package.json").version}`' >> $GITHUB_ENV
-        
+
       - name: Branch name
         run: echo running on branch ${GITHUB_REF##*/}
 
