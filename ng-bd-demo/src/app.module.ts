@@ -5,14 +5,12 @@ import {AppController} from './app.controller';
 import {AppService} from './app.service';
 import {SubdivisionsModule} from './subdivisions/subdivisions.module';
 import {FrontendMiddleware} from './common/middleware/frontend.middleware';
-import {OrganisationsModule} from './organisations/organisations.module';
 
 @Module({
   imports: [
     SubdivisionsModule,
-    OrganisationsModule,
     MongooseModule.forRoot(
-      'mongodb+srv://sia_user:y9f1P1mHQwoAUVPF@clustertest-immus.gcp.mongodb.net/nestjs-demo?retryWrites=true&w=majority'),
+      'mongodb+srv://sia_user:h7TmLXUvtrPrTCOl@clustertest.immus.gcp.mongodb.net/nestjs-demo?retryWrites=true&w=majority', {useNewUrlParser: true}),
 
   ],
   controllers: [AppController],
