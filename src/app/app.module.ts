@@ -29,15 +29,16 @@ import {NgLoopDirective} from './ui/directives/ng-loop.directive';
 import {SharedModule} from './ui/shared/shared.module';
 import {CardOrListViewExampleComponent} from './components/card-or-list-view-example/card-or-list-view-example.component';
 import {DocumentChartComponent} from './components/card/document-chart/document-chart.component';
-import {NvD3Module} from 'ng2-nvd3';
+
 import {ScrollDirectionDirective} from './ui/directives/scroll-direction.directive';
 import {ProductListComponent} from './components/product-list/product-list.component';
 import {ProductDetailsComponent} from './components/product-details/product-details.component';
 import {OverviewComponent} from './components/overview/overview.component';
 import {SpecsComponent} from './components/specs/specs.component';
-import { GridsterLayoutComponent } from './components/gridster-layout/gridster-layout.component';
+import {GridsterLayoutComponent} from './components/gridster-layout/gridster-layout.component';
 import {GridsterModule} from 'angular-gridster2';
 import {GridsterLayoutService} from './services/gridster-layout.service';
+import {GridsterLayoutItemDirective} from './directives/gridster-layout-item.directive';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import {GridsterLayoutService} from './services/gridster-layout.service';
     OverviewComponent,
     SpecsComponent,
     ScrollDirectionDirective,
-    GridsterLayoutComponent
+    GridsterLayoutComponent,
+    GridsterLayoutItemDirective
   ],
   imports: [
     AppRoutingModule,
@@ -76,12 +78,11 @@ import {GridsterLayoutService} from './services/gridster-layout.service';
     LayoutModule,
     OverlayModule,
     SharedModule,
-    NvD3Module,
     GridsterModule
   ],
   providers: [WeatherService, DataService, GridsterLayoutService],
   bootstrap: [AppComponent],
-  entryComponents: [AppTooltipComponent],
+  entryComponents: [AppTooltipComponent, DocumentChartComponent, ViewTableCardComponent],
 })
 export class AppModule {
 }
