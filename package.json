@@ -34,7 +34,7 @@
     "core-js": "^2.6.12",
     "ip-regex": "^4.3.0",
     "lodash": "^4.17.20",
-    "moment": "^2.29.1",
+    "moment": "^2.27.0",
     "net": "^1.0.2",
     "ng-material-multilevel-menu": "^4.12.4",
     "reflect-metadata": "^0.1.13",
@@ -70,6 +70,6 @@
     "stylelint-webpack-plugin": "^1.2.3",
     "ts-node": "~7.0.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.0.5"
+    "typescript": "~4.0.2"
   }
 }
