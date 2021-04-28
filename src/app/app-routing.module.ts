@@ -43,7 +43,8 @@ const routes: Routes = [
   {path: 'card-or-list', component: CardOrListViewExampleComponent},
   {path: 'file', component: FileComponent},
   {path: 'map', component: MapExampleComponent},
-  {path: '**', component: GridsterLayoutComponent}
+  {path: 'test1', component: AnotherTestPageComponent},
+  {path: '**', component: GridsterLayoutComponent}  
 ];
 
 @NgModule({
