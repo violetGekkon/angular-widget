@@ -6,10 +6,10 @@ import {MapExampleComponent} from './map-example/map-example.component';
 import {TableComponent} from './table-page/table.component';
 import {FileComponent} from './file/file.component';
 import {CardOrListViewExampleComponent} from './components/card-or-list-view-example/card-or-list-view-example.component';
-import {ProductListComponent} from './components/product-list/product-list.component';
-import {ProductDetailsComponent} from './components/product-details/product-details.component';
-import {OverviewComponent} from './components/overview/overview.component';
-import {SpecsComponent} from './components/specs/specs.component';
+import {ProductListComponent} from './modules/product/components/product-list/product-list.component';
+import {ProductDetailsComponent} from './modules/product/components/product-details/product-details.component';
+import {OverviewComponent} from './modules/product/components/overview/overview.component';
+import {SpecsComponent} from './modules/product/components/specs/specs.component';
 import {GridsterLayoutComponent} from './components/gridster-layout/gridster-layout.component';
 
 const routes: Routes = [
@@ -27,6 +27,10 @@ const routes: Routes = [
   {
     path: 'issuance', loadChildren:
       () => import('./modules/barcode-issuance/barcode-issuance.module').then(m => m.BarcodeIssuanceModule)
+  },
+  {
+    path: 'market-participants',
+    loadChildren: () => import('./modules/market-participants/market-participants.module').then(m => m.MarketParticipantsModule)
   },
   {
     path: 'animations', loadChildren:

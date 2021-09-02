@@ -54,7 +54,8 @@ export class ManeNavComponent implements OnInit {
           {title: 'mergeMap и т.д.', link: '/map', icon: ''},
           {title: 'Настройки', link: '/settings', icon: ''},
           {title: 'animations', link: '/animations'},
-          {title: 'Продукция', link: '/product-list'}
+          {title: 'Продукция', link: '/product-list'},
+          {title: 'Участники рынка', link: 'market-participants'}
         ]
       },
       {
