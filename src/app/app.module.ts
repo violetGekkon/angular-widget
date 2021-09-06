@@ -39,6 +39,7 @@ import {GridsterLayoutComponent} from './components/gridster-layout/gridster-lay
 import {GridsterModule} from 'angular-gridster2';
 import {GridsterLayoutService} from './services/gridster-layout.service';
 import {GridsterLayoutItemDirective} from './directives/gridster-layout-item.directive';
+import {NavigationService} from './services/navigation.service';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,7 @@ import {GridsterLayoutItemDirective} from './directives/gridster-layout-item.dir
     SharedModule,
     GridsterModule
   ],
-  providers: [WeatherService, DataService, GridsterLayoutService],
+  providers: [WeatherService, DataService, GridsterLayoutService, NavigationService],
   bootstrap: [AppComponent],
   entryComponents: [AppTooltipComponent, DocumentChartComponent, ViewTableCardComponent],
 })
