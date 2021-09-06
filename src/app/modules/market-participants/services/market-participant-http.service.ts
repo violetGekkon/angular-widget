@@ -25,7 +25,6 @@ export class MarketParticipantHttpService {
     return timer(5000, 10000)
       .pipe(
         tap(_ => count = count + 1),
-        tap(_ => console.log(count)),
         switchMap(_ => of(LIC_FILTER.map(val => ({...val, count: (+val.count + count).toString()})))
         )
       );

@@ -30,15 +30,11 @@ export class MarketParticipantsComponent implements OnInit, AfterViewInit {
     );
 
     this.service.getLicenseGroup().subscribe(serverFilters => {
-      console.log(serverFilters);
       this.licFilter = this.licFilter.map(filter => {
-        console.log('old ', filter);
         let newFilter;
         for (let i = 0; i < serverFilters.length; i++) {
-          console.log('new ', serverFilters);
           if (serverFilters[i].id === filter.id) {
             newFilter = {...filter, count: serverFilters[i].count, title: serverFilters[i].title};
-            console.log('concat ', newFilter);
             return newFilter;
           }
         }
@@ -47,7 +43,7 @@ export class MarketParticipantsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.filter.changeFilter.subscribe(val => console.log(val));
+    // this.filter.changeFilter.subscribe(val => console.log(val));
   }
 
   goToDetail(organization: IMarketParticipant) {
