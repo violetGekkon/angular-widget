@@ -3,7 +3,7 @@ import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTre
 import {NavigationService} from '../../../services/navigation.service';
 
 @Injectable()
-export class MarketParticipantListGuardService implements CanActivate {
+export class CanActivateGuardService implements CanActivate {
 
   private previousUrl: string | null;
 
@@ -12,9 +12,9 @@ export class MarketParticipantListGuardService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree {
 
-    console.log(this.navigationService.history);
+    // console.log(this.navigationService.history);
     this.previousUrl = this.navigationService.history.length !== 0 ? this.navigationService.history.slice(-1)[0] : null;
-    console.log(this.previousUrl);
+    // console.log(this.previousUrl);
     // Если история пустая
     if (!this.previousUrl) {
       // Проверяем текущий url и если это url организации, то запрос на возврат к списку

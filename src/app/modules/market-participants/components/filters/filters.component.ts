@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActiveFilter, Filter} from '../../interfaces/filters.interface';
-import {BehaviorSubject} from 'rxjs';
+import {BehaviorSubject, Subject} from 'rxjs';
 
 @Component({
   selector: 'app-filters',
@@ -12,7 +12,7 @@ export class FiltersComponent implements OnInit {
   @Input() group: string;
   @Input() filters: Filter[] = [];
 
-  changeFilter = new BehaviorSubject<Filter[]>([]);
+  changeFilter = new Subject<Filter[]>();
 
   constructor() {
   }

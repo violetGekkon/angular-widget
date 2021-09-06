@@ -9,6 +9,10 @@ export class TemporaryStorageService {
 
   private storage: SessionStorageWrapper;
 
+  constructor() {
+    this.storage = new SessionStorageWrapper();
+  }
+
   public forKey(key: string): TemporaryStorageFacet {
     return (new TemporaryStorageFacet(key, this.storage));
   }
@@ -44,6 +48,7 @@ export class TemporaryStorageFacet {
   }
 
   public remove(): void {
+    console.log('TemporaryStorageFacet remove');
     this.storage.remove(this.key);
   }
 

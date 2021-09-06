@@ -11,13 +11,16 @@ import {FlexModule} from '@angular/flex-layout';
 
 import {FiltersComponent} from './components/filters/filters.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {MarketParticipantListGuardService} from './services/market-participant-list-guard.service';
+import {CanActivateGuardService} from './services/can-activate-guard.service';
+import {MarketParticipantsFacade} from './market-participants.facade';
+import {TemporaryStorageService} from './services/temporary-storage.service';
 
 export const routes: Route[] = [
   {
     path: '',
     component: MarketParticipantsComponent,
-    canActivate: [MarketParticipantListGuardService]
+    canActivate: [CanActivateGuardService],
+    canDeactivate: []
   },
   {
     path: ':marketParticipantUrl',
@@ -45,7 +48,9 @@ export const routes: Route[] = [
   ],
   providers: [
     MarketParticipantHttpService,
-    MarketParticipantListGuardService
+    MarketParticipantsFacade,
+    TemporaryStorageService,
+    CanActivateGuardService
   ]
 })
 export class MarketParticipantsModule {
