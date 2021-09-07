@@ -41,12 +41,11 @@ export class MarketParticipantsComponent implements OnInit, AfterViewInit {
     );
 
     this.service.getLicenseGroup().subscribe(serverFilters => {
-      console.log(this.filters);
-      if (!this.filters && !this.filters?.companyParams?.licenses_groups) {
+      if (!this.filters || !this.filters?.companyParams?.licenses_groups) {
         this.licFilters = serverFilters;
         return;
       }
-      const savedLicFilters = this.filters.companyParams.licenses_groups.split(',').map(val => ({title: val, active: true}));
+      const savedLicFilters = this.filters.companyParams.licenses_groups.split(',').map(val => ({title: val}));
       this.licFilters = serverFilters.map((serverFilter: Filter) => {
         const newFilter = serverFilter;
         for (const savedFilter of savedLicFilters) {

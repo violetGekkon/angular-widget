@@ -1,6 +1,7 @@
 export interface IMarketParticipantFilter {
-  queryString: string;
-  companyParams: {
+  organizationUrl?: string;
+  queryString?: string;
+  companyParams?: {
     owner_id?: string;
     company?: string;
     inn?: string;
@@ -28,10 +29,10 @@ export interface IMarketParticipantFilter {
     network_name?: string;
     inn_kpp?: string
   };
-  topLeft_x: number;
-  topLeft_y: number;
-  bottomRight_x: number;
-  bottomRight_y: number;
+  topLeft_x?: number;
+  topLeft_y?: number;
+  bottomRight_x?: number;
+  bottomRight_y?: number;
   page: number;
   pageLength: number;
 }

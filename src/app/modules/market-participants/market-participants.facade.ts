@@ -38,7 +38,7 @@ export class MarketParticipantsFacade {
   }
 
   stop() {
-    console.log('stop timing');
+    console.log('stop timer');
     this._stop.next();
   }
 
@@ -46,7 +46,7 @@ export class MarketParticipantsFacade {
     return this.marketParticipantsTempStorage.get<IMarketParticipantFilter>();
   }
 
-  setFilters(val) {
+  setFilters(val: IMarketParticipantFilter) {
     this.marketParticipantsTempStorage.set(val);
   }
 
@@ -55,5 +55,10 @@ export class MarketParticipantsFacade {
     return this.httService.getPage(filters);
   }
 
+
+  saveOrgUrlToStorage(url: string) {
+    const filters = this.getFilters();
+    this.setFilters({...filters, organizationUrl: url});
+  }
 
 }

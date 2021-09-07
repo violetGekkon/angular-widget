@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {MarketParticipantHttpService} from '../../services/market-participant-http.service';
 import {firmTypeMap} from '../../interfaces/market-participant';
 import {map, tap} from 'rxjs/operators';
+import {MarketParticipantsFacade} from '../../market-participants.facade';
 
 @Component({
   selector: 'app-market-participant-detail',
@@ -13,10 +14,11 @@ export class MarketParticipantDetailComponent implements OnInit {
 
   type$;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private facade: MarketParticipantsFacade) {
     this.type$ = route.paramMap.pipe(
       tap(paramsMap => console.log(paramsMap.get('marketParticipantUrl'))),
-      map(paramsMap => paramsMap.get('marketParticipantUrl'))
+      map(paramsMap => paramsMap.get('marketParticipantUrl')),
+      tap(url => this.facade.saveOrgUrlToStorage(url)),
     );
   }
 
