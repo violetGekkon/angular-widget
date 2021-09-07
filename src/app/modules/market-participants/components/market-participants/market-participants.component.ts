@@ -32,8 +32,8 @@ export class MarketParticipantsComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
 
-    if (this.facade.getFilters()) {
-      this.filters = this.facade.getFilters();
+    if (this.facade.getStateFromStorage()) {
+      this.filters = this.facade.getStateFromStorage();
     }
 
     this.service.getAllMarketParticipants().subscribe(val =>

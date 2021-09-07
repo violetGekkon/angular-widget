@@ -11,8 +11,8 @@ export class NavigationService {
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
+        this._nextUrl.next(event.urlAfterRedirects);
         this._history.push(event.urlAfterRedirects);
-        this._nextUrl.next(this._history.pop());
       }
     });
   }
@@ -24,4 +24,5 @@ export class NavigationService {
   get nextUrl(): Observable<string> {
     return this._nextUrl.asObservable();
   }
+
 }

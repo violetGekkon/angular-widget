@@ -14,11 +14,10 @@ export class MarketParticipantDetailComponent implements OnInit {
 
   type$;
 
-  constructor(private route: ActivatedRoute, private facade: MarketParticipantsFacade) {
+  constructor(private route: ActivatedRoute) {
     this.type$ = route.paramMap.pipe(
       tap(paramsMap => console.log(paramsMap.get('marketParticipantUrl'))),
-      map(paramsMap => paramsMap.get('marketParticipantUrl')),
-      tap(url => this.facade.saveOrgUrlToStorage(url)),
+      map(paramsMap => paramsMap.get('marketParticipantUrl'))
     );
   }
 

@@ -11,20 +11,25 @@ import {FlexModule} from '@angular/flex-layout';
 
 import {FiltersComponent} from './components/filters/filters.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {CanActivateGuardService} from './services/can-activate-guard.service';
+import {CanActivateParticipantListGuardService} from './services/can-activate-participant-list-guard.service';
 import {MarketParticipantsFacade} from './market-participants.facade';
 import {TemporaryStorageService} from './services/temporary-storage.service';
+import {CanDeactivateParticipantItemGuardService} from './services/can-deactivate-participant-item-guard.service';
+import {CanDeactivateParticipantListGuardService} from './services/can-deactivate-participant-list-guard.service';
+import {CanActivateParticipantItemGuardService} from './services/can-activate-participant-item-guard.service';
 
 export const routes: Route[] = [
   {
     path: '',
     component: MarketParticipantsComponent,
-    canActivate: [CanActivateGuardService],
-    canDeactivate: []
+    canActivate: [CanActivateParticipantListGuardService],
+    canDeactivate: [CanDeactivateParticipantListGuardService]
   },
   {
     path: ':marketParticipantUrl',
-    component: MarketParticipantDetailComponent
+    component: MarketParticipantDetailComponent,
+    canActivate: [CanActivateParticipantItemGuardService],
+    canDeactivate: [CanDeactivateParticipantItemGuardService]
   }
 ];
 
@@ -50,7 +55,10 @@ export const routes: Route[] = [
     MarketParticipantHttpService,
     MarketParticipantsFacade,
     TemporaryStorageService,
-    CanActivateGuardService
+    CanActivateParticipantListGuardService,
+    CanActivateParticipantItemGuardService,
+    CanDeactivateParticipantItemGuardService,
+    CanDeactivateParticipantListGuardService
   ]
 })
 export class MarketParticipantsModule {
