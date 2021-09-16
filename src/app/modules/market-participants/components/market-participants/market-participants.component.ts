@@ -18,6 +18,8 @@ export class MarketParticipantsComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['fsrarId', 'firmType', 'fullName', 'inn', 'kpp'];
   dataSource = [];
 
+  links = ['справочник ёмкости', 'справочник сырья'];
+
   @ViewChild(FiltersComponent) licGroupsFilters: FiltersComponent;
 
   filters: IMarketParticipantFilter;
@@ -56,6 +58,7 @@ export class MarketParticipantsComponent implements OnInit, AfterViewInit {
         return newFilter;
       });
     });
+
   }
 
   ngAfterViewInit() {
