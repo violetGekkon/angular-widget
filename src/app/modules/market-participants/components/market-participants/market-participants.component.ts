@@ -8,6 +8,9 @@ import {MarketParticipantsFacade} from '../../market-participants.facade';
 import {map, filter} from 'rxjs/operators';
 import {IMarketParticipantFilter} from '../../interfaces/market-participant-filter.interface';
 
+import moment from 'moment';
+import {ReferenceBookResolver} from '../../../reference-books/services/reference-book.resolver';
+
 @Component({
   selector: 'app-market-participants',
   templateUrl: './market-participants.component.html',
@@ -23,7 +26,7 @@ export class MarketParticipantsComponent implements OnInit, AfterViewInit {
   @ViewChild(FiltersComponent) licGroupsFilters: FiltersComponent;
 
   filters: IMarketParticipantFilter;
-  licFilters: Filter[] = [0, 1, 2, 3].map(idx => ({ id: idx, active: false }));
+  licFilters: Filter[] = [0, 1, 2, 3].map(idx => ({id: idx, active: false}));
 
   constructor(private service: MarketParticipantHttpService,
               private facade: MarketParticipantsFacade,
@@ -34,6 +37,13 @@ export class MarketParticipantsComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
 
+    const time = moment.unix(1632147685).format('DD.MM.YYYY hh:mm');
+    console.log(time);
+
+    const ts = moment('22.09.2021 21:00', 'DD MMM YYYY hh:mm').unix();
+    const m = moment.unix(ts);
+
+    console.log(ts);
     if (this.facade.getStateFromStorage()) {
       this.filters = this.facade.getStateFromStorage();
     }
@@ -69,13 +79,13 @@ export class MarketParticipantsComponent implements OnInit, AfterViewInit {
       )
       .subscribe(val => {
         console.log(val);
-        this.filters = { ...this.filters, companyParams: { licenses_groups: val.map(item => item.title).toString() } };
+        this.filters = {...this.filters, companyParams: {licenses_groups: val.map(item => item.title).toString()}};
         this.facade.saveFiltersAndGetFilteredList(this.filters);
       });
   }
 
   goToDetail(organization: IMarketParticipant) {
-    this.router.navigate([firmTypeMap.get(organization.firmType)], { relativeTo: this.route });
+    this.router.navigate([firmTypeMap.get(organization.firmType)], {relativeTo: this.route});
   }
 
 }

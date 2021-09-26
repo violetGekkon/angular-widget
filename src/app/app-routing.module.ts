@@ -45,7 +45,7 @@ const routes: Routes = [
       () => import('./modules/settings/settings.module').then(m => m.SettingsModule)
   },
   {
-    path: 'reference-books', loadChildren:
+    path: 'frap', loadChildren:
       () => import('./modules/reference-books/reference-books.module').then(m => m.ReferenceBooksModule)
   },
   {path: 'card-or-list', component: CardOrListViewExampleComponent},

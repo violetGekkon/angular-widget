@@ -1,0 +1,11 @@
+<mat-nav-list>
+  <a mat-list-item fxLayout="row" [disableRipple]="true"
+     *ngFor="let link of links" (click)="goToDetail(link)" >
+    <span>{{ link.title }}</span>
+      <mat-progress-spinner *ngIf="(isLoading$ | async) && link.url === activeLink?.url"
+        color="primary"
+        mode="indeterminate"
+        diameter="24">
+      </mat-progress-spinner>
+  </a>
+</mat-nav-list>

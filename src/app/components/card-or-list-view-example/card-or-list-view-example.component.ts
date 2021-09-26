@@ -7,7 +7,6 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CardOrListViewExampleComponent implements OnInit {
 
-  mode = 'card';
   items = [
     {
       header: 'Creating Reuseable Components with NgTemplateOutlet in Angular',

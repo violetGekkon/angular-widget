@@ -1,0 +1,12 @@
+<div fxLayout="column">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-raised-button color="primary" (click)="add()">Добавить</button>
+    <button mat-raised-button (click)="export()">Экспорт</button>
+  </div>
+  <div>
+    <app-dynamic-table [tableDef]="referenceBookDef"></app-dynamic-table>
+  </div>
+</div>
+
+
+
