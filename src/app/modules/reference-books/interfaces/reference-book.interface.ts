@@ -1,4 +1,5 @@
 import {Type} from '@angular/core';
+import {InjectableTableComponent} from '../models/injectable-table-component.model';
 
 export interface Link {
   id?: number;
@@ -18,8 +19,4 @@ export interface ReferenceBook {
 
 export interface Capacity extends ReferenceBook {
   capacity: string;
-}
-
-export class InjectableTableComponent {
-  dataSource: ReferenceBook[];
 }

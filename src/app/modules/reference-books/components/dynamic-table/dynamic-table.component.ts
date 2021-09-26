@@ -11,6 +11,8 @@ export class DynamicTableComponent implements OnInit, AfterViewInit {
   @Input() tableDef: ReferenceBookDefinition;
   @ViewChild('table', { read: ViewContainerRef }) container: ViewContainerRef;
 
+  componentRef;
+
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit(): void {
@@ -21,11 +23,19 @@ export class DynamicTableComponent implements OnInit, AfterViewInit {
         const { type: componentType } = this.tableDef;
         const componentFactory = this.componentFactoryResolver.resolveComponentFactory(componentType);
         this.container.clear();
-        const componentRef = this.container.createComponent(
+        this.componentRef = this.container.createComponent(
           componentFactory
         );
-        componentRef.instance.dataSource = this.tableDef.data;
+        this.componentRef.instance.dataSource = this.tableDef.data;
 
+  }
+
+  exportTableToExel() {
+    this.componentRef.instance.export();
+  }
+
+  addNewItem() {
+    this.componentRef.instance.add();
   }
 
 }

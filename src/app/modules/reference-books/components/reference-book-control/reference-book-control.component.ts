@@ -29,15 +29,6 @@ export class ReferenceBookControlComponent implements OnInit, OnDestroy {
 
   }
 
-
-  add(): void {
-
-  }
-
-  export(): void {
-
-  }
-
   ngOnDestroy() {
     this.onDestroy$.next();
     this.onDestroy$.complete();

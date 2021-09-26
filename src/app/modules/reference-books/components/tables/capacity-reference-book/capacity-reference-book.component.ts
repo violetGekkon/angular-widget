@@ -1,5 +1,7 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
-import {Capacity, InjectableTableComponent} from '../../../interfaces/reference-book.interface';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, ViewChild} from '@angular/core';
+import {InjectableTableComponent} from '../../../models/injectable-table-component.model';
+import {Capacity, ReferenceBook} from '../../../interfaces/reference-book.interface';
+import {MatTable} from '@angular/material/table';
 
 
 @Component({
@@ -8,9 +10,13 @@ import {Capacity, InjectableTableComponent} from '../../../interfaces/reference-
   styleUrls: ['./capacity-reference-book.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CapacityReferenceBookComponent implements OnInit, InjectableTableComponent {
+export class CapacityReferenceBookComponent extends InjectableTableComponent {
+
+  // @ViewChild(DxDataGridComponent) dataGrid: DxDataGridComponent
+  @ViewChild(MatTable) dataGrid: MatTable<ReferenceBook>;
 
   displayedColumns: string[] = ['code', 'capacity'];
+
   private _dataSource: Capacity[];
 
   @Input() set dataSource(data: Capacity[]) {
@@ -23,9 +29,11 @@ export class CapacityReferenceBookComponent implements OnInit, InjectableTableCo
   }
 
   constructor(private cdr: ChangeDetectorRef) {
+    super();
   }
 
-  ngOnInit(): void {
+  add() {
+
   }
 
 }
