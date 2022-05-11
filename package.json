@@ -4,9 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4205",
-    "prebuild": "npm version patch -m \"Version %s [ci-skip]\"",
+
     "build": "ng build --prod --base-href ./",
-    "postbuild": "git push",
+
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
