@@ -23,8 +23,8 @@ jobs:
 
       - name: Install and Build
         run: |
-          echo git config --global user.name
-          echo git config --global user.email
+          git config --global user.name
+          git config --global user.email
           npm install
           npm run build
 
@@ -43,8 +43,8 @@ jobs:
 
       - name: Commit version
         run: |
-          echo git config --global user.name
-          echo git config --global user.email
+          git config --global user.name
+          git config --global user.email
           git add .
           git commit -m "version ${{ env.PACKAGE_VERSION }} [skip ci]"
           git push origin develop
