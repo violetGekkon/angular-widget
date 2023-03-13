@@ -1,10 +1,29 @@
-<app-card-or-list-view
-  [items]="items">
-  <div *cardItem="let item">
-    <h1>{{item.header}}</h1>
-    <p>{{item.content}}</p>
+<section>
+  <div class="app">
+    <h1 id="message"></h1>
+    <button mat-raised-button
+            color="primary"
+            [disabled]="!(userMessage.innerHTML === 'Go!')"
+            (click)="changeMode()">Toggle
+    </button>
   </div>
-  <li *listItem="let item">
-    {{item.header}}: {{item.content}}
-  </li>
-</app-card-or-list-view>
+  <app-card-or-list-view
+    [items]="items" [mode]="viewMode">
+    <!-- The interesting thing to note is that we use the asterisk prefix and microsyntax for syntactical sugar -->
+    <!-- <ng-template cardItem let-item>
+            <div>
+              <h1>{{item.header}}</h1>
+              <p>{{item.content}}</p>
+            </div>
+</ng-template> -->
+    <div [style.border]="'1px solid grey'" *cardItem="let item">
+      <h1>{{item.header}}</h1>
+      <p>{{item.content}}</p>
+    </div>
+    <li *listItem="let item">
+      {{item.header}}: {{item.content}}
+    </li>
+  </app-card-or-list-view>
+</section>
+
+

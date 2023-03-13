@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {OverlayContainer} from '@angular/cdk/overlay';
-import {BehaviorSubject, from, of, Subject} from 'rxjs';
-import {concatMap, delay, map, mergeAll, mergeMap, switchMap, takeUntil} from 'rxjs/operators';
+import {BehaviorSubject, EMPTY, from, merge, of, Subject} from 'rxjs';
+import {concatMap, delay, map, mergeAll, mergeMap, startWith, switchMap, takeUntil} from 'rxjs/operators';
 
 export interface Food {
   value: string;
@@ -93,13 +93,13 @@ export class MapExampleComponent implements OnInit, OnDestroy {
 
     // использование map и mergeAll
     // MergeAll позаботится о подписке на внутренний Observable
-    from([1, 2, 3, 4]).pipe(takeUntil(this.onDestroy$),
+    from([1, 2, 3, 4]).pipe(
       map(param => getData(param)),
       mergeAll()
     ).subscribe(val => console.log(val));
 
     // использование mergeMap
-    from([1, 2, 3, 4]).pipe(takeUntil(this.onDestroy$),
+    from([1, 2, 3, 4]).pipe(
       mergeMap(param => getData(param))
     ).subscribe(val => console.log(val));
 
@@ -149,21 +149,21 @@ export class MapExampleComponent implements OnInit, OnDestroy {
       );
     };
 
-
     // map
-    from([1, 2, 3, 4]).pipe(
-      map(param => getData2(param))
-    ).subscribe(val => val.subscribe(d => console.log('map:', d)));
+    // from([1, 2, 3, 4]).pipe(
+    //   map(param => getData2(param))
+    // ).subscribe(val => val.subscribe(d => console.log('map:', d)));
 
     // mergeMap
-    from([1, 2, 3, 4]).pipe(
-      mergeMap(param => getData2(param))
-    ).subscribe(val => console.log('mergeMap:', val));
+    // from([1, 2, 3, 4]).pipe(
+    //   mergeMap(param => getData2(param))
+    // ).subscribe(val => console.log('mergeMap:', val));
+
 
     // concatMap
-    from([1, 2, 3, 4]).pipe(
-      concatMap(param => getData2(param))
-    ).subscribe(val => console.log('concatMap:', val));
+    // from([1, 2, 3, 4]).pipe(
+    //   concatMap(param => getData2(param)),
+    // ).subscribe(myObserver('concatMap'));
 
     //   Map is for mapping ‘normal’ values to whatever format you need it to be.
     //   The return value will be wrapped in an Observable again, so you can keep using it in your data stream.
@@ -171,6 +171,11 @@ export class MapExampleComponent implements OnInit, OnDestroy {
     //   Use mergeMap if you simply want to flatten the data into one Observable,
     //   use switchMap if you need to flatten the data into one Observable but only need the latest value
     //   and use concatMap if you need to flatten the data into one Observable and the order is important to you.
+
+
+    // merge оператор подписывается на внутренние Observable и эмитит их значения
+    merge(getData2('merge1'), getData2('merge2'))
+      .subscribe(myObserver('merge'));
 
   }
 
@@ -185,3 +190,12 @@ export class MapExampleComponent implements OnInit, OnDestroy {
 
 
 }
+
+
+const myObserver = (operator: string) => {
+  return {
+    next: (x: string) => console.log(`${operator} observer got a next value: ${x}`),
+    error: (err: Error) => console.error(`${operator} observer got a next value: ${err}`),
+    complete: () => console.log(`${operator} observer got a complete notification`),
+  };
+};
