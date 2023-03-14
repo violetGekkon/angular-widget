@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MarketParticipantHttpService} from '../../services/market-participant-http.service';
+import {FlowersHttpService} from '../../services/flowers-http.service';
 import {firmTypeMap} from '../../interfaces/market-participant';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Filter} from '../../interfaces/filters.interface';
@@ -17,7 +17,7 @@ export class TableComponent implements OnInit {
   displayedColumns: string[] = ['fsrarId', 'firmType', 'fullName', 'inn', 'kpp'];
   dataSource = [];
 
-  constructor(private service: MarketParticipantHttpService,
+  constructor(private service: FlowersHttpService,
               private route: ActivatedRoute,
               private router: Router) {
   }

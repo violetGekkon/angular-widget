@@ -2,18 +2,18 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, of, timer} from 'rxjs';
 import {IMarketParticipant, IMarketParticipantPage} from '../interfaces/market-participant';
-import {COUNTERPARTIES, LIC_FILTER, MARKET_PARTICIPANTS} from '../mock-market-participant';
+import {COUNTERPARTIES, LIC_FILTER, FLOWERS, Flower} from '../mock-flowers';
 import {Filter} from '../interfaces/filters.interface';
 import {map, switchMap, tap} from 'rxjs/operators';
 
 @Injectable()
-export class MarketParticipantHttpService {
+export class FlowersHttpService {
 
   constructor(private http: HttpClient) {
   }
 
-  getAllMarketParticipants(): Observable<IMarketParticipant[]> {
-    return of(MARKET_PARTICIPANTS);
+  getFlowers(): Observable<Flower[]> {
+    return of(FLOWERS);
   }
 
   getCounterparties(): Observable<IMarketParticipant[]> {

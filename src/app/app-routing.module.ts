@@ -29,8 +29,8 @@ const routes: Routes = [
       () => import('./modules/barcode-issuance/barcode-issuance.module').then(m => m.BarcodeIssuanceModule)
   },
   {
-    path: 'market-participants',
-    loadChildren: () => import('./modules/market-participants/market-participants.module').then(m => m.MarketParticipantsModule)
+    path: 'flowers',
+    loadChildren: () => import('./modules/market-participants/flowers.module').then(m => m.FlowersModule)
   },
   {
     path: 'animations', loadChildren:

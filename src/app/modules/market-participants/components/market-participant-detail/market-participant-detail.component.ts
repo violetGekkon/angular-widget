@@ -1,9 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {MarketParticipantHttpService} from '../../services/market-participant-http.service';
+import {FlowersHttpService} from '../../services/flowers-http.service';
 import {firmTypeMap} from '../../interfaces/market-participant';
 import {map, tap} from 'rxjs/operators';
-import {MarketParticipantsFacade} from '../../market-participants.facade';
+import {FlowersFacade} from '../../flowers-facade.service';
 
 @Component({
   selector: 'app-market-participant-detail',
@@ -16,8 +16,8 @@ export class MarketParticipantDetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) {
     this.type$ = route.paramMap.pipe(
-      tap(paramsMap => console.log(paramsMap.get('marketParticipantUrl'))),
-      map(paramsMap => paramsMap.get('marketParticipantUrl'))
+      tap(paramsMap => console.log(paramsMap.get('id'))),
+      map(paramsMap => paramsMap.get('id'))
     );
   }
 

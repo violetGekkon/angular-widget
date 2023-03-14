@@ -56,7 +56,7 @@ export class ManeNavComponent implements OnInit {
           {title: 'animations', link: '/animations'},
           {title: 'Продукция', link: '/product-list'},
           {title: 'Справочники', link: '/frap'},
-          {title: 'Участники рынка', link: 'market-participants'}
+          {title: 'Комнатные растения', link: 'flowers'}
         ]
       },
       {

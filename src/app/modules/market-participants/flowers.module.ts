@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {Route, RouterModule} from '@angular/router';
 import {MarketParticipantsComponent} from './components/market-participants/market-participants.component';
 import {MaterialModule} from '../../material.module';
-import {MarketParticipantHttpService} from './services/market-participant-http.service';
+import {FlowersHttpService} from './services/flowers-http.service';
 import {MarketParticipantDetailComponent} from './components/market-participant-detail/market-participant-detail.component';
 import {CommonModule} from '@angular/common';
 import {TableComponent} from './components/table/table.component';
@@ -11,25 +11,17 @@ import {FlexModule} from '@angular/flex-layout';
 
 import {FiltersComponent} from './components/filters/filters.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {CanActivateParticipantListGuardService} from './services/can-activate-participant-list-guard.service';
-import {MarketParticipantsFacade} from './market-participants.facade';
+import {FlowersFacade} from './flowers-facade.service';
 import {TemporaryStorageService} from './services/temporary-storage.service';
-import {CanDeactivateParticipantItemGuardService} from './services/can-deactivate-participant-item-guard.service';
-import {CanDeactivateParticipantListGuardService} from './services/can-deactivate-participant-list-guard.service';
-import {CanActivateParticipantItemGuardService} from './services/can-activate-participant-item-guard.service';
 
 export const routes: Route[] = [
   {
     path: '',
     component: MarketParticipantsComponent,
-    canActivate: [CanActivateParticipantListGuardService],
-    canDeactivate: [CanDeactivateParticipantListGuardService]
   },
   {
-    path: ':marketParticipantUrl',
+    path: ':id',
     component: MarketParticipantDetailComponent,
-    canActivate: [CanActivateParticipantItemGuardService],
-    canDeactivate: [CanDeactivateParticipantItemGuardService]
   }
 ];
 
@@ -52,14 +44,10 @@ export const routes: Route[] = [
     RouterModule
   ],
   providers: [
-    MarketParticipantHttpService,
-    MarketParticipantsFacade,
+    FlowersHttpService,
+    FlowersFacade,
     TemporaryStorageService,
-    CanActivateParticipantListGuardService,
-    CanActivateParticipantItemGuardService,
-    CanDeactivateParticipantItemGuardService,
-    CanDeactivateParticipantListGuardService
   ]
 })
-export class MarketParticipantsModule {
+export class FlowersModule {
 }
