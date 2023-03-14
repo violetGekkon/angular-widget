@@ -42,8 +42,8 @@ jobs:
 
       - name: Commit version
         run: |
-          git config --global user.name
-          git config --global user.email
+          echo git config --global user.name
+          echo git config --global user.email
           git add .
           git commit -m "version ${{ env.PACKAGE_VERSION }} [skip ci]"
           git push origin develop
