@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4205",
+    "prebuild": "npm --no-git-tag-version version patch",
     "build": "ng build --prod --base-href ./",
     "test": "ng test",
     "lint": "ng lint",
