@@ -1,7 +1,7 @@
-@import '~@angular/material/theming';
+@use '~@angular/material' as mat;
 @import 'src/app/components/rsa-page/rsa-page.component.scss-theme';
 
-@include mat-core();
+@include mat.core();
 
 $egais-primary-palette: (
   50 : #e2ebf4,
@@ -19,19 +19,19 @@ $egais-primary-palette: (
   A400 : #427cff,
   A700 : #296aff,
   contrast: (
-    50: $light-primary-text,
-    100: $light-primary-text,
-    200: $light-primary-text,
-    300: $light-primary-text,
-    400: $light-primary-text,
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
     500: white,
     600: white,
     700: white,
     800: white,
     900: white,
-    A100: $light-primary-text,
-    A200: $light-primary-text,
-    A400: $light-primary-text,
+    A100: white,
+    A200: white,
+    A400: white,
     A700: white,
   )
 );
@@ -52,20 +52,20 @@ $egais-accent-palette: (
   A400 : #ff928e,
   A700 : #ff7974,
   contrast: (
-    50: $dark-primary-text,
-    100: $dark-primary-text,
-    200: $dark-primary-text,
-    300: $dark-primary-text,
-    400: $dark-primary-text,
-    500: $light-primary-text,
-    600: $light-primary-text,
-    700: $light-primary-text,
-    800: $light-primary-text,
-    900: $light-primary-text,
-    A100: $dark-primary-text,
-    A200: $dark-primary-text,
-    A400: $light-primary-text,
-    A700: $light-primary-text,
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: white,
+    A700: white,
   )
 );
 
@@ -85,41 +85,41 @@ $egais-warn-palette: (
   A400 : #ff4d53,
   A700 : #ff343b,
   contrast: (
-    50: $dark-primary-text,
-    100: $dark-primary-text,
-    200: $dark-primary-text,
-    300: $dark-primary-text,
-    400: $dark-primary-text,
-    500: $light-primary-text,
-    600: $light-primary-text,
-    700: $light-primary-text,
-    800: $light-primary-text,
-    900: $light-primary-text,
-    A100: $dark-primary-text,
-    A200: $dark-primary-text,
-    A400: $light-primary-text,
-    A700: $light-primary-text,
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: white,
+    A700: white,
   )
 );
 
 /* egais-light-theme */
 
-$egais-theme-primary: mat-palette($egais-primary-palette);
-$egais-theme-accent: mat-palette($egais-accent-palette);
-$egais-theme-warn: mat-palette($egais-warn-palette);
+$egais-theme-primary: mat.define-palette($egais-primary-palette);
+$egais-theme-accent: mat.define-palette($egais-accent-palette);
+$egais-theme-warn: mat.define-palette($egais-warn-palette);
 
-$egais-light-theme: mat-light-theme(
+$egais-light-theme: mat.define-light-theme(
     $egais-theme-primary,
     $egais-theme-accent,
     $egais-theme-warn);
 
 /* egais-dark-theme */
 
-$egais-dark-theme-primary: mat-palette($mat-purple);
-$egais-dark-theme-accent: mat-palette($mat-pink);
-$egais-dark-theme-warn: mat-palette($mat-red);
+$egais-dark-theme-primary: mat.define-palette(mat.$purple-palette);
+$egais-dark-theme-accent: mat.define-palette(mat.$pink-palette);
+$egais-dark-theme-warn: mat.define-palette(mat.$red-palette);
 
-$egais-dark-theme: mat-dark-theme(
+$egais-dark-theme: mat.define-dark-theme(
     $egais-dark-theme-primary,
     $egais-dark-theme-accent,
     $egais-dark-theme-warn);
@@ -152,11 +152,11 @@ $egais-theme: map-merge($egais-light-theme, (foreground: $egais-foreground)); */
   @include test-page-theme($theme);
 }
 
-@include angular-material-theme($egais-light-theme);
+@include mat.all-component-themes($egais-light-theme);
 @include egais-components-theme($egais-light-theme);
 
 
 .egais-dark-theme {
-  @include angular-material-theme($egais-dark-theme);
+  @include mat.all-component-themes($egais-dark-theme);
   @include egais-components-theme($egais-dark-theme)
 }

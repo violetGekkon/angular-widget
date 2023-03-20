@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @mixin test-page-theme($theme) {
 
   $primary: map-get($theme, primary);
@@ -7,20 +8,20 @@
   $foreground: map-get($theme, foreground);
 
   .ml-file-list {
-    border-bottom: 1px solid mat-color($foreground, divider);
+    border-bottom: 1px solid mat.get-color-from-palette($foreground, divider);
   }
 
   .ml-file-list-item {
-    color: mat-color($primary);
+    color: mat.get-color-from-palette($primary);
 
 
     &:hover, &:active, &:focus {
-      background-color: mat-color($background, hover);
+      background-color: mat.get-color-from-palette($background, hover);
     }
 
     &.selected {
-      background-color: mat-color($primary, lighter, 0.5);
-      color: mat-color($foreground, text);
+      background-color: mat.get-color-from-palette($primary, lighter, 0.5);
+      color: mat.get-color-from-palette($foreground, text);
     }
   }
 }
