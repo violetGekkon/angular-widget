@@ -34,7 +34,7 @@
     "core-js": "^2.6.12",
     "ip-regex": "^4.3.0",
     "lodash": "^4.17.20",
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "net": "^1.0.2",
     "ng-material-multilevel-menu": "^4.12.4",
     "reflect-metadata": "^0.1.13",
