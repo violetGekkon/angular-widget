@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {Route, RouterModule} from '@angular/router';
-import {MarketParticipantsComponent} from './components/market-participants/market-participants.component';
+import {FlowersListComponent} from './components/flowers-list/flowers-list.component';
 import {MaterialModule} from '../../material.module';
 import {FlowersHttpService} from './services/flowers-http.service';
-import {MarketParticipantDetailComponent} from './components/market-participant-detail/market-participant-detail.component';
+import {FlowerDetailComponent} from './components/flower-detail/flower-detail.component';
 import {CommonModule} from '@angular/common';
 import {TableComponent} from './components/table/table.component';
 import {StatisticComponent} from './components/statistic/statistic.component';
@@ -17,18 +17,18 @@ import {TemporaryStorageService} from './services/temporary-storage.service';
 export const routes: Route[] = [
   {
     path: '',
-    component: MarketParticipantsComponent,
+    component: FlowersListComponent,
   },
   {
     path: ':id',
-    component: MarketParticipantDetailComponent,
+    component: FlowerDetailComponent,
   }
 ];
 
 @NgModule({
   declarations: [
-    MarketParticipantsComponent,
-    MarketParticipantDetailComponent,
+    FlowersListComponent,
+    FlowerDetailComponent,
     TableComponent,
     StatisticComponent,
     FiltersComponent

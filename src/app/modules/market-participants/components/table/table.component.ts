@@ -1,8 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {FlowersHttpService} from '../../services/flowers-http.service';
-import {firmTypeMap} from '../../interfaces/market-participant';
-import {ActivatedRoute, Router} from '@angular/router';
-import {Filter} from '../../interfaces/filters.interface';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -11,26 +7,10 @@ import {Filter} from '../../interfaces/filters.interface';
 })
 export class TableComponent implements OnInit {
 
-  @Input() type = firmTypeMap.values().next().value;
-
-
-  displayedColumns: string[] = ['fsrarId', 'firmType', 'fullName', 'inn', 'kpp'];
-  dataSource = [];
-
-  constructor(private service: FlowersHttpService,
-              private route: ActivatedRoute,
-              private router: Router) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.service.getCounterparties().subscribe(val =>
-      this.dataSource = val
-    );
-  }
-
-  goToDetail(organization) {
-    console.log(this.route);
-    this.router.navigate([firmTypeMap.get(organization.firmType)], {relativeTo: this.route.parent});
   }
 
 

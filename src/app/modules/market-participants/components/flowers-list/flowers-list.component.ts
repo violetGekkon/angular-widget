@@ -1,17 +1,15 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {FlowersHttpService} from '../../services/flowers-http.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {IMarketParticipant, firmTypeMap} from '../../interfaces/market-participant';
-import {FiltersComponent} from '../filters/filters.component';
 import {FlowersFacade} from '../../flowers-facade.service';
 import {Flower} from '../../mock-flowers';
 
 @Component({
-  selector: 'app-market-participants',
-  templateUrl: './market-participants.component.html',
-  styleUrls: ['./market-participants.component.scss']
+  selector: 'app-flowers-list',
+  templateUrl: './flowers-list.component.html',
+  styleUrls: ['./flowers-list.component.scss']
 })
-export class MarketParticipantsComponent implements OnInit {
+export class FlowersListComponent implements OnInit {
 
   columns: any[] = [
     {
@@ -48,15 +46,14 @@ export class MarketParticipantsComponent implements OnInit {
   columnsToDisplay = this.columns.map(col => col.name);
   dataSource = [];
 
-  constructor(private service: FlowersHttpService,
-              private facade: FlowersFacade,
+  constructor(private facade: FlowersFacade,
               private route: ActivatedRoute,
               private router: Router) {
 
   }
 
   ngOnInit(): void {
-    this.service.getFlowers().subscribe(val =>
+    this.facade.flowers().subscribe(val =>
       this.dataSource = val
     );
   }

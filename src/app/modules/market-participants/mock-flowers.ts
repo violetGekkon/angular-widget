@@ -1,8 +1,31 @@
+// В зависимости от декоративных свойств, морфологических особенностей, экологии и возможностей использования в интерьере
+// всю огромную семью комнатных растений можно разделить на шесть больших групп: декоративно-лиственные, декоративно-цветущие,
+// пальмы, папоротники, кактусы и суккуленты, а также декоративно-плодовые.
+
+export enum FlowerType {
+  DECORATIVE_LEAFY,
+  DECORATIVE_BLOOMING,
+  DECORATIVE_FRUIT,
+  PALM_TREES,
+  FERNS,
+  SUCCULENTS,
+}
+
+console.log('[FlowerType.DECORATIVE_LEAFY] ', [FlowerType.DECORATIVE_LEAFY]);
+
+export const flowerTypeRussian: Record<FlowerType, string> = {
+  [FlowerType.DECORATIVE_LEAFY]: '',
+  [FlowerType.DECORATIVE_BLOOMING]: '',
+  [FlowerType.DECORATIVE_FRUIT]: '',
+  [FlowerType.PALM_TREES]: '',
+  [FlowerType.FERNS]: '',
+  [FlowerType.SUCCULENTS]: '',
+};
+
 export interface Name {
   latin: string;
   russian: string;
 }
-
 
 export interface Flower {
   id?: string;

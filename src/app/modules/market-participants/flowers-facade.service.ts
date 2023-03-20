@@ -3,6 +3,7 @@ import {Observable, Subject, timer} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {TemporaryStorageFacet, TemporaryStorageService} from './services/temporary-storage.service';
 import {FlowersHttpService} from './services/flowers-http.service';
+import {Flower} from './mock-flowers';
 
 @Injectable()
 export class FlowersFacade {
@@ -30,6 +31,10 @@ export class FlowersFacade {
 
   clearTmpStorage() {
     this.flowersTempStorage.remove();
+  }
+
+  flowers(): Observable<Flower[]> {
+    return this.httService.getFlowers();
   }
 
 }
