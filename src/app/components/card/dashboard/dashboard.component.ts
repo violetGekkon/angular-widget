@@ -5,10 +5,9 @@ import {TableComponent} from '../../../table-page/table.component';
 import {DocumentChartComponent} from '../document-chart/document-chart.component';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
-  entryComponents: [TableComponent, DocumentChartComponent]
+    selector: 'app-dashboard',
+    templateUrl: './dashboard.component.html',
+    styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit, OnDestroy {
 
