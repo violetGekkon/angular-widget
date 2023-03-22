@@ -26,7 +26,7 @@ export class FlowersFacade {
 
   stopTimer() {
     console.log('stop timer');
-    this._stop.next();
+    this._stop.next(true);
   }
 
   clearTmpStorage() {

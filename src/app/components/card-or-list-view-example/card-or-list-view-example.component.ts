@@ -35,7 +35,7 @@ export class CardOrListViewExampleComponent implements OnInit, OnDestroy {
     }
   ];
 
-  onDestroy$ = new Subject();
+  onDestroy$ = new Subject<boolean>();
 
   ngOnInit() {
 
@@ -47,10 +47,13 @@ export class CardOrListViewExampleComponent implements OnInit, OnDestroy {
       delayedMessage(2),
       delayedMessage(1),
       delayedMessage('Go!'),
-      takeUntil(this.onDestroy$)
-      // delayedMessage('', 2000)
     )
-      .subscribe((message: any) => this.userMessage.innerHTML = message);
+      .subscribe(
+        {
+          next: (x: string) => this.userMessage.innerHTML = x,
+          error: (err: Error) => console.error(`concat observer got a next value: ${err}`),
+          complete: () => console.log(`concat observer got a complete notification`),
+        });
 
   }
 
@@ -59,7 +62,7 @@ export class CardOrListViewExampleComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.onDestroy$.next();
+    this.onDestroy$.next(true);
     this.onDestroy$.complete();
   }
 

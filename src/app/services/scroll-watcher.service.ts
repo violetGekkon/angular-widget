@@ -187,7 +187,7 @@ export class ScrollWatcherService {
     watchedElements.activeElement.complete();
     this.scrollWatchedElementSets = this.scrollWatchedElementSets.filter(watchedElementSet => watchedElementSet !== watchedElements);
     if (!this.scrollWatchedElementSets.length) {
-      this.stopTrack$.next();
+      this.stopTrack$.next(true);
     }
   }
 
