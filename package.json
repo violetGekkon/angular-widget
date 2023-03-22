@@ -28,7 +28,7 @@
     "@types/sockjs-client": "^1.5.0",
     "@types/stompjs": "^2.3.4",
     "angular-cli-ghpages": "^0.6.2",
-    "angular-gridster2": "^13.3.2",
+    "angular-gridster2": "^14.1.5",
     "angular2-uuid": "^1.1.1",
     "cerialize": "^2.0.1",
     "core-js": "^2.6.12",
