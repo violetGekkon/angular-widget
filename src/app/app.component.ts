@@ -2,9 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {DashboardCardsService} from './services/dashboard-card-service.service';
 
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
-import {map} from 'rxjs/operators';
 import {MediaObserver} from '@angular/flex-layout';
-
 
 
 const COLORS = [
@@ -87,19 +85,10 @@ export class AppComponent implements OnInit {
       ['xl']: 3
     };
 
-    this.mediaObserver.media$.subscribe(data => console.log('---------------------------------------------------------------------------------------------------------------' + data.mqAlias));
-
-    /* Определяем количество столбцов в сетке */
-    this.cols$ = this.mediaObserver.media$.pipe(
-      map(x => {
-
-        return breakpointsGrid[x.mqAlias];
-      })
+    this.mediaObserver.asObservable().subscribe(data =>
+      console.log(
+        '---------------------------------------------------------------------------------------------------------------' + data)
     );
-
-    /* Определяем количество столбцов для небольших виджетов */
-    this.cols_sml$ = this.mediaObserver.media$.pipe(
-      map(x => breakpointsColsSm[x.mqAlias]));
 
   }
 
