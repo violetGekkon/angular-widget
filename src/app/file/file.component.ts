@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup} from '@angular/forms';
 import {UploadService} from '../services/upload.service';
 
 @Component({
@@ -8,13 +8,13 @@ import {UploadService} from '../services/upload.service';
   styleUrls: ['./file.component.scss']
 })
 export class FileComponent implements OnInit {
-  form: FormGroup;
+  form: UntypedFormGroup;
   error;
   userId;
   uploadResponse = { status: '', message: '', filePath: '' };
 
 
-  constructor(private formBuilder: FormBuilder, private uploadService: UploadService) {
+  constructor(private formBuilder: UntypedFormBuilder, private uploadService: UploadService) {
   }
 
   ngOnInit() {

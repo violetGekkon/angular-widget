@@ -4,7 +4,7 @@ import {
   OnInit,
   ViewChild
 } from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import {UntypedFormGroup} from '@angular/forms';
 import {MatStepper} from '@angular/material/stepper';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import {MatCheckboxChange} from '@angular/material/checkbox';
@@ -59,12 +59,12 @@ export class BarcodeIssuanceComponent implements OnInit, AfterViewInit {
     ];
 
 
-  get codeIssuanceForm(): FormGroup {
+  get codeIssuanceForm(): UntypedFormGroup {
     return this.codeIssuanceService.form;
   }
 
-  get calculationDemand(): FormGroup {
-    return this.codeIssuanceForm.get('calculationDemand') as FormGroup;
+  get calculationDemand(): UntypedFormGroup {
+    return this.codeIssuanceForm.get('calculationDemand') as UntypedFormGroup;
   }
 
   constructor(private readonly  codeIssuanceService: BarcodeIssuanceService) {

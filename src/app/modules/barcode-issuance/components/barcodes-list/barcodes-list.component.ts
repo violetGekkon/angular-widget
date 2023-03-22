@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormArray, FormGroup} from '@angular/forms';
+import {UntypedFormArray, UntypedFormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-barcodes-list',
@@ -10,7 +10,7 @@ export class BarcodesListComponent implements OnInit {
 
   step = 0;
 
-  @Input() group: FormGroup;
+  @Input() group: UntypedFormGroup;
 
   @Output() addBarcode = new EventEmitter();
   @Output() deleteBarcode = new EventEmitter();
@@ -21,8 +21,8 @@ export class BarcodesListComponent implements OnInit {
   constructor() {
   }
 
-  get barcodes(): FormArray {
-    return this.group.get('codes') as FormArray;
+  get barcodes(): UntypedFormArray {
+    return this.group.get('codes') as UntypedFormArray;
   }
 
   ngOnInit() {

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 import {BarcodeIssuanceFormValidatorService} from './barcode-issuance-form-validator.service';
 import {MomentConstructor, Moment} from '../../../ui/moment/moment-date-only';
 
@@ -10,9 +10,9 @@ const moment = MomentConstructor.getInstance();
 })
 export class BarcodeIssuanceService {
 
-  public form: FormGroup;
+  public form: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder,
+  constructor(private fb: UntypedFormBuilder,
               private readonly validatorsService: BarcodeIssuanceFormValidatorService) {
     this.form = this.fb.group({
         claimNumber: this.fb.control(null, [
@@ -74,8 +74,8 @@ export class BarcodeIssuanceService {
     // this.form.get('declarerDetails').disable();
   }
 
-  get codes(): FormArray {
-    const array = this.form.get('codes') as FormArray;
+  get codes(): UntypedFormArray {
+    const array = this.form.get('codes') as UntypedFormArray;
     return array;
   }
 
@@ -87,7 +87,7 @@ export class BarcodeIssuanceService {
     return true;
   }
 
-  addBarcode(): FormGroup {
+  addBarcode(): UntypedFormGroup {
     const codeGroup = this.barcodeFormGroup();
     codeGroup.setParent(this.codes);
     this.codes.controls.unshift(codeGroup);
@@ -119,7 +119,7 @@ export class BarcodeIssuanceService {
   //   });
   // }
 
-  barcodeFormGroup(): FormGroup {
+  barcodeFormGroup(): UntypedFormGroup {
     return this.fb.group({
       sampleFSM: ['ФСМ. Вина ликерные (особые). До 1 л'], // Заявленный образец ФСМ (пост. Правительства РФ от 11.07.2012  №704)
       alcPercent: [null, Validators.required], // Содержание этилового спирта, %
@@ -132,7 +132,7 @@ export class BarcodeIssuanceService {
     });
   }
 
-  createSpirit(): FormGroup {
+  createSpirit(): UntypedFormGroup {
     return this.fb.group({
       raw: this.createProduct('spirit'),
       volumeProducedRaw: this.createVolume(),
@@ -157,7 +157,7 @@ export class BarcodeIssuanceService {
     });
   }
 
-  createWine(): FormGroup {
+  createWine(): UntypedFormGroup {
     return this.fb.group({
       raw: this.createProduct('wine'),
       volumeProducedRaw: this.createVolume(),
@@ -178,7 +178,7 @@ export class BarcodeIssuanceService {
   }
 
 
-  createProduct(type: string): FormGroup {
+  createProduct(type: string): UntypedFormGroup {
     return this.fb.group({
       alcCode: [type === 'spirit' ? '0016970000001187666' : '038265000001576625', Validators.required],
       fullName: [type === 'spirit' ? 'Спирт этиловый ректификованный из пищевого сырья \"Люкс\"'
@@ -189,14 +189,14 @@ export class BarcodeIssuanceService {
     });
   }
 
-  createVolume(): FormGroup {
+  createVolume(): UntypedFormGroup {
     return this.fb.group({
       volume20C: ['0.1', Validators.required],
       volumeAnhydrous: ['0.1', Validators.required],
     });
   }
 
-  createRawMaterial(): FormGroup {
+  createRawMaterial(): UntypedFormGroup {
     return this.fb.group({
       typeRawMaterial: '1111',
       volumeSpirit: ['85.2368', Validators.required],

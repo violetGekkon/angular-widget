@@ -1,5 +1,5 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup} from '@angular/forms';
 import {ReplaySubject, Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {sampleFsm, TypeInterface, vidAP171} from '../../interfaces/type-interface';
@@ -15,9 +15,9 @@ export class BarcodeItemComponent implements OnInit, OnDestroy {
   vidAP = vidAP171;
 
   types704 = sampleFsm;
-  public search_704Control = new FormControl();
+  public search_704Control = new UntypedFormControl();
 
-  @Input() group: FormGroup;
+  @Input() group: UntypedFormGroup;
   private onDestroy$ = new Subject<void>();
 
   constructor() {

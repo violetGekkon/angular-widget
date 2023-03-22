@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import {UntypedFormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-spirit-calculation-part',
@@ -8,15 +8,15 @@ import {FormGroup} from '@angular/forms';
 })
 export class SpiritCalculationPartComponent implements OnInit {
 
-  @Input() group: FormGroup;
+  @Input() group: UntypedFormGroup;
 
-  volumeReceivedRaw: FormGroup;
-  volumeUsedRaw: FormGroup;
+  volumeReceivedRaw: UntypedFormGroup;
+  volumeUsedRaw: UntypedFormGroup;
   constructor() { }
 
   ngOnInit() {
-    this.volumeReceivedRaw = this.group.get('volumeReceivedRaw') as FormGroup;
-    this.volumeUsedRaw = this.group.get('volumeUsedRaw') as FormGroup;
+    this.volumeReceivedRaw = this.group.get('volumeReceivedRaw') as UntypedFormGroup;
+    this.volumeUsedRaw = this.group.get('volumeUsedRaw') as UntypedFormGroup;
 
   }
 

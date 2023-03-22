@@ -1,5 +1,4 @@
 import {Directive, Input, OnChanges, OnInit, TemplateRef, ViewContainerRef} from '@angular/core';
-import {} from '@angular/compiler/src/render3/r3_ast';
 // https://medium.com/@adrianfaciu/creating-structural-directives-in-angular-ff17211c7b28
 // https://netbasal.com/the-power-of-structural-directives-in-angular-bfe4d8c44fb1
 
@@ -12,6 +11,8 @@ export class NgLoopDirective implements OnInit, OnChanges {
 
   constructor(private vcr: ViewContainerRef,
               private tpl: TemplateRef<any>) {
+    console.log(vcr);
+    console.log(tpl);
   }
 
   ngOnInit(): void {

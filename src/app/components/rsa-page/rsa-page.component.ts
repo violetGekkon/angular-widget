@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 
 
 import {DashboardCard} from '../card/model/dashboard-card.model';
@@ -19,7 +19,7 @@ import {MongoDBService} from '../../services/mongo-db. service';
 export class RsaPageComponent implements OnInit, AfterViewInit {
 
 
-  firstFormGroup: FormGroup;
+  firstFormGroup: UntypedFormGroup;
   isSecondStepComlited = false;
 
   subdivisions$: Observable<Subdivision[]>;
@@ -37,7 +37,7 @@ export class RsaPageComponent implements OnInit, AfterViewInit {
 
   @ViewChild('stepper') stepper;
 
-  constructor(private cardsService: DashboardCardsService, private _formBuilder: FormBuilder, private mongoDB: MongoDBService) {
+  constructor(private cardsService: DashboardCardsService, private _formBuilder: UntypedFormBuilder, private mongoDB: MongoDBService) {
   }
 
 
