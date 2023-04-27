@@ -11,6 +11,7 @@ import {ProductDetailsComponent} from './modules/product/components/product-deta
 import {OverviewComponent} from './modules/product/components/overview/overview.component';
 import {SpecsComponent} from './modules/product/components/specs/specs.component';
 import {GridsterLayoutComponent} from './components/gridster-layout/gridster-layout.component';
+import {loadRemoteModule} from '@angular-architects/module-federation';
 
 const routes: Routes = [
   {path: 'rsa', component: RsaPageComponent},
@@ -47,6 +48,16 @@ const routes: Routes = [
   {
     path: 'frap', loadChildren:
       () => import('./modules/reference-books/reference-books.module').then(m => m.ReferenceBooksModule)
+  },
+  { // The option type: 'manifest' makes loadRemoteModule to look up the key data needed in the loaded manifest.
+    // The property remoteName points to the key that was used in the manifest.
+    path: 'utm',
+    loadChildren: () => loadRemoteModule({
+      type: 'manifest',
+      remoteName: 'mfe1',
+      exposedModule: './Module',
+    })
+      .then(m => m.MfeTestModule),
   },
   {path: 'card-or-list', component: CardOrListViewExampleComponent},
   {path: 'file', component: FileComponent},
