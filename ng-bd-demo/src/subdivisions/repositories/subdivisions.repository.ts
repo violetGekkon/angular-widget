@@ -81,7 +81,7 @@ export class SubdivisionsRepository {
 
   async deleteSubdivision(id: string) {
     const result = await this.subdivisionModel.deleteOne({_id: id}).exec();
-    if (result.n === 0) {
+    if (result.deletedCount === 0) {
       throw new NotFoundException(`Подразделение с id ${id} не найдено`);
     }
     return result;
