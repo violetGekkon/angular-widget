@@ -1,3 +1,4 @@
+import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { RsaPageComponent } from './components/rsa-page/rsa-page.component';
@@ -14,6 +15,10 @@ import { GridsterLayoutComponent } from './components/gridster-layout/gridster-l
 import { loadRemoteModule } from '@angular-architects/module-federation';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: NxWelcomeComponent,
+  },
   { path: 'rsa', component: RsaPageComponent },
   { path: 'table', component: TableComponent },
   { path: 'product-list', component: ProductListComponent },

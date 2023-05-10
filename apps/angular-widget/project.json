@@ -11,15 +11,21 @@
   },
   "targets": {
     "build": {
-      "executor": "ngx-build-plus:browser",
+      "executor": "@nx/angular:webpack-browser",
       "options": {
         "outputPath": "dist/apps/angular-widget",
         "index": "apps/angular-widget/src/index.html",
         "main": "apps/angular-widget/src/main.ts",
         "polyfills": "apps/angular-widget/src/polyfills.ts",
         "tsConfig": "apps/angular-widget/tsconfig.app.json",
-        "assets": ["apps/angular-widget/src/favicon.ico", "apps/angular-widget/src/assets"],
-        "styles": ["apps/angular-widget/src/styles.scss", "apps/angular-widget/src/egais-theme.scss"],
+        "assets": [
+          "apps/angular-widget/src/favicon.ico",
+          "apps/angular-widget/src/assets"
+        ],
+        "styles": [
+          "apps/angular-widget/src/styles.scss",
+          "apps/angular-widget/src/egais-theme.scss"
+        ],
         "allowedCommonJsDependencies": ["lodash"],
         "vendorChunk": true,
         "extractLicenses": false,
@@ -27,8 +33,10 @@
         "sourceMap": true,
         "optimization": false,
         "namedChunks": true,
-        "extraWebpackConfig": "apps/angular-widget/webpack.config.js",
-        "commonChunk": false
+        "commonChunk": false,
+        "customWebpackConfig": {
+          "path": "apps/angular-widget/webpack.config.js"
+        }
       },
       "configurations": {
         "production": {
@@ -56,7 +64,9 @@
               "maximumWarning": "6kb"
             }
           ],
-          "extraWebpackConfig": "webpack.prod.config.js"
+          "customWebpackConfig": {
+            "path": "apps/angular-widget/webpack.prod.config.js"
+          }
         }
       },
       "defaultConfiguration": ""
@@ -69,25 +79,21 @@
       }
     },
     "serve": {
-      "executor": "ngx-build-plus:dev-server",
+      "executor": "@nx/angular:module-federation-dev-server",
       "options": {
         "browserTarget": "angular-widget:build",
-        "port": 4201,
-        "publicHost": "http://localhost:4201",
-        "extraWebpackConfig": "apps/angular-widget/webpack.config.js"
+        "publicHost": "http://localhost:4200"
       },
       "configurations": {
         "production": {
-          "browserTarget": "angular-widget:build:production",
-          "extraWebpackConfig": "webpack.prod.config.js"
+          "browserTarget": "angular-widget:build:production"
         }
       }
     },
     "extract-i18n": {
       "executor": "ngx-build-plus:extract-i18n",
       "options": {
-        "browserTarget": "angular-widget:build",
-        "extraWebpackConfig": "apps/angular-widget/webpack.config.js"
+        "browserTarget": "angular-widget:build"
       }
     },
     "test": {
