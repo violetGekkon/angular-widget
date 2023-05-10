@@ -1,0 +1,37 @@
+<!--<div class="example-boundary" cdkDropList cdkDropListOrientation="horizontal">-->
+
+<!--  &lt;!&ndash;<div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>&ndash;&gt;-->
+<!--  &lt;!&ndash;I can only be dragged within the dotted container&ndash;&gt;-->
+<!--  &lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--  <mat-grid-list cols="8" rowHeight="1:1">-->
+<!--    <mat-grid-tile *ngFor="let card of cards"-->
+<!--                   [colspan]="2" [rowspan]="2">-->
+<!--      <app-dashboard-card-spawner cdkDrag [card]="card"></app-dashboard-card-spawner>-->
+<!--    </mat-grid-tile>-->
+<!--  </mat-grid-list>-->
+<!--</div>-->
+
+<div
+  fxLayout="row wrap"
+  fxLayout.lt-sm="column"
+  fxLayoutGap="24px"
+  fxLayoutAlign="start stretch"
+>
+  <mat-card
+    *ngFor="let card of cards; let i = activeIndex"
+    fxFlex="0 1 calc(33.3% - 32px)"
+    fxFlex.lt-md="0 1 calc(50% - 32px)"
+    fxFlex.lt-sm="100%"
+  >
+    <mat-card-content>
+      <div
+        routerLink="{{ card.inputs.routerLink.value }}"
+        class="ci-widget-content-focus"
+      >
+        <!--             [ngClass]="{'ci-widget-content-focus':widget.inputs.routerLink.value != '/'}">-->
+        <app-dashboard-card-spawner [card]="card"></app-dashboard-card-spawner>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

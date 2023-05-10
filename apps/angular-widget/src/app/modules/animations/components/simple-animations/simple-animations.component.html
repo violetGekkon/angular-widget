@@ -1,0 +1,5 @@
+<button mat-stroked-button (click)="show = !show">Apply animation</button>
+
+<div *ngIf="show" @fadeSlideInOut [style.margin-top]="'20px'">
+  <app-card-item></app-card-item>
+</div>

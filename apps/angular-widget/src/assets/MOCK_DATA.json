@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "type": "switch",
+    "state": "Brongkah",
+    "timestamp": "7/8/2020",
+    "replyId": "7f4b21f1-3a46-4589-a159-ea0052123dde",
+    "fileId": "31076878-fad1-4ab7-8f20-8d9fcb81d084"
+  },
+  {
+    "id": 2,
+    "type": "instapayment",
+    "state": "Uruçuca",
+    "timestamp": "5/25/2020",
+    "replyId": "6a5af763-fa7b-404a-bd64-1629c5711fbf",
+    "fileId": "cefcb5d7-4ab5-4699-93fd-ced033caacf0"
+  },
+  {
+    "id": 3,
+    "type": "jcb",
+    "state": "Krasnyye Barrikady",
+    "timestamp": "7/11/2020",
+    "replyId": "5796623e-9bee-4c1f-92a4-d14cc6672aa0",
+    "fileId": "0ac5d95a-cb07-448e-8e58-ebdf8f50ad49"
+  },
+  {
+    "id": 4,
+    "type": "diners-club-international",
+    "state": "Garça",
+    "timestamp": "2/23/2020",
+    "replyId": "b2420d44-1153-4d13-b9f6-3d3ae441f034",
+    "fileId": "1407ed11-c8a2-4ebe-ae17-7dcfd7140b2b"
+  },
+  {
+    "id": 5,
+    "type": "jcb",
+    "state": "La Maná",
+    "timestamp": "4/18/2020",
+    "replyId": "36ea1084-0fe2-4881-89a7-079c6fcdc0b5",
+    "fileId": "57ef96ea-ee17-49ea-a3f8-9a93c9fc27d4"
+  },
+  {
+    "id": 6,
+    "type": "switch",
+    "state": "Sudogda",
+    "timestamp": "5/31/2020",
+    "replyId": "5c6289cd-7fbd-4056-830d-6bede7eb76a1",
+    "fileId": "a5bf2046-51d5-4556-b245-4065da5b1639"
+  },
+  {
+    "id": 7,
+    "type": "diners-club-us-ca",
+    "state": "Letlhakeng",
+    "timestamp": "12/13/2019",
+    "replyId": "e161abb9-1709-4b3e-88fd-ca9a654b648e",
+    "fileId": "239b7415-6926-4991-85d5-e4a292242947"
+  },
+  {
+    "id": 8,
+    "type": "jcb",
+    "state": "Sibanicú",
+    "timestamp": "12/9/2019",
+    "replyId": "42664c98-f725-4273-9133-a3ee6fe129b3",
+    "fileId": "5a6a286a-175e-4ed3-a369-9ce19af564f8"
+  },
+  {
+    "id": 9,
+    "type": "jcb",
+    "state": "Popielów",
+    "timestamp": "11/12/2019",
+    "replyId": "0eebde45-854b-4570-b56d-d210023c19db",
+    "fileId": "2ba6f8a2-2eee-4289-abb8-6a9d3a0b01c2"
+  },
+  {
+    "id": 10,
+    "type": "jcb",
+    "state": "Liliongan",
+    "timestamp": "8/31/2020",
+    "replyId": "0d210110-5b33-4ff2-b66b-8644f4ca637a",
+    "fileId": "42106dc6-6758-4861-9c65-a212ca0f4daf"
+  },
+  {
+    "id": 11,
+    "type": "maestro",
+    "state": "Caazapá",
+    "timestamp": "3/12/2020",
+    "replyId": "c76f045d-2314-43e4-8c3f-a37f45592c9f",
+    "fileId": "8f81ec6f-ddc8-4e2d-af85-ae0d16fda582"
+  },
+  {
+    "id": 12,
+    "type": "diners-club-carte-blanche",
+    "state": "El Gouna",
+    "timestamp": "12/5/2019",
+    "replyId": "73f6ae75-61f6-447d-985d-269baa8a096a",
+    "fileId": "435f4b48-46ec-41de-9c3e-24eb2eb9c17c"
+  },
+  {
+    "id": 13,
+    "type": "jcb",
+    "state": "Pyin Oo Lwin",
+    "timestamp": "8/1/2020",
+    "replyId": "95a6fa7c-51b1-49e1-9462-79c97e127075",
+    "fileId": "1f6dc522-7158-4e38-8f60-47e03695ae17"
+  },
+  {
+    "id": 14,
+    "type": "switch",
+    "state": "Figueiras",
+    "timestamp": "12/11/2019",
+    "replyId": "a6a917cc-af6e-4c22-9fba-367b800c3646",
+    "fileId": "fcf0c50c-d33c-4145-a890-eb73979d6259"
+  },
+  {
+    "id": 15,
+    "type": "jcb",
+    "state": "Vinsady",
+    "timestamp": "5/29/2020",
+    "replyId": "a6a59cad-1423-4597-83b9-7a642aba66e8",
+    "fileId": "85aa2660-a12d-40f8-81ed-6b1374206a0c"
+  },
+  {
+    "id": 16,
+    "type": "bankcard",
+    "state": "Nanding",
+    "timestamp": "8/23/2020",
+    "replyId": "20fd5fd0-b63c-4589-afe7-34905ecf0122",
+    "fileId": "6adfb285-c4d4-4631-95ca-315ac1ca430f"
+  },
+  {
+    "id": 17,
+    "type": "jcb",
+    "state": "Huangni",
+    "timestamp": "7/7/2020",
+    "replyId": "e4297d49-e545-4d1b-9649-d24ab4ef27a1",
+    "fileId": "f5509777-1587-4e4f-8cb4-da9e15dadbe3"
+  },
+  {
+    "id": 18,
+    "type": "jcb",
+    "state": "Juranalas",
+    "timestamp": "10/24/2019",
+    "replyId": "1fd141c0-cf63-413d-af8f-e59025b79b62",
+    "fileId": "5081de9e-f127-4ca9-950f-98f3e53951b0"
+  },
+  {
+    "id": 19,
+    "type": "americanexpress",
+    "state": "Paris 01",
+    "timestamp": "5/3/2020",
+    "replyId": "bfd16536-2c74-4eb3-8f48-366b6b244b62",
+    "fileId": "dd38a06d-b981-4508-9f6c-25f95b8c4ce9"
+  },
+  {
+    "id": 20,
+    "type": "jcb",
+    "state": "Bayḩān",
+    "timestamp": "6/15/2020",
+    "replyId": "025faf37-f9c3-4634-9dff-9b2bbf861a4e",
+    "fileId": "2b03431b-51b9-4565-a2da-76d746de8121"
+  },
+  {
+    "id": 21,
+    "type": "jcb",
+    "state": "Pumai",
+    "timestamp": "7/30/2020",
+    "replyId": "425cd553-902e-4dd5-a69d-aea95ead2af1",
+    "fileId": "2af42da3-3c58-4f8f-a2ac-2737613f0a32"
+  },
+  {
+    "id": 22,
+    "type": "instapayment",
+    "state": "Courtaboeuf",
+    "timestamp": "7/16/2020",
+    "replyId": "0dc2bd99-bf1e-4c2d-beec-6195acb33c54",
+    "fileId": "93ee78d6-bee1-414c-8953-4d465015b43a"
+  },
+  {
+    "id": 23,
+    "type": "maestro",
+    "state": "San José",
+    "timestamp": "1/3/2020",
+    "replyId": "59da5c09-ecfc-4eaf-8ffc-246a2c421984",
+    "fileId": "2ebe8a45-8dfc-4913-9ee0-84ec6544f32c"
+  },
+  {
+    "id": 24,
+    "type": "jcb",
+    "state": "Kurba",
+    "timestamp": "5/6/2020",
+    "replyId": "b70e803f-5dfa-4b0d-abd0-447de29f84fb",
+    "fileId": "d064ef2e-0ea6-4927-93dc-c2df1b43550d"
+  },
+  {
+    "id": 25,
+    "type": "americanexpress",
+    "state": "Frederiksberg",
+    "timestamp": "11/6/2019",
+    "replyId": "56dad9b7-ab67-4cd0-b01d-26fe9ac2f4e7",
+    "fileId": "321d9edd-698c-4648-9bb0-6746ad79b041"
+  },
+  {
+    "id": 26,
+    "type": "jcb",
+    "state": "Camagüey",
+    "timestamp": "12/9/2019",
+    "replyId": "a1dfacde-b301-4a86-a542-c6cb4dbaa92a",
+    "fileId": "02ceb4e3-fe1c-4de8-b57c-32819601dcd7"
+  },
+  {
+    "id": 27,
+    "type": "jcb",
+    "state": "Matlang",
+    "timestamp": "7/8/2020",
+    "replyId": "20bb17be-4624-475a-a514-419c566bf32d",
+    "fileId": "f7a182ba-1668-4e04-83e1-6b0b1f319fdd"
+  },
+  {
+    "id": 28,
+    "type": "jcb",
+    "state": "Rîşcani",
+    "timestamp": "11/6/2019",
+    "replyId": "8bcf8911-5d67-4e62-85ac-2f81cb3ac355",
+    "fileId": "f3eb5e29-247f-45d3-96fb-4063ceb3cfaa"
+  },
+  {
+    "id": 29,
+    "type": "jcb",
+    "state": "Pulaupanggung",
+    "timestamp": "6/30/2020",
+    "replyId": "4a52c362-2bf5-42ac-a5f0-b1d009d00815",
+    "fileId": "33083fcc-93cb-4c18-9b4c-ad3735f4edbf"
+  },
+  {
+    "id": 30,
+    "type": "americanexpress",
+    "state": "Buenavista",
+    "timestamp": "10/6/2019",
+    "replyId": "9df144f0-b833-43fe-934a-7bf537c12cd4",
+    "fileId": "e43ec3ab-2756-4c95-a7e7-b53f246137ca"
+  },
+  {
+    "id": 31,
+    "type": "diners-club-carte-blanche",
+    "state": "Alfortville",
+    "timestamp": "5/1/2020",
+    "replyId": "6f0aaf3e-6408-4f43-a246-65ab1dabbb5e",
+    "fileId": "c7e7385e-ddbf-46b8-8e59-ac0d8323fc2f"
+  },
+  {
+    "id": 32,
+    "type": "mastercard",
+    "state": "Angkup",
+    "timestamp": "3/16/2020",
+    "replyId": "52a25bc3-dd92-42e8-8736-3ed5580e232a",
+    "fileId": "5b45841e-a2a9-4427-84ae-ee29a7aef1a3"
+  },
+  {
+    "id": 33,
+    "type": "jcb",
+    "state": "Junín",
+    "timestamp": "11/2/2019",
+    "replyId": "48dc681a-ccdf-4b80-b274-406e3b0197f7",
+    "fileId": "418d6587-b33f-4938-83c3-5e6795182427"
+  },
+  {
+    "id": 34,
+    "type": "jcb",
+    "state": "Ardee",
+    "timestamp": "5/3/2020",
+    "replyId": "b0d1ec3d-d0d3-4044-8750-236d8105b936",
+    "fileId": "db65a83a-5920-4518-b1dd-29547847da97"
+  },
+  {
+    "id": 35,
+    "type": "jcb",
+    "state": "Dizhai",
+    "timestamp": "2/14/2020",
+    "replyId": "710b0417-68aa-4c6a-b526-c3bc577b135f",
+    "fileId": "565f44d0-c5c0-43a9-bb7e-0d65f09bd1db"
+  },
+  {
+    "id": 36,
+    "type": "americanexpress",
+    "state": "Avelinha",
+    "timestamp": "5/23/2020",
+    "replyId": "48e7f5d8-67cc-4c0f-8436-a9b527258da2",
+    "fileId": "58a26910-c156-4fd0-988b-15ef71340d81"
+  },
+  {
+    "id": 37,
+    "type": "jcb",
+    "state": "Sumberpucung",
+    "timestamp": "5/25/2020",
+    "replyId": "3615822f-b68f-406b-b0a6-6b7421ca1254",
+    "fileId": "b0ec907e-a425-4252-ae9f-ea28a13a2fd6"
+  },
+  {
+    "id": 38,
+    "type": "jcb",
+    "state": "Khadan Khāk",
+    "timestamp": "2/8/2020",
+    "replyId": "6a61d30f-7c77-4ac4-b834-5c5dde3d3648",
+    "fileId": "719b39e0-acf2-4769-bd01-865b473b3a88"
+  },
+  {
+    "id": 39,
+    "type": "jcb",
+    "state": "Babah Rot",
+    "timestamp": "7/16/2020",
+    "replyId": "2ef51355-60d0-44de-b2bb-a35613da9481",
+    "fileId": "4457e2ab-f4ce-42b2-8058-bfa7631d13a1"
+  },
+  {
+    "id": 40,
+    "type": "diners-club-enroute",
+    "state": "Pisarzowice",
+    "timestamp": "3/21/2020",
+    "replyId": "18a0f5c5-b3e2-488f-b76a-24ff8048e79e",
+    "fileId": "a9dcfee3-ae04-456d-9c0c-3bfbdd3046ed"
+  },
+  {
+    "id": 41,
+    "type": "visa",
+    "state": "Tuapse",
+    "timestamp": "8/15/2020",
+    "replyId": "2799bbe9-91a5-41c9-908e-6565912d11a5",
+    "fileId": "7da3fa93-4b00-44dc-9ed3-d4b6cd9f54dc"
+  },
+  {
+    "id": 42,
+    "type": "jcb",
+    "state": "Gucheng",
+    "timestamp": "2/4/2020",
+    "replyId": "2555a3b5-b532-403c-895e-2d0d6c11e46e",
+    "fileId": "90b4c4a8-a3b1-4904-b289-de4e34be82fd"
+  },
+  {
+    "id": 43,
+    "type": "jcb",
+    "state": "Abbotsford",
+    "timestamp": "9/2/2020",
+    "replyId": "480b8b2d-9cc7-41f9-8db9-d475ab82293f",
+    "fileId": "a519c910-9f75-4e9c-b9ab-bf7860989301"
+  },
+  {
+    "id": 44,
+    "type": "diners-club-carte-blanche",
+    "state": "Cisiih",
+    "timestamp": "5/27/2020",
+    "replyId": "a8ff1943-b343-4777-a41f-88ddb54c54eb",
+    "fileId": "41c37d98-bdf0-49b3-bfe1-022e8ba561c5"
+  },
+  {
+    "id": 45,
+    "type": "maestro",
+    "state": "Sanhe",
+    "timestamp": "10/14/2019",
+    "replyId": "3c4df1cd-e6ef-4327-8712-4110c13c5458",
+    "fileId": "40c4e5e9-afe3-4990-9a53-1e49cf436c35"
+  },
+  {
+    "id": 46,
+    "type": "diners-club-carte-blanche",
+    "state": "Putat Lor",
+    "timestamp": "6/29/2020",
+    "replyId": "67ce7af2-b63a-45fa-b4d2-0a99a67f874d",
+    "fileId": "f0436085-0b58-47f3-b7a6-a26cb858ee92"
+  },
+  {
+    "id": 47,
+    "type": "bankcard",
+    "state": "Gómfoi",
+    "timestamp": "9/20/2019",
+    "replyId": "08e2f6e7-2072-4a59-b31f-1020f0f89f28",
+    "fileId": "6af06593-b372-4b00-aa35-2759c7217a64"
+  },
+  {
+    "id": 48,
+    "type": "diners-club-carte-blanche",
+    "state": "Lubao",
+    "timestamp": "3/7/2020",
+    "replyId": "f4452e68-5340-4dc5-853f-8efdde0823db",
+    "fileId": "34233a86-ba0e-481b-957e-7499d8e706db"
+  },
+  {
+    "id": 49,
+    "type": "jcb",
+    "state": "Naukšēni",
+    "timestamp": "12/23/2019",
+    "replyId": "66c8b7b8-a69f-44cd-9efd-595b43ea8f16",
+    "fileId": "142bd8d5-5c6a-49ca-8bb5-815cb26eff78"
+  },
+  {
+    "id": 50,
+    "type": "instapayment",
+    "state": "Cortes",
+    "timestamp": "7/17/2020",
+    "replyId": "126d8ac1-2f34-4ec4-abb7-39db6fdda48d",
+    "fileId": "66f6fea8-0dda-470d-88e8-ea5ac85764e8"
+  },
+  {
+    "id": 51,
+    "type": "mastercard",
+    "state": "Pehuajó",
+    "timestamp": "4/24/2020",
+    "replyId": "ba47d1cb-a5ef-4bf3-8faa-ca5d1e265ed0",
+    "fileId": "681eff5c-6e35-43e1-895e-d9ac75c46622"
+  },
+  {
+    "id": 52,
+    "type": "visa-electron",
+    "state": "Gulu",
+    "timestamp": "7/5/2020",
+    "replyId": "3c40db74-8cd6-4e0c-a4c7-126f1a102128",
+    "fileId": "a64a7aaa-787f-4dd8-9b67-57d7d69716cd"
+  },
+  {
+    "id": 53,
+    "type": "mastercard",
+    "state": "Palencia",
+    "timestamp": "9/12/2019",
+    "replyId": "406a3806-9e88-4416-8bc6-62af6d97a16e",
+    "fileId": "95c037bb-c984-4a6a-b051-338c38412de9"
+  },
+  {
+    "id": 54,
+    "type": "jcb",
+    "state": "Nsukka",
+    "timestamp": "12/28/2019",
+    "replyId": "48e71f41-6d66-466d-bace-a8a8aa9edcfd",
+    "fileId": "5ddd84d4-f022-4d24-b863-7bf53b6a0315"
+  },
+  {
+    "id": 55,
+    "type": "china-unionpay",
+    "state": "Vale da Pedra",
+    "timestamp": "11/5/2019",
+    "replyId": "67b9ff0e-65bc-4cb7-b1d8-7766b16be218",
+    "fileId": "66b72844-599a-4676-9e77-cb89226ebaef"
+  },
+  {
+    "id": 56,
+    "type": "jcb",
+    "state": "Randu",
+    "timestamp": "9/27/2019",
+    "replyId": "e779ae16-bc8b-4f56-ab70-5c0a7c7a2ed4",
+    "fileId": "cc679e9c-c0a2-47c8-a62b-6bdad7350e23"
+  },
+  {
+    "id": 57,
+    "type": "americanexpress",
+    "state": "San Lorenzo",
+    "timestamp": "9/10/2019",
+    "replyId": "7517a2f6-6fa6-4170-839d-02faffa1f990",
+    "fileId": "3da9153e-bb7f-459f-9f29-f539155d2f88"
+  },
+  {
+    "id": 58,
+    "type": "jcb",
+    "state": "Tamaki",
+    "timestamp": "2/2/2020",
+    "replyId": "78cf53b9-b88b-421b-88c2-18162d33c212",
+    "fileId": "9280fd09-98c5-4f7e-9515-1b46f4e86d45"
+  },
+  {
+    "id": 59,
+    "type": "jcb",
+    "state": "Liaonan",
+    "timestamp": "5/17/2020",
+    "replyId": "25707ea1-697e-438b-9bea-a98b9729d14b",
+    "fileId": "15171a81-cc7d-4df7-a185-230a30647a95"
+  },
+  {
+    "id": 60,
+    "type": "jcb",
+    "state": "Sędziszów",
+    "timestamp": "12/19/2019",
+    "replyId": "9441c643-2d5c-4efb-90ff-d7f90e2d53c2",
+    "fileId": "1553d49c-e7a7-4094-a58d-b84f2044fb46"
+  },
+  {
+    "id": 61,
+    "type": "jcb",
+    "state": "Yoichi",
+    "timestamp": "12/6/2019",
+    "replyId": "990d6c61-d451-4774-9a75-acff49e85950",
+    "fileId": "e0b9313e-b48b-4031-8d8e-773d47dd4d95"
+  },
+  {
+    "id": 62,
+    "type": "jcb",
+    "state": "Kuala Terengganu",
+    "timestamp": "5/10/2020",
+    "replyId": "299cf6ce-8c79-4bb8-9303-088c660db605",
+    "fileId": "4490846d-c55c-4b90-a568-ea44ef42b34e"
+  },
+  {
+    "id": 63,
+    "type": "jcb",
+    "state": "Baqiu",
+    "timestamp": "11/30/2019",
+    "replyId": "adb57c9d-ce17-4c13-bc61-49f855010f67",
+    "fileId": "b408a2fe-49e2-45ed-83fd-d2dcf95cb6c0"
+  },
+  {
+    "id": 64,
+    "type": "jcb",
+    "state": "Bous",
+    "timestamp": "4/5/2020",
+    "replyId": "b6c6db93-867a-4b05-96b4-0b32f3f1c3e3",
+    "fileId": "462b5bc5-0941-41fa-8be4-92f400928ce5"
+  },
+  {
+    "id": 65,
+    "type": "visa-electron",
+    "state": "Porvoo",
+    "timestamp": "5/10/2020",
+    "replyId": "7cb90f6b-a280-4015-a7bd-e788520278da",
+    "fileId": "18c8b5f4-f030-45a7-9039-685b62e60730"
+  },
+  {
+    "id": 66,
+    "type": "bankcard",
+    "state": "Kongjiang",
+    "timestamp": "4/5/2020",
+    "replyId": "66e0f440-e2f7-4524-95db-4095b9bbc91c",
+    "fileId": "395f48bf-ae0d-43d6-8101-9af3349eadf8"
+  },
+  {
+    "id": 67,
+    "type": "jcb",
+    "state": "Sumberkrajan",
+    "timestamp": "7/14/2020",
+    "replyId": "992582d6-8a38-41b6-ab47-5440efb274e4",
+    "fileId": "121d5c92-ccf7-42f5-b979-dbdfb9ac7c52"
+  },
+  {
+    "id": 68,
+    "type": "diners-club-us-ca",
+    "state": "Arcangel",
+    "timestamp": "4/19/2020",
+    "replyId": "2c66da9e-d5c0-4010-97e3-a35d32942859",
+    "fileId": "ef40d07b-65dd-4c2e-941c-5bbbf60d2f7e"
+  },
+  {
+    "id": 69,
+    "type": "jcb",
+    "state": "Dagou",
+    "timestamp": "1/16/2020",
+    "replyId": "7b330c91-a9bb-450f-8b66-115c4c0f2d92",
+    "fileId": "3f721e24-391a-4955-bc02-56affdf095b7"
+  },
+  {
+    "id": 70,
+    "type": "mastercard",
+    "state": "Shizikeng",
+    "timestamp": "9/7/2020",
+    "replyId": "93441865-7a29-44be-be81-8ee8bb94c028",
+    "fileId": "259ed43a-8b74-4318-b5e2-86099f66243e"
+  },
+  {
+    "id": 71,
+    "type": "visa-electron",
+    "state": "Xamtay",
+    "timestamp": "5/18/2020",
+    "replyId": "7473b260-05e5-4f69-9623-6adca90abba8",
+    "fileId": "b0f8b153-ab9f-4124-8b22-a1cf91e7c660"
+  },
+  {
+    "id": 72,
+    "type": "bankcard",
+    "state": "Tumbagaan",
+    "timestamp": "11/2/2019",
+    "replyId": "17fbd4db-9250-456f-a7fd-f9b9d1c75e07",
+    "fileId": "6f8264d6-acbb-47ca-9297-7a96bbbe7816"
+  },
+  {
+    "id": 73,
+    "type": "bankcard",
+    "state": "Paraguaçu",
+    "timestamp": "6/10/2020",
+    "replyId": "0187b2bd-774e-4b59-bbbc-fd80820a49a8",
+    "fileId": "c888f304-ca6c-4090-99c4-994d5635718b"
+  },
+  {
+    "id": 74,
+    "type": "switch",
+    "state": "Oroqen Zizhiqi",
+    "timestamp": "6/23/2020",
+    "replyId": "aba02808-e0a2-443f-baba-69ec700fef1e",
+    "fileId": "4213fa1a-2a35-4073-9c56-158e3ce9435c"
+  },
+  {
+    "id": 75,
+    "type": "jcb",
+    "state": "San Francisco",
+    "timestamp": "4/10/2020",
+    "replyId": "47fc5525-db9b-4501-85e8-e3d08cb69d35",
+    "fileId": "688a9f4a-5cea-4b8b-a279-ac05446f37ee"
+  },
+  {
+    "id": 76,
+    "type": "maestro",
+    "state": "Rönninge",
+    "timestamp": "4/3/2020",
+    "replyId": "e5e2237a-b20d-475c-85a1-eb88a57ebfdb",
+    "fileId": "e7ac3470-4f2d-4bd4-bdbb-063460b87094"
+  },
+  {
+    "id": 77,
+    "type": "americanexpress",
+    "state": "Södertälje",
+    "timestamp": "6/4/2020",
+    "replyId": "da03c535-422d-4a74-adce-a03cfab67410",
+    "fileId": "91f4bd9e-32c2-4be8-bb00-e94863924839"
+  },
+  {
+    "id": 78,
+    "type": "laser",
+    "state": "Kamuli",
+    "timestamp": "9/6/2020",
+    "replyId": "548e0863-6a7d-4a76-b433-ccd521b2d234",
+    "fileId": "0a854005-43b3-4c6b-8c56-c5a236d9dd07"
+  },
+  {
+    "id": 79,
+    "type": "jcb",
+    "state": "Quinipot",
+    "timestamp": "7/24/2020",
+    "replyId": "45e291d0-f3d8-463b-b3ef-006fc60971c4",
+    "fileId": "8261a5fa-79a7-47a2-af14-cbb6658e5820"
+  },
+  {
+    "id": 80,
+    "type": "china-unionpay",
+    "state": "Le Chambon-Feugerolles",
+    "timestamp": "2/24/2020",
+    "replyId": "a143d4bf-f76b-4d51-863f-1a50fdb7313e",
+    "fileId": "f957480c-3c88-4d99-8a0e-21d4bead88e2"
+  },
+  {
+    "id": 81,
+    "type": "bankcard",
+    "state": "Ichinomiya",
+    "timestamp": "6/22/2020",
+    "replyId": "72e06bc3-5150-4ab6-8e52-9ab6ab941870",
+    "fileId": "1ff8355f-19e1-4cdf-8548-88acf993192a"
+  },
+  {
+    "id": 82,
+    "type": "jcb",
+    "state": "Tutup",
+    "timestamp": "12/14/2019",
+    "replyId": "9c04793a-d8ce-4f26-9546-a992d7ec340c",
+    "fileId": "f649093f-e651-48b9-8057-3d9f9a7ef8e8"
+  },
+  {
+    "id": 83,
+    "type": "jcb",
+    "state": "Tigaherang",
+    "timestamp": "5/21/2020",
+    "replyId": "ecf6c7c5-2b37-49ce-b7e4-5b2cfc44ebd7",
+    "fileId": "b923183d-e24a-4f74-b36f-c769d8fac86b"
+  },
+  {
+    "id": 84,
+    "type": "solo",
+    "state": "Belawang",
+    "timestamp": "1/13/2020",
+    "replyId": "0ea352cd-671d-4c06-a783-6fdc793810a4",
+    "fileId": "ee911224-9c08-41b7-b8d5-435840d4542d"
+  },
+  {
+    "id": 85,
+    "type": "diners-club-international",
+    "state": "Nanling",
+    "timestamp": "3/22/2020",
+    "replyId": "9acd0073-fcdf-4487-9416-6dae4063eb2d",
+    "fileId": "4b6e7b09-f4cc-4fe3-82a8-582dd96073d8"
+  },
+  {
+    "id": 86,
+    "type": "switch",
+    "state": "Patpata Segundo",
+    "timestamp": "6/27/2020",
+    "replyId": "318f9b42-596f-4034-b11d-3070d646a60f",
+    "fileId": "a20b3e4d-cb1d-47f1-bb27-549440c24214"
+  },
+  {
+    "id": 87,
+    "type": "mastercard",
+    "state": "Sernur",
+    "timestamp": "8/10/2020",
+    "replyId": "12d4be41-e124-48e6-b99f-805cf68c36bb",
+    "fileId": "ab7f8aff-5d20-42fc-82c3-7a0c07f46512"
+  },
+  {
+    "id": 88,
+    "type": "maestro",
+    "state": "Lepaterique",
+    "timestamp": "1/14/2020",
+    "replyId": "fc2d990e-27b6-491f-83b8-251894100aa2",
+    "fileId": "3c8baf62-e123-45d2-a370-346a60b26377"
+  },
+  {
+    "id": 89,
+    "type": "mastercard",
+    "state": "Saint-Rémi",
+    "timestamp": "9/23/2019",
+    "replyId": "c6e2e17e-e4c9-4a33-9a41-14f243163224",
+    "fileId": "c0ab230e-1e6f-4151-948b-b80ab612372f"
+  },
+  {
+    "id": 90,
+    "type": "visa-electron",
+    "state": "Jarocin",
+    "timestamp": "11/8/2019",
+    "replyId": "32ff3bf8-78ab-460b-be5c-bbdc26ca005d",
+    "fileId": "69b588b9-0b7b-407b-a976-b572bf5ce806"
+  },
+  {
+    "id": 91,
+    "type": "jcb",
+    "state": "Jindui",
+    "timestamp": "5/22/2020",
+    "replyId": "4130b255-c522-4d5e-ac58-a9fcd4bb2131",
+    "fileId": "b9571018-ac58-46fc-afd7-f7cee4b1695d"
+  },
+  {
+    "id": 92,
+    "type": "visa-electron",
+    "state": "Szydłowo",
+    "timestamp": "6/12/2020",
+    "replyId": "83e9e1d9-1be5-4d10-ae97-2c88dc8716b0",
+    "fileId": "cd9b1953-7c8b-4435-9342-925916ed3c91"
+  },
+  {
+    "id": 93,
+    "type": "switch",
+    "state": "Lindavista",
+    "timestamp": "10/30/2019",
+    "replyId": "cc74e77b-feff-4cc7-ac0c-02553e1aefdc",
+    "fileId": "926b0fc1-b41f-4a3e-8bda-47a3a77b5778"
+  },
+  {
+    "id": 94,
+    "type": "switch",
+    "state": "Niihama",
+    "timestamp": "5/15/2020",
+    "replyId": "4456d6f9-6811-48ef-971c-f43b5bbf454d",
+    "fileId": "72785000-074c-44cb-8279-d6094c0b351a"
+  },
+  {
+    "id": 95,
+    "type": "jcb",
+    "state": "Santo Antônio da Platina",
+    "timestamp": "3/22/2020",
+    "replyId": "9c7b4d55-0664-449c-aba8-eb689dbe4ec8",
+    "fileId": "d9dc4978-0eca-4e0a-86e3-b7f2deb4250c"
+  },
+  {
+    "id": 96,
+    "type": "visa",
+    "state": "Stara Kornica",
+    "timestamp": "3/2/2020",
+    "replyId": "9b98bca6-1e66-448b-922a-a126ffa004dc",
+    "fileId": "ac11ec78-77db-4e52-92e3-6d14906685be"
+  },
+  {
+    "id": 97,
+    "type": "jcb",
+    "state": "Pedrulheira",
+    "timestamp": "11/3/2019",
+    "replyId": "b84b9133-efa8-495b-b9b7-de09dd65c917",
+    "fileId": "f1ea42bd-a895-4e2b-8f2d-2b8f5c7e57ef"
+  },
+  {
+    "id": 98,
+    "type": "jcb",
+    "state": "Wanhu",
+    "timestamp": "5/8/2020",
+    "replyId": "22f770eb-e2b3-4c39-bb1a-33852a55667a",
+    "fileId": "46b3267c-d2f6-424b-8009-8941e93fcb4f"
+  },
+  {
+    "id": 99,
+    "type": "maestro",
+    "state": "Kuznechnoye",
+    "timestamp": "7/12/2020",
+    "replyId": "2862f28d-66ab-416c-b073-e76176c94825",
+    "fileId": "1a650cac-b2b8-4b70-bad0-dec40fffca54"
+  },
+  {
+    "id": 100,
+    "type": "jcb",
+    "state": "La Agustina",
+    "timestamp": "9/2/2020",
+    "replyId": "fd4f920b-2284-487f-8698-70bace3d310d",
+    "fileId": "3c165684-b8f6-4ac1-995b-2daaeaeb5bcb"
+  }
+]

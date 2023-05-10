@@ -3,12 +3,12 @@
   "version": "1.0.36",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4205",
+    "start": "nx serve --port 4205",
     "prebuild": "npm --no-git-tag-version version patch",
-    "build": "ng build --configuration production --base-href ./",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
+    "build": "nx build --configuration production --base-href ./",
+    "test": "nx test",
+    "lint": "nx lint",
+    "e2e": "nx e2e",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,
@@ -53,9 +53,15 @@
   "devDependencies": {
     "@angular-architects/module-federation": "^14.3.14",
     "@angular-devkit/build-angular": "^14.2.11",
+    "@angular-devkit/core": "^14.2.11",
+    "@angular-devkit/schematics": "^14.2.11",
     "@angular/cli": "^14.2.11",
     "@angular/compiler-cli": "^14.3.0",
     "@angular/language-service": "^14.3.0",
+    "@nx/angular": "16.1.4",
+    "@nx/js": "16.1.4",
+    "@nx/workspace": "16.1.4",
+    "@schematics/angular": "^14.2.11",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "^12.11.1",
@@ -67,10 +73,13 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
     "ngx-build-plus": "^14.0.0",
+    "nx": "16.1.4",
+    "nx-cloud": "latest",
+    "prettier": "^2.6.2",
     "stylelint": "^13.9.0",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-webpack-plugin": "^1.2.3",
     "ts-node": "~7.0.0",
-    "typescript": "~4.6.4"
+    "typescript": "~5.0.2"
   }
 }

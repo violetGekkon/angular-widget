@@ -1,0 +1,13 @@
+<h4>Заявка на выдачу RSA-ключа</h4>
+<p>
+  {{ selectedSub.shortName }} в лице {{ name }} просит выдать RSA-ключ для
+  использования по месту осуществления деятельности, со следующими реквизитами:
+</p>
+<span
+  >ИНН: {{ selectedSub.kpp
+  }}<span
+    ><span *ngIf="selectedSub.kpp">, КПП: {{ selectedSub.kpp }}</span>
+
+    <span>, {{ selectedSub.factAddress }}</span>
+  </span></span
+>

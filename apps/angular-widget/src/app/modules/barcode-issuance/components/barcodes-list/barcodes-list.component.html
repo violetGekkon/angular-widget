@@ -1,0 +1,78 @@
+<div [formGroup]="group">
+  <div class="ci-barcode-list">
+    <div
+      fxLayout="row"
+      fxLayoutAlign="start center"
+      class="ci-barcode-list-control"
+    >
+      <div fxFlex="auto" lass="ci-barcode-list-title">
+        <p>Данные о марках</p>
+      </div>
+      <div
+        title="Добавить позицию"
+        class="ci-barcode-list-control--add"
+        (click)="addBarcode.emit(); step = 0"
+      >
+        <mat-icon class="ci-barcode-list-control-icon">add</mat-icon>
+      </div>
+    </div>
+    <mat-accordion formArrayName="codes" class="ci-barcode-list-content">
+      <mat-expansion-panel
+        class="mat-elevation-z0 ci-barcode-list-item"
+        *ngFor="let barcode of barcodes.controls; let i = index"
+        [expanded]="step === i"
+        (opened)="setStep(i)"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title> Позиция {{ barcodes.length - i }} </mat-panel-title>
+          <mat-panel-description>
+            {{ barcodes.controls[i].get('sampleFSM').value }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-card
+          class="mat-elevation-z0 ci-barcode-item-card"
+          (click)="selectedBarcode.emit(i)"
+        >
+          <mat-card-content>
+            <app-barcode-item [group]="barcode"></app-barcode-item>
+          </mat-card-content>
+
+          <mat-card-actions align="end">
+            <button
+              mat-button
+              (click)="clearBarcode.emit(i); $event.stopPropagation()"
+            >
+              Очистить
+            </button>
+            <button
+              mat-button
+              (click)="deleteBarcode.emit(i); $event.stopPropagation()"
+            >
+              Удалить
+            </button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-action-row *ngIf="barcodes.length > 1">
+          <button
+            *ngIf="i !== 0"
+            mat-button
+            color="primary"
+            (click)="prevStep()"
+          >
+            К предыдущей позиции
+          </button>
+          <button
+            *ngIf="i !== barcodes.length - 1"
+            mat-button
+            color="primary"
+            (click)="nextStep()"
+          >
+            К следующей позиции
+          </button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

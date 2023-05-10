@@ -1,0 +1,80 @@
+<div style="margin: 20px">
+  <button mat-button (click)="createRecords()">Создать записи в MongoDB</button>
+  <mat-horizontal-stepper linear #stepper>
+    <mat-step [editable]="isEditable">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel
+          >Выбор места осуществления деятельности</ng-template
+        >
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Поиск (КПП, адрес)"
+            formControlName="firstCtrl"
+          />
+          <button
+            mat-button
+            *ngIf="firstFormGroup.value.firstCtrl"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="clearField()"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <div
+          class="ci-subdiv-container"
+          fxLayout="row wrap"
+          fxLayout.lt-sm="column"
+          fxLayoutGap="32px"
+          fxLayoutAlign="flex-start"
+        >
+          <ng-container *ngFor="let sub of filteredSubdivisions$ | async">
+            <app-subdivision
+              fxFlex="0 1 calc(33.3% - 32px)"
+              fxFlex.lt-xl="0 1 calc(25% - 32px)"
+              fxFlex.lt-md="0 1 calc(50% - 32px)"
+              fxFlex.lt-sm="100%"
+              [subdivision]="sub"
+              (click)="selectSubdivision(sub)"
+              [ngClass]="{ active: sub === selectedSub }"
+            ></app-subdivision>
+          </ng-container>
+        </div>
+        <!--        <div>-->
+        <!--          <button mat-button matStepperNext>Дальше</button>-->
+        <!--        </div>-->
+      </form>
+    </mat-step>
+    <mat-step [completed]="isSecondStepComlited" [editable]="isEditable">
+      <ng-template matStepLabel>Подтверждение данных</ng-template>
+      <app-certificate-rsa-application
+        *ngIf="selectedSub"
+        [selectedSub]="selectedSub"
+      ></app-certificate-rsa-application>
+      <div>
+        <button mat-button matStepperPrevious [disabled]="genCertButtonClicked">
+          Назад
+        </button>
+        <button
+          mat-raised-button
+          (click)="createCert(); genCertButtonClicked = true"
+          [disabled]="genCertButtonClicked"
+        >
+          Сформировать сертификат
+        </button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Готово</ng-template>
+      Сертификат RSA сгенерирован.
+      <div>
+        <!--      <button mat-button matStepperPrevious>Back</button>-->
+        <button mat-button (click)="reset()" [disabled]="isGenerate">
+          Сгенерировать другой сертификат
+        </button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

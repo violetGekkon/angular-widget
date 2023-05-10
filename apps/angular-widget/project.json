@@ -1,0 +1,109 @@
+{
+  "name": "angular-widget",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/angular-widget/src",
+  "projectType": "application",
+  "prefix": "app",
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
+  "targets": {
+    "build": {
+      "executor": "ngx-build-plus:browser",
+      "options": {
+        "outputPath": "dist/apps/angular-widget",
+        "index": "apps/angular-widget/src/index.html",
+        "main": "apps/angular-widget/src/main.ts",
+        "polyfills": "apps/angular-widget/src/polyfills.ts",
+        "tsConfig": "apps/angular-widget/tsconfig.app.json",
+        "assets": ["apps/angular-widget/src/favicon.ico", "apps/angular-widget/src/assets"],
+        "styles": ["apps/angular-widget/src/styles.scss", "apps/angular-widget/src/egais-theme.scss"],
+        "allowedCommonJsDependencies": ["lodash"],
+        "vendorChunk": true,
+        "extractLicenses": false,
+        "buildOptimizer": false,
+        "sourceMap": true,
+        "optimization": false,
+        "namedChunks": true,
+        "extraWebpackConfig": "apps/angular-widget/webpack.config.js",
+        "commonChunk": false
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/angular-widget/src/environments/environment.ts",
+              "with": "apps/angular-widget/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true,
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "2mb",
+              "maximumError": "5mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "6kb"
+            }
+          ],
+          "extraWebpackConfig": "webpack.prod.config.js"
+        }
+      },
+      "defaultConfiguration": ""
+    },
+    "deploy": {
+      "executor": "angular-cli-ghpages:deploy",
+      "options": {
+        "baseHref": "https://violetgekkon.github.io/angular-widget/",
+        "name": "sia angular-widget"
+      }
+    },
+    "serve": {
+      "executor": "ngx-build-plus:dev-server",
+      "options": {
+        "browserTarget": "angular-widget:build",
+        "port": 4201,
+        "publicHost": "http://localhost:4201",
+        "extraWebpackConfig": "apps/angular-widget/webpack.config.js"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "angular-widget:build:production",
+          "extraWebpackConfig": "webpack.prod.config.js"
+        }
+      }
+    },
+    "extract-i18n": {
+      "executor": "ngx-build-plus:extract-i18n",
+      "options": {
+        "browserTarget": "angular-widget:build",
+        "extraWebpackConfig": "apps/angular-widget/webpack.config.js"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/angular-widget/src/test.ts",
+        "polyfills": "apps/angular-widget/src/polyfills.ts",
+        "tsConfig": "apps/angular-widget/tsconfig.spec.json",
+        "karmaConfig": "apps/angular-widget/karma.conf.js",
+        "styles": ["apps/angular-widget/src/styles.scss"],
+        "scripts": [],
+        "assets": [
+          "apps/angular-widget/src/favicon.ico",
+          "apps/angular-widget/src/assets"
+        ]
+      }
+    }
+  }
+}

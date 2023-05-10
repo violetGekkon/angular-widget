@@ -1,0 +1,35 @@
+.ml-file-list {
+  max-height: 250px;
+  //overflow: scroll;
+  list-style: none;
+  margin: 0;
+  padding: 1.2em 2em;
+}
+
+.ml-file-list-item {
+  font-size: 0.9em;
+  font-weight: 400;
+  padding: 0.4em 0.4em;
+  line-height: 1.4;
+  position: relative;
+
+  mat-icon {
+    font-size: 1.2em;
+    vertical-align: -22%;
+    height: 18px;
+    width: 18px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.ci-subdiv-container {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+:host ::ng-deep app-subdivision.active > mat-card {
+  background-color: #daedff;
+}

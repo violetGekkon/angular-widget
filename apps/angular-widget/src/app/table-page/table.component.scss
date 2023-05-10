@@ -1,0 +1,118 @@
+.ci-utm-info-list-item-text {
+  padding-left: 8px;
+  //border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ci-utm-info-list-item-title {
+  font-size: 13px;
+}
+
+.ci-utm-info-list-item-description {
+  padding: 2px 0;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+  opacity: 0.7;
+  white-space: pre-wrap;
+}
+
+.mat-card {
+  max-width: 350px;
+}
+
+.ci-widget-content-focus {
+  cursor: pointer;
+  outline: none;
+}
+
+.ci-utm-info-list-container {
+  display: flex;
+  //border: solid 1px red;
+  flex: 1 1 auto;
+  /*  changed, flex row item need the grow value
+                                to be 1 to fill its parent's width  */
+  flex-direction: column;
+}
+
+.ci-utm-info-list-item {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.ci-utm-info-list-item-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.card-list > *:not(:last-child) {
+  margin-right: 32px;
+}
+
+/* Item sizing */
+.card-list-item {
+  flex: 0 1 calc(33.3% - 32px);
+}
+
+/* medium size viewport */
+@media screen and (max-width: 959px) {
+  /* Column Gap */
+  .card-list > *:not(:last-child) {
+    margin-right: 32px;
+  }
+  /* Item sizing */
+  .card-list-item {
+    flex: 0 1 calc(50% - 32px);
+  }
+}
+
+/* small size viewport */
+@media screen and (max-width: 599px) {
+  .card-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .card-list > *:not(:last-child) {
+    margin-right: unset;
+    margin-bottom: 32px;
+  }
+}
+
+:host ::ng-deep .mat-list-base .mat-list-item .mat-list-item-content {
+  font-size: 12px !important;
+  padding: unset !important;
+}
+:host ::ng-deep .mat-list-base .mat-list-item.mat-2-line {
+  height: 42px !important;
+}
+
+:host ::ng-deep .mat-list-base .mat-list-item .mat-line:nth-child(n + 2) {
+  font-size: 12px !important;
+  white-space: pre-wrap !important;
+  text-overflow: unset !important;
+  color: rgba(0, 0, 0, 0.87);
+  opacity: 0.7;
+}
+
+table {
+  width: 100%;
+}
+
+.no-records {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}

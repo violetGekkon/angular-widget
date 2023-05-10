@@ -1,0 +1,74 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav primary"
+    fixedInViewport="true"
+    style="padding: 20px"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)"
+  >
+    <mat-nav-list>
+      <div class="ci-viewer-nav">
+        <div class="ci-viewer-nav-content">
+          <mat-accordion multi="true">
+            <div *ngFor="let navItem of navList">
+              <mat-expansion-panel class="mat-elevation-z0" [expanded]="true">
+                <mat-expansion-panel-header
+                  class="nav-head"
+                  [expandedHeight]="'48px'"
+                >
+                  <mat-panel-title class="nav-link">
+                    <!--<mat-icon>{{navItem.icon}}</mat-icon>-->
+                    <span class="nav-link-text">{{ navItem.heading }}</span>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <ul class="nav-section">
+                  <li *ngFor="let navPage of navItem.pages" class="nav-item">
+                    <a
+                      class="nav-link"
+                      routerLink="{{ navPage.link }}"
+                      routerLinkActive="selected"
+                      >{{ navPage.title }}</a
+                    >
+                  </li>
+                </ul>
+              </mat-expansion-panel>
+            </div>
+          </mat-accordion>
+        </div>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content
+    fxFlex
+    fxLayout="column"
+    appScrollDirection
+    (scrolledUp)="show = 'show'"
+    (scrolledDown)="show = 'hide'"
+  >
+    <mat-toolbar color="primary">
+      <mat-toolbar-row class="mat-elevation-z6">
+        <span>First toolbar-row</span>
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async"
+        >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      </mat-toolbar-row>
+      <mat-toolbar-row fxHide fxShow.xs [@fadeShowHide]="show">
+        <span>Second toolbar-row</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div class="ci-push-content"></div>
+    <main style="padding: 15px" #main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

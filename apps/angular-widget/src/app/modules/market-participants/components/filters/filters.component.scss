@@ -1,0 +1,8 @@
+.filter {
+  &:hover {
+    cursor: pointer;
+  }
+  &.active {
+    color: red;
+  }
+}

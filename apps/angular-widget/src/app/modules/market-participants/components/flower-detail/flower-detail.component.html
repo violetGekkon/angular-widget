@@ -1,0 +1,8 @@
+<ng-container *ngIf="type$ | async as type">
+  <p>market-participant-detail for {{ type | uppercase }} works!</p>
+  <button mat-raised-button [routerLink]="['../']">Вернуться к списку</button>
+  <div fxLayout="row" fxLayoutGap="20px">
+    <app-statistic [type]="type"></app-statistic>
+    <app-table></app-table>
+  </div>
+</ng-container>

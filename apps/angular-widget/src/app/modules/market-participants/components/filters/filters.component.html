@@ -1,0 +1,12 @@
+<div fxLayout="row" fxLayoutGap="26px">
+  <div
+    fxLayout="column"
+    class="filter"
+    *ngFor="let filter of filters"
+    (click)="select(filter)"
+    [ngClass]="{ active: filter.active }"
+  >
+    <span>{{ filter.title }}</span>
+    <span>{{ filter.count }}</span>
+  </div>
+</div>

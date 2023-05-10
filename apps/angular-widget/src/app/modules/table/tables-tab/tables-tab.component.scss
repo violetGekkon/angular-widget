@@ -1,0 +1,22 @@
+.ci-out-doc-table {
+  width: 100%;
+  padding: 24px;
+  table-layout: fixed;
+}
+
+.ci-out-doc-table td:nth-child(2),
+td:nth-child(5),
+td:nth-child(6) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mat-row {
+  cursor: pointer;
+}
+
+.mat-cell:first-of-type,
+.mat-header-cell:first-of-type {
+  padding-left: unset !important;
+}

@@ -1,0 +1,4 @@
+<p [@openClose]="isOpen ? 'open' : 'close'">{{ isOpen ? 'open' : 'close' }}</p>
+<button mat-stroked-button type="button" (click)="isOpen = !isOpen">
+  Trigger
+</button>

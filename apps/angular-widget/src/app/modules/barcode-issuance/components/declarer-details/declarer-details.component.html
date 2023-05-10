@@ -1,0 +1,44 @@
+<div fxLayout="column" [formGroup]="group">
+  <div
+    fxLayout="row"
+    fxLayout.lt-md="column"
+    fxLayoutGap="24px"
+    add_circle_outline
+    fxLayoutGap.lt-md="0px"
+  >
+    <mat-form-field class="ci-full-width">
+      <input matInput placeholder="Заявитель" formControlName="fullName" />
+    </mat-form-field>
+
+    <mat-form-field class="ci-full-width">
+      <input matInput placeholder="ИНН" formControlName="inn" />
+    </mat-form-field>
+
+    <mat-form-field class="ci-full-width">
+      <input matInput placeholder="КПП" formControlName="kpp" />
+    </mat-form-field>
+  </div>
+
+  <div
+    fxLayout="row"
+    fxLayout.lt-md="column"
+    fxLayoutGap="24px"
+    fxLayoutGap.lt-md="0px"
+  >
+    <mat-form-field [formGroup]="group.get('address_ur')" class="ci-full-width">
+      <input
+        matInput
+        placeholder="Юридический адрес"
+        formControlName="description"
+      />
+    </mat-form-field>
+
+    <mat-form-field [formGroup]="group.get('address')" class="ci-full-width">
+      <input
+        matInput
+        placeholder="Фактический адрес"
+        formControlName="description"
+      />
+    </mat-form-field>
+  </div>
+</div>
