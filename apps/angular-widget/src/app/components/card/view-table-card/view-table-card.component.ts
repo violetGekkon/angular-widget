@@ -7,17 +7,17 @@ import { WeatherService } from '../../../services/weather.service';
   styleUrls: ['./view-table-card.component.scss'],
 })
 export class ViewTableCardComponent implements OnInit {
-  @ViewChild('containerPieChart') element: ElementRef;
+  @ViewChild('containerPieChart') element: ElementRef | undefined;
 
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit() {
-    this.weatherService.dailyForecast().subscribe((res) => console.log(res));
+    this.weatherService.dailyForecast().subscribe((res: any) => console.log(res));
   }
 }
 
 // Функция считает сумму масива с документами
-function arraySum(array) {
+function arraySum(array: string | any[]) {
   let sum = 0;
   for (let i = 0; i < array.length; i++) {
     sum += array[i];

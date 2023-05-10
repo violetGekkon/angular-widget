@@ -16,7 +16,7 @@ export class DocumentChartComponent implements OnInit {
   public data: any;
 
   @HostListener('window:resize', ['$event'])
-  onResize(event) {}
+  onResize(event: any) {}
 
   ngOnInit() {
     // this.setBarChartOptions();

@@ -6,6 +6,7 @@ import {
   OnInit,
   ViewChild,
   ViewContainerRef,
+  ViewRef,
 } from '@angular/core';
 import { DashboardCard } from '../model/dashboard-card.model';
 
@@ -15,7 +16,7 @@ import { DashboardCard } from '../model/dashboard-card.model';
   styles: [':host { height: 100%; width: 100%;}'],
 })
 export class DashboardCardSpawnerComponent implements OnInit {
-  @ViewChild('spawn', { read: ViewContainerRef, static: true }) container;
+  @ViewChild('spawn', { read: ViewContainerRef, static: true }) container: ViewContainerRef | undefined;
 
   constructor(private resolver: ComponentFactoryResolver) {}
 
@@ -40,7 +41,7 @@ export class DashboardCardSpawnerComponent implements OnInit {
     const injector = Injector.create({ providers: inputProviders });
 
     const component = componentFactory.create(injector);
-    this.container.insert(component.hostView);
+    this.container?.insert(component.hostView);
   }
 
   ngOnInit() {}

@@ -9,7 +9,7 @@ import { ViewMode } from '../../ui/components/card-or-list-view/card-or-list-vie
   styleUrls: ['./card-or-list-view-example.component.scss'],
 })
 export class CardOrListViewExampleComponent implements OnInit, OnDestroy {
-  userMessage;
+  userMessage: HTMLElement | null | undefined;
   viewMode: ViewMode = 'card';
 
   items = [
@@ -42,12 +42,12 @@ export class CardOrListViewExampleComponent implements OnInit, OnDestroy {
 
     concat(
       delayedMessage('Get Ready!'),
-      delayedMessage(3, 4000),
-      delayedMessage(2),
-      delayedMessage(1),
+      delayedMessage('3', 4000),
+      delayedMessage('2'),
+      delayedMessage('1'),
       delayedMessage('Go!')
     ).subscribe({
-      next: (x: string) => (this.userMessage.innerHTML = x),
+      next: (x: string) => (this.userMessage!.innerHTML = x),
       error: (err: Error) =>
         console.error(`concat observer got a next value: ${err}`),
       complete: () =>
@@ -66,6 +66,6 @@ export class CardOrListViewExampleComponent implements OnInit, OnDestroy {
 }
 
 // helpers
-const delayedMessage = (message, delayedTime = 1000) => {
+const delayedMessage = (message: string, delayedTime = 1000) => {
   return EMPTY.pipe(startWith(message), delay(delayedTime));
 };

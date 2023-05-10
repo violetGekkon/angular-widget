@@ -46,8 +46,6 @@ const COLORS = [
   providers: [DashboardCardsService],
 })
 export class AppComponent implements OnInit {
-  cols$;
-  cols_sml$;
 
   constructor(
     private breakpointObserver: BreakpointObserver,

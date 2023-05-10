@@ -4,7 +4,7 @@
     <button
       mat-raised-button
       color="primary"
-      [disabled]="!(userMessage.innerHTML === 'Go!')"
+      [disabled]="!(userMessage?.innerHTML === 'Go!')"
       (click)="changeMode()"
     >
       Toggle

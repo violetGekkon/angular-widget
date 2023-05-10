@@ -12,8 +12,8 @@ import { DocumentChartComponent } from '../document-chart/document-chart.compone
 export class DashboardComponent implements OnInit, OnDestroy {
   // cards$: Observable<DashboardCard[]>;
   cards: DashboardCard[] = [];
-  count: number;
-  counter: Observable<number>;
+  count: number | undefined;
+  counter: Observable<number> | undefined;
 
   constructor() {}
 
