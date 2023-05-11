@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-flower-detail',
@@ -8,7 +9,7 @@ import { map, tap } from 'rxjs/operators';
   styleUrls: ['./flower-detail.component.scss'],
 })
 export class FlowerDetailComponent implements OnInit {
-  type$;
+  type$: Observable<string>;
 
   constructor(private route: ActivatedRoute) {
     this.type$ = route.paramMap.pipe(

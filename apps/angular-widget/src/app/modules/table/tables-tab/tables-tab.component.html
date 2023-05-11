@@ -77,7 +77,7 @@
         [length]="page.total"
         [pageSize]="page.size"
         [pageIndex]="page.number"
-        (page)="data.fetch($event)"
+        (page)="data.fetch($event.pageIndex)"
       >
       </mat-paginator>
     </div>
