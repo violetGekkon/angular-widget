@@ -9,9 +9,9 @@ import { UntypedFormGroup } from '@angular/forms';
 export class DeclarerDetailsComponent implements OnInit {
   @Input() group: UntypedFormGroup;
 
- get address_ur(): UntypedFormGroup {
-   return this.group.get('address_ur') as UntypedFormGroup;
- }
+  get address_ur(): UntypedFormGroup {
+    return this.group.get('address_ur') as UntypedFormGroup;
+  }
 
   get address(): UntypedFormGroup {
     return this.group.get('address') as UntypedFormGroup;

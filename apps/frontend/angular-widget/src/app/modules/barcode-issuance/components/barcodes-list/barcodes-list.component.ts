@@ -23,7 +23,8 @@ export class BarcodesListComponent implements OnInit {
   // }
 
   get barcodes(): UntypedFormGroup[] {
-    return (<UntypedFormArray>this.group.get('codes')).controls as UntypedFormGroup[];
+    return (<UntypedFormArray>this.group.get('codes'))
+      .controls as UntypedFormGroup[];
   }
 
   ngOnInit() {}

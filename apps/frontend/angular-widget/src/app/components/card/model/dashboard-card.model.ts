@@ -22,9 +22,8 @@ export class DashboardCard {
         value: string;
       };
     },
-    private _component: any
-  ) // private services:
-  //   {provide: any, useClass: any, deps: any[]}[]
+    private _component: any // private services:
+  ) //   {provide: any, useClass: any, deps: any[]}[]
 
   {}
 

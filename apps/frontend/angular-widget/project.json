@@ -1,7 +1,7 @@
 {
-  "name": "angular-widget",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/angular-widget/src",
+  "name": "frontend-angular-widget",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/frontend/angular-widget/src",
   "projectType": "application",
   "prefix": "app",
   "generators": {
@@ -13,18 +13,18 @@
     "build": {
       "executor": "@nx/angular:webpack-browser",
       "options": {
-        "outputPath": "dist/apps/angular-widget",
-        "index": "apps/angular-widget/src/index.html",
-        "main": "apps/angular-widget/src/main.ts",
-        "polyfills": "apps/angular-widget/src/polyfills.ts",
-        "tsConfig": "apps/angular-widget/tsconfig.app.json",
+        "outputPath": "dist/apps/frontend/angular-widget",
+        "index": "apps/frontend/angular-widget/src/index.html",
+        "main": "apps/frontend/angular-widget/src/main.ts",
+        "polyfills": "apps/frontend/angular-widget/src/polyfills.ts",
+        "tsConfig": "apps/frontend/angular-widget/tsconfig.app.json",
         "assets": [
-          "apps/angular-widget/src/favicon.ico",
-          "apps/angular-widget/src/assets"
+          "apps/frontend/angular-widget/src/favicon.ico",
+          "apps/frontend/angular-widget/src/assets"
         ],
         "styles": [
-          "apps/angular-widget/src/styles.scss",
-          "apps/angular-widget/src/egais-theme.scss"
+          "apps/frontend/angular-widget/src/styles.scss",
+          "apps/frontend/angular-widget/src/egais-theme.scss"
         ],
         "allowedCommonJsDependencies": ["lodash"],
         "vendorChunk": true,
@@ -35,15 +35,15 @@
         "namedChunks": true,
         "commonChunk": false,
         "customWebpackConfig": {
-          "path": "apps/angular-widget/webpack.config.js"
+          "path": "apps/frontend/angular-widget/webpack.config.js"
         }
       },
       "configurations": {
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/angular-widget/src/environments/environment.ts",
-              "with": "apps/angular-widget/src/environments/environment.prod.ts"
+              "replace": "apps/frontend/angular-widget/src/environments/environment.ts",
+              "with": "apps/frontend/angular-widget/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -65,7 +65,7 @@
             }
           ],
           "customWebpackConfig": {
-            "path": "apps/angular-widget/webpack.prod.config.js"
+            "path": "apps/frontend/angular-widget/webpack.prod.config.js"
           }
         }
       },
@@ -81,33 +81,33 @@
     "serve": {
       "executor": "@nx/angular:module-federation-dev-server",
       "options": {
-        "browserTarget": "angular-widget:build",
+        "browserTarget": "frontend-angular-widget:build",
         "publicHost": "http://localhost:4200"
       },
       "configurations": {
         "production": {
-          "browserTarget": "angular-widget:build:production"
+          "browserTarget": "frontend-angular-widget:build:production"
         }
       }
     },
     "extract-i18n": {
       "executor": "ngx-build-plus:extract-i18n",
       "options": {
-        "browserTarget": "angular-widget:build"
+        "browserTarget": "frontend-angular-widget:build"
       }
     },
     "test": {
       "executor": "@angular-devkit/build-angular:karma",
       "options": {
-        "main": "apps/angular-widget/src/test.ts",
-        "polyfills": "apps/angular-widget/src/polyfills.ts",
-        "tsConfig": "apps/angular-widget/tsconfig.spec.json",
-        "karmaConfig": "apps/angular-widget/karma.conf.js",
-        "styles": ["apps/angular-widget/src/styles.scss"],
+        "main": "apps/frontend/angular-widget/src/test.ts",
+        "polyfills": "apps/frontend/angular-widget/src/polyfills.ts",
+        "tsConfig": "apps/frontend/angular-widget/tsconfig.spec.json",
+        "karmaConfig": "apps/frontend/angular-widget/karma.conf.js",
+        "styles": ["apps/frontend/angular-widget/src/styles.scss"],
         "scripts": [],
         "assets": [
-          "apps/angular-widget/src/favicon.ico",
-          "apps/angular-widget/src/assets"
+          "apps/frontend/angular-widget/src/favicon.ico",
+          "apps/frontend/angular-widget/src/assets"
         ]
       }
     }

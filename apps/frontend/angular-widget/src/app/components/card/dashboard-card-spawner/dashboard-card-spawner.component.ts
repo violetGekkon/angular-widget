@@ -16,7 +16,9 @@ import { DashboardCard } from '../model/dashboard-card.model';
   styles: [':host { height: 100%; width: 100%;}'],
 })
 export class DashboardCardSpawnerComponent implements OnInit {
-  @ViewChild('spawn', { read: ViewContainerRef, static: true }) container: ViewContainerRef | undefined;
+  @ViewChild('spawn', { read: ViewContainerRef, static: true }) container:
+    | ViewContainerRef
+    | undefined;
 
   constructor(private resolver: ComponentFactoryResolver) {}
 

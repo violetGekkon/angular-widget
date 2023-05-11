@@ -1,4 +1,4 @@
 module.exports = {
-  name: 'angular-widget',
+  name: 'frontend-angular-widget',
   remotes: [],
 };

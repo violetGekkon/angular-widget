@@ -31,9 +31,7 @@
   <div fxLayout="row wrap" fxLayoutGap="24px" fxLayoutGap.lt-sm="0px">
     <div fxLayout="column" fxFlex="calc(50%-24px)" fxFlex.lt-sm="100%">
       <p>Объем произведенного сырья с даты заполнения предыдущего расчёта:</p>
-      <app-volume-type
-        [group]="volumeProducedRaw"
-      ></app-volume-type>
+      <app-volume-type [group]="volumeProducedRaw"></app-volume-type>
     </div>
 
     <div fxLayout="column" fxFlex="calc(50%-24px)" fxFlex.lt-sm="100%">
@@ -52,23 +50,17 @@
   >
     <div fxLayout="column" fxFlex.xl="calc(33.3% - 24px)" fxFlex.lt-sm="100%">
       <p>с выдержки</p>
-      <app-volume-type
-        [group]="volumeFromAgingRaw"
-      ></app-volume-type>
+      <app-volume-type [group]="volumeFromAgingRaw"></app-volume-type>
     </div>
 
     <div fxLayout="column" fxFlex.xl="calc(33.3% - 24px)" fxFlex.lt-sm="100%">
       <p>закупка от поставщиков (объём, зафиксированный в ЕГАИС)</p>
-      <app-volume-type
-        [group]="volumeBuyRaw"
-      ></app-volume-type>
+      <app-volume-type [group]="volumeBuyRaw"></app-volume-type>
     </div>
 
     <div fxLayout="column" fxFlex.xl="calc(33.3% - 24px)" fxFlex.lt-sm="100%">
       <p>слив и переработка (объём, зафиксированный в ЕГАИС)</p>
-      <app-volume-type
-        [group]="volumeConversionRaw"
-      ></app-volume-type>
+      <app-volume-type [group]="volumeConversionRaw"></app-volume-type>
     </div>
   </div>
 
@@ -82,18 +74,14 @@
   >
     <div fxLayout="column" fxFlex.xl="calc(50% - 24px)" fxFlex.lt-sm="100%">
       <p>на выдержку</p>
-      <app-volume-type
-        [group]="volumeToAgingRaw"
-      ></app-volume-type>
+      <app-volume-type [group]="volumeToAgingRaw"></app-volume-type>
     </div>
 
     <div fxLayout="column" fxFlex.xl="calc(50% - 24px)" fxFlex.lt-sm="100%">
       <p>
         на производство АП (с учётом потерь, объём, зафиксированный в ЕГАИС)
       </p>
-      <app-volume-type
-        [group]="volumeToProducedRaw"
-      ></app-volume-type>
+      <app-volume-type [group]="volumeToProducedRaw"></app-volume-type>
     </div>
   </div>
 

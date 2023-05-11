@@ -12,7 +12,9 @@ export class ViewTableCardComponent implements OnInit {
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit() {
-    this.weatherService.dailyForecast().subscribe((res: any) => console.log(res));
+    this.weatherService
+      .dailyForecast()
+      .subscribe((res: any) => console.log(res));
   }
 }
 

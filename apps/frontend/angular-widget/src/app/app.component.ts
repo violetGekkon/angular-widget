@@ -46,7 +46,6 @@ const COLORS = [
   providers: [DashboardCardsService],
 })
 export class AppComponent implements OnInit {
-
   constructor(
     private breakpointObserver: BreakpointObserver,
     private mediaObserver: MediaObserver

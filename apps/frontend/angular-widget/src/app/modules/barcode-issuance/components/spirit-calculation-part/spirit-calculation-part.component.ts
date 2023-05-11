@@ -40,7 +40,9 @@ export class SpiritCalculationPartComponent implements OnInit {
   }
 
   get volumeConversionRaw(): UntypedFormGroup {
-    return this.volumeReceivedRaw.get('volumeConversionRaw') as UntypedFormGroup;
+    return this.volumeReceivedRaw.get(
+      'volumeConversionRaw'
+    ) as UntypedFormGroup;
   }
 
   get volumeToAgingRaw(): UntypedFormGroup {
