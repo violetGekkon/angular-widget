@@ -82,7 +82,8 @@
       "executor": "@nx/angular:module-federation-dev-server",
       "options": {
         "browserTarget": "frontend-angular-widget:build",
-        "publicHost": "http://localhost:4200"
+        "publicHost": "http://localhost:4200",
+        "proxyConfig": "apps/frontend/angular-widget/proxy.conf.json"
       },
       "configurations": {
         "production": {
