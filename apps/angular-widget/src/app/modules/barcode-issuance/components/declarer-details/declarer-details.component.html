@@ -25,7 +25,7 @@
     fxLayoutGap="24px"
     fxLayoutGap.lt-md="0px"
   >
-    <mat-form-field [formGroup]="group.get('address_ur')" class="ci-full-width">
+    <mat-form-field [formGroup]="address_ur" class="ci-full-width">
       <input
         matInput
         placeholder="Юридический адрес"
@@ -33,7 +33,7 @@
       />
     </mat-form-field>
 
-    <mat-form-field [formGroup]="group.get('address')" class="ci-full-width">
+    <mat-form-field [formGroup]="address" class="ci-full-width">
       <input
         matInput
         placeholder="Фактический адрес"

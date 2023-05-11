@@ -19,14 +19,14 @@
     <mat-accordion formArrayName="codes" class="ci-barcode-list-content">
       <mat-expansion-panel
         class="mat-elevation-z0 ci-barcode-list-item"
-        *ngFor="let barcode of barcodes.controls; let i = index"
+        *ngFor="let barcode of barcodes; let i = index"
         [expanded]="step === i"
         (opened)="setStep(i)"
       >
         <mat-expansion-panel-header>
           <mat-panel-title> Позиция {{ barcodes.length - i }} </mat-panel-title>
           <mat-panel-description>
-            {{ barcodes.controls[i].get('sampleFSM').value }}
+            {{ barcodes[i].get('sampleFSM').value }}
           </mat-panel-description>
         </mat-expansion-panel-header>
 

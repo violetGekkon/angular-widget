@@ -18,8 +18,12 @@ export class BarcodesListComponent implements OnInit {
 
   constructor() {}
 
-  get barcodes(): UntypedFormArray {
-    return this.group.get('codes') as UntypedFormArray;
+  // get barcodes(): UntypedFormArray {
+  //   return this.group.get('codes') as UntypedFormArray;
+  // }
+
+  get barcodes(): UntypedFormGroup[] {
+    return (<UntypedFormArray>this.group.get('codes')).controls as UntypedFormGroup[];
   }
 
   ngOnInit() {}

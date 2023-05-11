@@ -22,4 +22,32 @@ export class SpiritCalculationPartComponent implements OnInit {
     ) as UntypedFormGroup;
     this.volumeUsedRaw = this.group.get('volumeUsedRaw') as UntypedFormGroup;
   }
+
+  get volumeProducedRaw(): UntypedFormGroup {
+    return this.group.get('volumeProducedRaw') as UntypedFormGroup;
+  }
+
+  get volumeOutRaw(): UntypedFormGroup {
+    return this.group.get('volumeOutRaw') as UntypedFormGroup;
+  }
+
+  get volumeFromAgingRaw(): UntypedFormGroup {
+    return this.volumeReceivedRaw.get('volumeFromAgingRaw') as UntypedFormGroup;
+  }
+
+  get volumeBuyRaw(): UntypedFormGroup {
+    return this.volumeReceivedRaw.get('volumeBuyRaw') as UntypedFormGroup;
+  }
+
+  get volumeConversionRaw(): UntypedFormGroup {
+    return this.volumeReceivedRaw.get('volumeConversionRaw') as UntypedFormGroup;
+  }
+
+  get volumeToAgingRaw(): UntypedFormGroup {
+    return this.volumeUsedRaw.get('volumeToAgingRaw') as UntypedFormGroup;
+  }
+
+  get volumeToProducedRaw(): UntypedFormGroup {
+    return this.volumeUsedRaw.get('volumeToProducedRaw') as UntypedFormGroup;
+  }
 }

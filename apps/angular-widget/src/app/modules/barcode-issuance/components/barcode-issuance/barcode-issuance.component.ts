@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+import { FormGroup, UntypedFormGroup } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { MatCheckboxChange } from '@angular/material/checkbox';
@@ -55,6 +55,10 @@ export class BarcodeIssuanceComponent implements OnInit, AfterViewInit {
 
   get codeIssuanceForm(): UntypedFormGroup {
     return this.codeIssuanceService.form;
+  }
+
+  get declarerDetailsForm(): UntypedFormGroup {
+    return this.codeIssuanceForm.controls['declarerDetails'] as FormGroup;
   }
 
   get calculationDemand(): UntypedFormGroup {
