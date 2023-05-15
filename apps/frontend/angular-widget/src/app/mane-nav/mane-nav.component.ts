@@ -60,13 +60,13 @@ export class ManeNavComponent implements OnInit {
         heading: 'Разное',
         pages: [
           { title: 'CardOrListView', link: '/card-or-list', icon: '' },
-          { title: 'Выдача марок', link: '/issuance', icon: '' },
+          // { title: 'Выдача марок', link: '/issuance', icon: '' },
           { title: 'mergeMap и т.д.', link: '/map', icon: '' },
-          { title: 'Настройки', link: '/settings', icon: '' },
+          // { title: 'Настройки', link: '/settings', icon: '' },
           { title: 'animations', link: '/animations' },
-          { title: 'Продукция', link: '/product-list' },
-          { title: 'Справочники', link: '/frap' },
-          { title: 'Комнатные растения', link: 'flowers' },
+          // { title: 'Продукция', link: '/product-list' },
+          // { title: 'Справочники', link: '/frap' },
+          // { title: 'Комнатные растения', link: 'flowers' },
         ],
       },
       {
@@ -77,9 +77,9 @@ export class ManeNavComponent implements OnInit {
         ],
       },
       {
-        heading: 'Ключ доступа',
+        heading: 'Files',
         pages: [
-          { title: 'Формирование RSA', link: '/rsa', icon: '' },
+          // { title: 'Формирование RSA', link: '/rsa', icon: '' },
           { title: 'Файлы', link: '/file', icon: '' },
         ],
       },
