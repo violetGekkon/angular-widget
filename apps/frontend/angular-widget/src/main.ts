@@ -16,9 +16,9 @@
  * called the Micro Frontend Manifest — at runtime:
  */
 
-import { loadManifest } from '@angular-architects/module-federation';
+import { setRemoteDefinitions } from '@nx/angular/mf';
 
-loadManifest('/assets/mf.manifest.json')
-  .catch((err) => console.error(err))
-  .then((_) => import('./bootstrap'))
-  .catch((err) => console.error(err));
+fetch('/assets/mf.manifest.json')
+  .then((res) => res.json())
+  .then((definitions) => setRemoteDefinitions(definitions))
+  .then(() => import('./bootstrap').catch((err) => console.error(err)));
