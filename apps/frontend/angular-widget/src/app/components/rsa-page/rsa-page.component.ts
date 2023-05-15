@@ -8,10 +8,10 @@ import {
 import { DashboardCard } from '../card/model/dashboard-card.model';
 import { DashboardCardsService } from '../../services/dashboard-card-service.service';
 import { ViewTableCardComponent } from '../card/view-table-card/view-table-card.component';
-import { Subdivision } from '../../../../shared/subdivision.model';
 import { combineLatest, Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { MongoDBService } from '../../services/mongo-db. service';
+import { Subdivision } from 'shared/data-access/interfaces';
 
 @Component({
   selector: 'app-test-page',

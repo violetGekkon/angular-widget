@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SubdivisionDto } from '../../../shared/dto/subdivision.dto';
-import { Subdivision } from '../../../shared/subdivision.model';
 import { Observable } from 'rxjs';
+import { Subdivision } from 'shared/data-access/interfaces';
 
 @Injectable({
   providedIn: 'root',
