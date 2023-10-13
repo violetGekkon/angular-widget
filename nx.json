@@ -43,16 +43,30 @@
         "{workspaceRoot}/.eslintrc.json",
         "{workspaceRoot}/.eslintignore"
       ]
+    },
+    "e2e": {
+      "inputs": ["default", "^production"]
     }
   },
   "projects": {
     "shared-data-access-interfaces": {
-      "tags": [
-        "type:lib",
-        "scope:shared",
-        "lib-type:data-access"
-      ]
+      "tags": ["type:lib", "scope:shared", "lib-type:data-access"]
     }
   },
-  "defaultProject": "frontend-angular-widget"
+  "defaultProject": "frontend-angular-widget",
+  "generators": {
+    "@nx/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nx/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nx/angular:component": {
+      "style": "scss"
+    }
+  }
 }
