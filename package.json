@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "nx serve --port 4205",
+    "frontend-angular-widget:start": " nx run frontend-angular-widget:serve ",
     "prebuild": "npm --no-git-tag-version version patch",
     "build": "nx build --configuration production --base-href ./",
     "test": "nx test",

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { UploadService } from '../services/upload.service';
+import { UploadService } from '../../services/upload.service';
 
 @Component({
   selector: 'app-file',

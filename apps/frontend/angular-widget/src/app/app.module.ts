@@ -8,20 +8,18 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './components/card/dashboard/dashboard.component';
 import { DashboardCardSpawnerComponent } from './components/card/dashboard-card-spawner/dashboard-card-spawner.component';
-import { RsaPageComponent } from './components/rsa-page/rsa-page.component';
 import { ViewTableCardComponent } from './components/card/view-table-card/view-table-card.component';
 import { WeatherService } from './services/weather.service';
 import { HttpClientModule } from '@angular/common/http';
-import { MapExampleComponent } from './map-example/map-example.component';
+import { MapExampleComponent } from './components/map-example/map-example.component';
 import { SubdivisionComponent } from './subdivision/subdivision.component';
-import { CertificateRsaApplicationComponent } from './components/certificate-rsa-application/certificate-rsa-application.component';
 import { TestListComponent } from './test-list/test-list.component';
 import { NavListComponent } from './nav-list/nav-list.component';
 import { TableComponent } from './table-page/table.component';
 import { SlidePanelComponent } from './slide-panel/slide-panel.component';
 import { DataService } from './data.service';
 import { BreadcrumbComponent } from './ui/components/breadcrumb/breadcrumb.component';
-import { FileComponent } from './file/file.component';
+import { FileComponent } from './components/file/file.component';
 import { AppTooltipComponent } from './ui/tooltips/app-tooltip/app-tooltip.component';
 import { AppTooltipDirective } from './ui/tooltips/app-tooltip/app-tooltip.directive';
 import { OverlayModule } from '@angular/cdk/overlay';
@@ -47,11 +45,9 @@ import { NavigationService } from './services/navigation.service';
     ManeNavComponent,
     DashboardComponent,
     DashboardCardSpawnerComponent,
-    RsaPageComponent,
     ViewTableCardComponent,
     MapExampleComponent,
     SubdivisionComponent,
-    CertificateRsaApplicationComponent,
     TestListComponent,
     NavListComponent,
     TableComponent,

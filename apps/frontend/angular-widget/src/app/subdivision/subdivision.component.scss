@@ -1,3 +1,5 @@
+@import "apps/frontend/angular-widget/src/breakpoints";
+
 .example-card {
   max-width: 400px;
   height: 100%;
@@ -10,7 +12,7 @@
 }
 
 .example-card h4 {
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .ci-rsa-exist {

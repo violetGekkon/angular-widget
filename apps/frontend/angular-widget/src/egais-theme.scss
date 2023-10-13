@@ -1,6 +1,4 @@
 @use '@angular/material' as mat;
-//@import 'src/app/components/rsa-page/rsa-page.component.scss-theme';
-@import 'app/components/rsa-page/rsa-page.component.scss-theme.scss';
 
 @include mat.core();
 
@@ -151,14 +149,14 @@ $egais-dark-theme: mat.define-dark-theme(
 $egais-foreground: egais-light-theme-foreground(#0b5ca6);
 $egais-theme: map-merge($egais-light-theme, (foreground: $egais-foreground)); */
 
-@mixin egais-components-theme($theme) {
-  @include test-page-theme($theme);
-}
-
-@include mat.all-component-themes($egais-light-theme);
-@include egais-components-theme($egais-light-theme);
-
-.egais-dark-theme {
-  @include mat.all-component-themes($egais-dark-theme);
-  @include egais-components-theme($egais-dark-theme);
-}
+//@mixin egais-components-theme($theme) {
+//  @include test-page-theme($theme);
+//}
+//
+//@include mat.all-component-themes($egais-light-theme);
+//@include egais-components-theme($egais-light-theme);
+//
+//.egais-dark-theme {
+//  @include mat.all-component-themes($egais-dark-theme);
+//  @include egais-components-theme($egais-dark-theme);
+//}
