@@ -32,7 +32,7 @@ const routes: Routes = [
   {
     path: 'flowers',
     loadChildren: () =>
-      loadRemoteModule('flower', './Module').then((m) => m.RemoteEntryModule),
+      loadRemoteModule('frontend-flower', './Module').then((m) => m.RemoteEntryModule),
   },
   // {
   //   path: 'flowers',

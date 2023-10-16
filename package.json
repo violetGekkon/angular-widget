@@ -3,7 +3,7 @@
   "version": "1.0.36",
   "scripts": {
     "ng": "ng",
-    "start": "nx serve --port 4205",
+    "start": "nx run-many --parallel --target=serve --projects=frontend-angular-widget,frontend-flower --maxParallel=100",
     "frontend-angular-widget:start": "nx run frontend-angular-widget:serve",
     "frontend-flower:start": "nx run frontend-flower:serve",
     "prebuild": "npm --no-git-tag-version version patch",

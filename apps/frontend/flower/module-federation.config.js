@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'flower',
+  name: 'frontend-flower',
   exposes: {
     './Module': 'apps/frontend/flower/src/app/remote-entry/entry.module.ts',
   },
