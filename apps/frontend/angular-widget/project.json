@@ -26,14 +26,7 @@
           "apps/frontend/angular-widget/src/styles.scss",
           "apps/frontend/angular-widget/src/egais-theme.scss"
         ],
-        "allowedCommonJsDependencies": ["lodash"],
-        "vendorChunk": true,
-        "extractLicenses": false,
-        "buildOptimizer": false,
-        "sourceMap": true,
-        "optimization": false,
-        "namedChunks": true,
-        "commonChunk": false,
+        "scripts": [],
         "customWebpackConfig": {
           "path": "apps/frontend/angular-widget/webpack.config.js"
         }
@@ -67,9 +60,17 @@
           "customWebpackConfig": {
             "path": "apps/frontend/angular-widget/webpack.prod.config.js"
           }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
         }
       },
-      "defaultConfiguration": ""
+      "defaultConfiguration": "production"
     },
     "deploy": {
       "executor": "angular-cli-ghpages:deploy",
@@ -88,8 +89,12 @@
       "configurations": {
         "production": {
           "browserTarget": "frontend-angular-widget:build:production"
+        },
+        "development": {
+          "browserTarget": "frontend-angular-widget:build:development"
         }
-      }
+      },
+      "defaultConfiguration": "development"
     },
     "extract-i18n": {
       "executor": "ngx-build-plus:extract-i18n",

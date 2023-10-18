@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
 import { FlowersListComponent } from './components/flowers-list/flowers-list.component';
-import { MaterialModule } from '../../material.module';
+import { MaterialModule } from '../../../../angular-widget/src/app/material.module';
 import { FlowersHttpService } from './services/flowers-http.service';
 import { FlowerDetailComponent } from './components/flower-detail/flower-detail.component';
 import { CommonModule } from '@angular/common';

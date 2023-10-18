@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "nx run-many --parallel --target=serve --projects=frontend-angular-widget,frontend-flower --maxParallel=100",
-    "frontend-angular-widget:start": "nx run frontend-angular-widget:serve",
+    "serve:host": "nx serve frontend-angular-widget --open",
+    "frontend-angular-widget:start": "nx run frontend-angular-widget:serve --devRemotes=frontend-flower",
     "frontend-flower:start": "nx run frontend-flower:serve",
     "prebuild": "npm --no-git-tag-version version patch",
     "build": "nx build --configuration production --base-href ./",

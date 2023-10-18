@@ -34,13 +34,6 @@ const routes: Routes = [
     loadChildren: () =>
       loadRemoteModule('frontend-flower', './Module').then((m) => m.RemoteEntryModule),
   },
-  // {
-  //   path: 'flowers',
-  //   loadChildren: () =>
-  //     import('./modules/flowers/flowers.module').then(
-  //       (m) => m.FlowersModule
-  //     ),
-  // },
   {
     path: 'animations',
     loadChildren: () =>
